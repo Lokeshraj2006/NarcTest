@@ -47,7 +47,34 @@ for it, name in sel:
 def tile(d, img, x, y, tw, it, name, r, fs):
     img.paste(Image.fromarray(cv2.cvtColor(cv2.resize(r_crop(it), (tw, tw), interpolation=cv2.INTER_AREA), cv2.COLOR_BGR2RGB)), (x, y))
 
-if NARROW:
+if '--grid' in sys.argv:  # 3 x 2 tiles only (numbers are already in the slide text) -> proof_grid.png
+    W, tw, gapx, rowh = 1200, 350, 50, 510
+    x0 = (W - (3 * tw + 2 * gapx)) // 2
+    img = Image.new('RGB', (W, 2 * rowh + 70), 'white'); d = ImageDraw.Draw(img)
+    def fit(text, size, bold=False):
+        while d.textlength(text, font=F(size, bold)) > tw + gapx - 8:
+            size -= 2
+        return F(size, bold)
+    right = 0
+    for i, (it, name, r, crop) in enumerate(thumbs):
+        x = x0 + (i % 3) * (tw + gapx); y = (i // 3) * rowh
+        img.paste(Image.fromarray(cv2.cvtColor(cv2.resize(crop, (tw, tw), interpolation=cv2.INTER_AREA), cv2.COLOR_BGR2RGB)), (x, y))
+        d.rectangle([x - 1, y - 1, x + tw, y + tw], outline=RULE, width=2)
+        ok = r['result'] == it['expected']; right += ok
+        d.text((x, y + tw + 8), name, font=fit(name, 54), fill=GREY)
+        ans = 'NOT SURE' if r['result'] == 'INCONCLUSIVE' else f"{r['result'].title()} {r['confidence']}%"
+        d.text((x, y + tw + 70), ans, font=fit(ans, 60, True), fill=ACC if ok else (0xC0, 0, 0))
+    foot = f"{right}/{len(thumbs)} correct · test run {time.strftime('%d %b %Y')} · simulated swatches"
+    fs = 44
+    while d.textlength(foot, font=F(fs)) > W - 2 * x0:
+        fs -= 2
+    d.text((x0, 2 * rowh + 6), foot, font=F(fs), fill=GREY)
+    out = ROOT / 'docs' / 'ppt_content' / 'evidence' / 'proof_grid.png'
+    img.save(out)
+    for r in results: print(r)
+    print('saved', out)
+    raise SystemExit(0)
+elif NARROW:
     W, H = 620, 2600
     img = Image.new('RGB', (W, H), 'white'); d = ImageDraw.Draw(img)
     tw, x0, y0, rowh = 230, 30, 30, 262
