@@ -106,9 +106,9 @@ set_heading(ux_head, 'User Experience')
 ux_head.text_frame.paragraphs[0].alignment = PP_ALIGN.LEFT
 ux = clone(s2, sid(s2, 23), 1.08, 7.26, 7.80, 1.40)
 set_bullets(ux, [
-    ('4 steps', ' - pick kit → photo inside the box → result → sealed. Result ~2.5 s after the photo.'),
-    ('Bad photo?', ' - App says NOT SURE with the reason (blur, glare, card not read) and asks to retake.'),
-    ('Easy to read', ' - big result word + colour (not colour alone), simple English. Next: timed test with 10 officers.'),
+    ('4 steps', ' - pick kit → take photo in the box → see result → saved. Result comes ~2.5 sec after photo.'),
+    ('Bad photo?', ' - App says NOT SURE, tells why (blurry, shiny, card not seen) and asks to take again.'),
+    ('Easy to read', ' - big result word with colour, simple English. Next: we will time 10 officers using it.'),
 ], size=16)
 
 # ------------------------------------------------------------------ Slide 3: real-kit trial is the next step
@@ -117,7 +117,7 @@ nxt = copy.deepcopy(note.paragraphs[0]._p)
 nr = nxt.findall(qn('a:r'))
 for r in nr[1:]:
     nxt.remove(r)
-nr[0].find(qn('a:t')).text = 'Next step (not done yet): real-kit trial with an FSL, in lab + field light.'
+nr[0].find(qn('a:t')).text = 'Not done yet: real-kit test with an FSL, in lab light + outside light.'
 note.paragraphs[-1]._p.addnext(nxt)
 place(sid(s3, 23), y=7.02)                        # divider
 card, ref_head = sid(s3, 13), sid(s3, 22)
@@ -137,10 +137,10 @@ set_heading(pilot_head, 'Pilot Plan (proposed)')
 pilot = clone(s4, sid(s4, 21), 4.95, 7.58, 4.72, 2.75)
 set_bullets(pilot, [
     ('Where', ' - 1 district in Tamil Nadu, with local police + nearest FSL'),
-    ('Who', ' - 20 field officers for 3 months'),
-    ('Check', ' - every field result re-tested in the FSL lab'),
-    ('Success', ' - 95%+ match with lab, NOT SURE under 10%, every record verifies'),
-    ('Then', ' - district → state → national (phases on the left)'),
+    ('Who', ' - 20 officers, for 3 months'),
+    ('Check', ' - every field result is checked again in the FSL lab'),
+    ('Success', ' - 95%+ same as lab, NOT SURE below 10%, every record passes the check'),
+    ('Then', ' - district → state → whole country (phases on the left)'),
 ], size=15.5, spacing=1.15)
 
 # ------------------------------------------------------------------ Slide 5: Tamper Test from a real run
@@ -155,7 +155,7 @@ for i in (29, 31):                                # "Map - Geo-Tagged test resul
 t_head = clone(s5, sid(s5, 29), fut.left / E, 5.22, 2.0, 0.40)
 set_heading(t_head, 'Tamper Test -')
 t_sub = clone(s5, sid(s5, 31), fut.left / E + 1.88, 5.26, 5.4, 0.34)
-set_heading(t_sub, 'real run on our saved records')
+set_heading(t_sub, 'real test on our saved records')
 tw = fut.width / E
 pic = s5.shapes.add_picture(TAMPER, fut.left, Inches(5.66), width=Inches(tw))
 pic.name = 'Tamper proof'

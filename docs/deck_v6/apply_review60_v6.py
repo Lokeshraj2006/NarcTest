@@ -68,7 +68,7 @@ s2, s4, s5 = p.slides[1], p.slides[3], p.slides[4]
 
 # ------------------------------------------------------------------ Slide 2: searchable log caption
 tf = box(s2, 9.40, 6.17, 9.85, 0.24)
-run(tf.paragraphs[0], 'Test Log (right): search + filter by date, officer, kit and result; export as CSV, PDF + QR.',
+run(tf.paragraphs[0], 'Test Log (right side): search and filter by date, officer, kit, result. Download as CSV, PDF with QR.',
     11.5, color=GREY, italic=True)
 
 # ------------------------------------------------------------------ Slide 4: pilot cost (per deployment)
@@ -77,7 +77,7 @@ last = pilot.text_frame.paragraphs[-1]._p
 cost = copy.deepcopy(last)
 rs = cost.findall(qn('a:r'))
 rs[0].find(qn('a:t')).text = 'Cost'
-rs[1].find(qn('a:t')).text = ' - about ₹10,000 for 3 months: cards ₹200 + server ~₹3,000/month (estimate)'
+rs[1].find(qn('a:t')).text = ' - around ₹10,000 for 3 months: cards ₹200 + server ~₹3,000/month (rough estimate)'
 last.addnext(cost)
 for par in pilot.text_frame.paragraphs:
     for r in par.runs:
@@ -97,19 +97,19 @@ right = ver.left / E + vw
 qh = sid(s5, 30)                                     # "QR-Based Record Verification" centred over the pair
 place(qh, x=(x0 + right) / 2 - qh.width / E / 2)
 
-block(s5, right + 0.28, 4.95, 10.95 - right - 0.28, 3.95, 'Privacy & Retention (DPDP 2023)', [
-    ('Data', ' - no biometrics, no suspect name (only a sample code). Officer ID, GPS, time kept as evidence.'),
-    ('Who sees', ' - officer: own tests; supervisor/admin: all; public QR: check page (hiding officer name planned).'),
-    ('Law', ' - police work needs no consent (s.7(c), s.17(1)(c)) but data must be kept safe (s.8(5)).'),
-    ('Keep', ' - till case + appeal end, then photo removed (planned).'),
+block(s5, right + 0.28, 4.95, 10.95 - right - 0.28, 3.95, 'Privacy & How Long We Keep Data', [
+    ('Data', ' - no fingerprint or face data, no suspect name (only a sample code). Officer ID, GPS, time kept as proof.'),
+    ('Who sees', ' - officer: only own tests; supervisor/admin: all tests; public QR: only the check page (hiding officer name: planned).'),
+    ('Law', ' - police work does not need consent (DPDP s.7(c), s.17(1)(c)), but data must be kept safe (s.8(5)).'),
+    ('Keep', ' - till the case and appeal are over, then photo is deleted (planned).'),
 ])
-block(s5, x0, y0 + S + 0.08, 10.95 - x0, 10.38 - (y0 + S + 0.08), 'Chain of Custody & Court', [
-    ('Key', ' - Ed25519 key only on the server, never in the app; anyone checks with the public key. '
-            'Next: hardware key box (HSM) + officer DSC.'),
-    ('Check', ' - QR page re-computes the photo hash + record hash, verifies the signature and the chain (see Tamper Test).'),
-    ('Court', ' - gives the SHA-256 hash for the BSA 2023 s.63 certificate; e-Sakshya / CCTNS linking is planned.'),
-    ('Offline (design)', ' - test saved on phone with its hash, sent later; same test sent twice is saved once; '
-                         'phone lost: admin blocks the login (planned).'),
+block(s5, x0, y0 + S + 0.08, 10.95 - x0, 10.38 - (y0 + S + 0.08), 'Chain of Custody (safe for court)', [
+    ('Key', ' - secret key only on our server, never in the app; anyone can check using the public key. '
+            "Next: hardware key box (HSM) + officer's own DSC."),
+    ('Check', ' - QR page checks the photo and record again, plus the signature and chain link (see Tamper Test).'),
+    ('Court', ' - gives the SHA-256 hash needed for the court certificate (BSA 2023 s.63). e-Sakshya / CCTNS link: planned.'),
+    ('Offline (design)', ' - no network? Test saved on phone with its hash, sent later; sent twice = saved once; '
+                         'phone lost = admin blocks the login (planned).'),
 ], size=11.5, head=15)
 
 p.save(OUT)
