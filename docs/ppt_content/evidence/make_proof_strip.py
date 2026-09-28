@@ -31,6 +31,7 @@ for key, name in lights:
 sel.append((pick(lambda i: 'glare' in str(i.get('kind', '')).lower() or 'glare' in str(i.get('file', '')).lower()), 'Glare on card'))
 
 VERTICAL = '--vertical' in sys.argv
+NARROW = '--narrow' in sys.argv
 F = lambda s, b=False: ImageFont.truetype('C:/Windows/Fonts/' + ('arialbd.ttf' if b else 'arial.ttf'), s)
 ACC, INK, GREY, RULE = (0x7A, 0x2F, 0x00), (0x1F, 0x1F, 0x1F), (0x6B, 0x6B, 0x6B), (0xD9, 0xD9, 0xD9)
 results = []
@@ -46,7 +47,24 @@ for it, name in sel:
 def tile(d, img, x, y, tw, it, name, r, fs):
     img.paste(Image.fromarray(cv2.cvtColor(cv2.resize(r_crop(it), (tw, tw), interpolation=cv2.INTER_AREA), cv2.COLOR_BGR2RGB)), (x, y))
 
-if not VERTICAL:
+if NARROW:
+    W, H = 620, 2600
+    img = Image.new('RGB', (W, H), 'white'); d = ImageDraw.Draw(img)
+    tw, x0, y0, rowh = 230, 30, 30, 262
+    for i, (it, name, r, crop) in enumerate(thumbs):
+        y = y0 + i * rowh
+        img.paste(Image.fromarray(cv2.cvtColor(cv2.resize(crop, (tw, tw), interpolation=cv2.INTER_AREA), cv2.COLOR_BGR2RGB)), (x0, y))
+        d.rectangle([x0 - 1, y - 1, x0 + tw, y + tw], outline=RULE, width=2)
+        ok = r['result'] == it['expected']
+        tx_ = x0 + tw + 26
+        d.text((tx_, y + 52), name, font=F(32), fill=GREY)
+        ans = 'NOT SURE' if r['result'] == 'INCONCLUSIVE' else r['result'].title()
+        d.text((tx_, y + 96), ans, font=F(40, True), fill=ACC if ok else (0xC0, 0, 0))
+        d.text((tx_, y + 146), (f"{r['confidence']}% sure · " if r['result'] != 'INCONCLUSIVE' else '') + ('correct' if ok else 'WRONG'), font=F(30), fill=GREY)
+    ly = y0 + 6 * rowh + 6
+    d.line([(x0, ly), (W - x0, ly)], fill=RULE, width=2)
+    tx, ty, big, mid, small = x0, ly + 26, 50, 32, 26
+elif not VERTICAL:
     W, H = 2400, 500
     img = Image.new('RGB', (W, H), 'white'); d = ImageDraw.Draw(img)
     tw, x0, y0, gap = 250, 40, 60, 22
@@ -82,13 +100,13 @@ d.text((tx, ty + 42), '15 passed, 0 failed', font=F(big, True), fill=ACC)
 lines = ['37/37 test photos correct', '12/12 bad photos said NOT SURE', 'Tamper: 4/4 caught', 'Real phone: 5 right, 1 not sure, 0 wrong']
 yy = ty + 42 + big + 24
 for ln in lines:
-    d.text((tx, yy), ln, font=F(mid if not ln.startswith('Real') or VERTICAL else 30), fill=INK); yy += mid + 13
+    d.text((tx, yy), ln, font=F(mid if not ln.startswith('Real') or VERTICAL else (26 if NARROW else 30)), fill=INK); yy += mid + 13
 yy += 30
 d.text((tx, yy), 'Same purple kit colour, 5 lights.', font=F(small), fill=GREY)
 d.text((tx, yy + small + 8), 'Simulated swatches, not real reagent.', font=F(small), fill=GREY)
-if VERTICAL:
-    img = img.crop((0, 0, W, min(H, yy + 2 * small + 60)))
-out = ROOT / 'docs' / 'ppt_content' / 'evidence' / ('proof_vertical.png' if VERTICAL else 'proof_strip.png')
+if VERTICAL or NARROW:
+    img = img.crop((0, 0, W, min(H, yy + 2 * small + 50)))
+out = ROOT / 'docs' / 'ppt_content' / 'evidence' / ('proof_narrow.png' if NARROW else 'proof_vertical.png' if VERTICAL else 'proof_strip.png')
 img.save(out)
 for r in results: print(r)
 print('saved', out)
