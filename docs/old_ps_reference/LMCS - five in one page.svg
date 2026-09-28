@@ -1,0 +1,197 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1F3A68"/>
+    </marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2E9E5B"/>
+    </marker>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#D63A40"/>
+    </marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#FFFFFF"/>
+
+  <text x="48" y="58" font-size="30" font-weight="700" fill="#1F3A68">Inside LMCS — five things the software does</text>
+  <text x="48" y="88" font-size="16" fill="#55627A">One label photo, from the phone to the Controller's decision</text>
+
+  <!-- ══ PANEL 1 ══ -->
+  <rect x="48" y="112" width="592" height="452" rx="16" fill="#F5F8FD" stroke="#C9D3E3" stroke-width="1.5"/>
+  <circle cx="82" cy="148" r="17" fill="#1E6FD9"/>
+  <text x="82" y="154" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+  <text x="110" y="154" font-size="20" font-weight="700" fill="#1F3A68">Photo to filled-in fields</text>
+  <text x="72" y="180" font-size="13.5" fill="#55627A">All of this happens on the phone</text>
+
+  <rect x="72" y="194" width="544" height="58" rx="10" fill="#FFFFFF" stroke="#4A90E2" stroke-width="1.8"/>
+  <text x="92" y="218" font-size="15" font-weight="700" fill="#14233C">Take the photo</text>
+  <text x="92" y="240" font-size="13" fill="#243247">with GPS location and the true internet time</text>
+
+  <rect x="72" y="262" width="544" height="58" rx="10" fill="#FFFFFF" stroke="#4A90E2" stroke-width="1.8"/>
+  <text x="92" y="286" font-size="15" font-weight="700" fill="#14233C">Read text + barcode — Google ML Kit</text>
+  <text x="92" y="308" font-size="13" fill="#243247">every line of text, with the position of each line</text>
+
+  <rect x="72" y="330" width="544" height="58" rx="10" fill="#FFF2E0" stroke="#F0A030" stroke-width="2"/>
+  <text x="92" y="354" font-size="15" font-weight="700" fill="#14233C">Fill the fields — our code</text>
+  <text x="92" y="376" font-size="13" fill="#243247">matches each heading to the value beside it</text>
+
+  <rect x="72" y="398" width="544" height="58" rx="10" fill="#E6F6F0" stroke="#2BA37A" stroke-width="1.8"/>
+  <text x="92" y="422" font-size="15" font-weight="700" fill="#14233C">User checks, then sends</text>
+  <text x="92" y="444" font-size="13" fill="#243247">any correction is saved with the scan</text>
+
+  <rect x="72" y="470" width="544" height="72" rx="10" fill="#FFFFFF" stroke="#C9D3E3"/>
+  <text x="92" y="494" font-size="12.5" font-weight="700" fill="#55627A">WHY IT IS HARD</text>
+  <text x="92" y="516" font-size="13" font-family="Consolas, monospace" fill="#243247">MRP      Rs.109,00   →   MRP  Rs. 109.00</text>
+  <text x="92" y="534" font-size="12.5" fill="#55627A">headings and values come in separate columns, often misread</text>
+
+  <!-- ══ PANEL 2 ══ -->
+  <rect x="664" y="112" width="592" height="452" rx="16" fill="#F5F8FD" stroke="#C9D3E3" stroke-width="1.5"/>
+  <circle cx="698" cy="148" r="17" fill="#1E6FD9"/>
+  <text x="698" y="154" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+  <text x="726" y="154" font-size="20" font-weight="700" fill="#1F3A68">Barcode as a ruler</text>
+  <text x="688" y="180" font-size="13.5" fill="#55627A">A photo has no sense of real size, so we borrow one</text>
+
+  <rect x="688" y="194" width="544" height="58" rx="10" fill="#FFFFFF" stroke="#4A90E2" stroke-width="1.8"/>
+  <text x="708" y="218" font-size="15" font-weight="700" fill="#14233C">The barcode's box in the photo</text>
+  <text x="708" y="240" font-size="13" fill="#243247">373 pixels wide, in this example</text>
+
+  <rect x="688" y="262" width="544" height="58" rx="10" fill="#FFFFFF" stroke="#4A90E2" stroke-width="1.8"/>
+  <text x="708" y="286" font-size="15" font-weight="700" fill="#14233C">An EAN-13 is always 37.29 mm wide</text>
+  <text x="708" y="308" font-size="13" fill="#243247">the same on every pack in the world</text>
+
+  <rect x="688" y="330" width="544" height="58" rx="10" fill="#FFF2E0" stroke="#F0A030" stroke-width="2"/>
+  <text x="708" y="356" font-size="15" font-weight="700" font-family="Consolas, monospace" fill="#B45309">37.29 mm ÷ 373 px = 0.1 mm per pixel</text>
+  <text x="708" y="378" font-size="13" fill="#243247">now every pixel has a real size</text>
+
+  <rect x="688" y="398" width="544" height="58" rx="10" fill="#E6F6F0" stroke="#2BA37A" stroke-width="1.8"/>
+  <text x="708" y="422" font-size="15" font-weight="700" fill="#14233C">Letters measure 1.4 mm</text>
+  <text x="708" y="444" font-size="13" fill="#243247">text box 20 px → 2.0 mm, × 0.70 for letter height</text>
+
+  <rect x="688" y="470" width="172" height="46" rx="10" fill="#E8F7EE" stroke="#2E9E5B" stroke-width="1.8"/>
+  <text x="774" y="499" font-size="14" font-weight="700" fill="#1C7C45" text-anchor="middle">PASS ≥ 1 mm</text>
+  <rect x="874" y="470" width="172" height="46" rx="10" fill="#FFF8EC" stroke="#F0A030" stroke-width="1.8"/>
+  <text x="960" y="499" font-size="14" font-weight="700" fill="#8F6100" text-anchor="middle">REVIEW 0.85–1</text>
+  <rect x="1060" y="470" width="172" height="46" rx="10" fill="#FDEBEB" stroke="#E0474C" stroke-width="1.8"/>
+  <text x="1146" y="499" font-size="14" font-weight="700" fill="#B8322A" text-anchor="middle">FAIL &lt; 0.85 mm</text>
+  <text x="688" y="538" font-size="12.5" font-style="italic" fill="#55627A">No barcode, or an impossible scale → REVIEW, never a guess</text>
+
+  <!-- ══ PANEL 3 ══ -->
+  <rect x="1280" y="112" width="592" height="452" rx="16" fill="#F5F8FD" stroke="#C9D3E3" stroke-width="1.5"/>
+  <circle cx="1314" cy="148" r="17" fill="#5B4BD6"/>
+  <text x="1314" y="154" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+  <text x="1342" y="154" font-size="20" font-weight="700" fill="#1F3A68">Registry check</text>
+  <text x="1304" y="180" font-size="13.5" fill="#55627A">The barcode is the key, not just something we detect</text>
+
+  <rect x="1304" y="194" width="260" height="120" rx="10" fill="#FFFFFF" stroke="#E0474C" stroke-width="1.8"/>
+  <text x="1322" y="218" font-size="12.5" font-weight="700" fill="#B8322A">THIS PACK PRINTS</text>
+  <text x="1322" y="244" font-size="14" fill="#55627A">MRP</text>
+  <text x="1420" y="244" font-size="14" font-weight="700" fill="#B8322A">Rs. 150.00</text>
+  <text x="1322" y="270" font-size="14" fill="#55627A">Quantity</text>
+  <text x="1420" y="270" font-size="14" fill="#14233C">400 g</text>
+  <text x="1322" y="296" font-size="14" fill="#55627A">Licence</text>
+  <text x="1420" y="296" font-size="14" fill="#14233C">1001401…</text>
+
+  <rect x="1592" y="194" width="260" height="120" rx="10" fill="#FFFFFF" stroke="#2E9E5B" stroke-width="1.8"/>
+  <text x="1610" y="218" font-size="12.5" font-weight="700" fill="#1C7C45">REGISTRY HOLDS</text>
+  <text x="1610" y="244" font-size="14" fill="#55627A">MRP</text>
+  <text x="1708" y="244" font-size="14" font-weight="700" fill="#1C7C45">Rs. 109.00</text>
+  <text x="1610" y="270" font-size="14" fill="#55627A">Quantity</text>
+  <text x="1708" y="270" font-size="14" fill="#14233C">400 g</text>
+  <text x="1610" y="296" font-size="14" fill="#55627A">Licence</text>
+  <text x="1708" y="296" font-size="14" fill="#14233C">1001401…</text>
+
+  <line x1="1570" y1="254" x2="1586" y2="254" stroke="#1F3A68" stroke-width="2.5"/>
+  <text x="1578" y="336" font-size="13.5" font-family="Consolas, monospace" fill="#1F3A68" text-anchor="middle">8904004400779</text>
+
+  <rect x="1304" y="352" width="548" height="60" rx="10" fill="#FDEBEB" stroke="#E0474C" stroke-width="2"/>
+  <text x="1324" y="376" font-size="15" font-weight="700" fill="#B8322A">Everything matches except the MRP</text>
+  <text x="1324" y="398" font-size="13" fill="#243247">every detail is on the pack, so only this check catches it</text>
+
+  <rect x="1304" y="424" width="548" height="42" rx="10" fill="#E8F7EE" stroke="#2E9E5B" stroke-width="1.6"/>
+  <text x="1324" y="451" font-size="13.5" fill="#1C7C45"><tspan font-weight="700">Matches</tspan> — nothing is raised</text>
+  <rect x="1304" y="472" width="548" height="42" rx="10" fill="#EEF1F5" stroke="#7A869A" stroke-width="1.6"/>
+  <text x="1324" y="499" font-size="13.5" fill="#4F5B70"><tspan font-weight="700">Not in the registry</tspan> — we say we cannot verify it</text>
+  <rect x="1304" y="520" width="548" height="42" rx="10" fill="#FDEBEB" stroke="#E0474C" stroke-width="1.6"/>
+  <text x="1324" y="547" font-size="13.5" fill="#B8322A"><tspan font-weight="700">Contradicts</tspan> — suspected tampering, goes to an inspector</text>
+
+  <!-- ══ PANEL 4 ══ -->
+  <rect x="48" y="588" width="900" height="444" rx="16" fill="#F5F8FD" stroke="#C9D3E3" stroke-width="1.5"/>
+  <circle cx="82" cy="624" r="17" fill="#138A63"/>
+  <text x="82" y="630" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">4</text>
+  <text x="110" y="630" font-size="20" font-weight="700" fill="#1F3A68">SHA-256 — sealing the evidence</text>
+  <text x="72" y="656" font-size="13.5" fill="#55627A">A fingerprint taken at capture, checked again before anyone acts on it</text>
+
+  <text x="72" y="686" font-size="12.5" font-weight="700" fill="#1F3A68" letter-spacing="0.5">WHEN THE SCAN IS SENT</text>
+  <rect x="72" y="698" width="180" height="76" rx="10" fill="#FFFFFF" stroke="#4A90E2" stroke-width="1.8"/>
+  <text x="162" y="730" font-size="15" font-weight="700" fill="#14233C" text-anchor="middle">The photo</text>
+  <text x="162" y="752" font-size="12.5" fill="#243247" text-anchor="middle">exact bytes taken</text>
+  <line x1="258" y1="736" x2="288" y2="736" stroke="#1F3A68" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="296" y="698" width="150" height="76" rx="10" fill="#1F3A68"/>
+  <text x="371" y="732" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">SHA-256</text>
+  <text x="371" y="754" font-size="12.5" fill="#CFE3FB" text-anchor="middle">one-way maths</text>
+  <line x1="452" y1="736" x2="482" y2="736" stroke="#1F3A68" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="490" y="698" width="200" height="76" rx="10" fill="#FFFFFF" stroke="#4A90E2" stroke-width="1.8"/>
+  <text x="590" y="726" font-size="14" font-weight="700" fill="#14233C" text-anchor="middle">The fingerprint</text>
+  <text x="590" y="750" font-size="13" font-family="Consolas, monospace" fill="#1F3A68" text-anchor="middle">a3f9c1d8…7c21</text>
+  <line x1="696" y1="736" x2="726" y2="736" stroke="#1F3A68" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="734" y="698" width="190" height="76" rx="10" fill="#E6F6F0" stroke="#2BA37A" stroke-width="1.8"/>
+  <text x="829" y="726" font-size="14" font-weight="700" fill="#14233C" text-anchor="middle">Saved together</text>
+  <text x="829" y="750" font-size="12.5" fill="#243247" text-anchor="middle">+ GPS + true time</text>
+
+  <text x="72" y="812" font-size="12.5" font-weight="700" fill="#1F3A68" letter-spacing="0.5">LATER, ON THE CONTROLLER'S SCREEN</text>
+  <rect x="72" y="824" width="180" height="76" rx="10" fill="#FFFFFF" stroke="#4A90E2" stroke-width="1.8"/>
+  <text x="162" y="856" font-size="15" font-weight="700" fill="#14233C" text-anchor="middle">Stored photo</text>
+  <text x="162" y="878" font-size="12.5" fill="#243247" text-anchor="middle">as it is today</text>
+  <line x1="258" y1="862" x2="288" y2="862" stroke="#1F3A68" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="296" y="824" width="150" height="76" rx="10" fill="#1F3A68"/>
+  <text x="371" y="858" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">SHA-256</text>
+  <text x="371" y="880" font-size="12.5" fill="#CFE3FB" text-anchor="middle">run again</text>
+  <line x1="452" y1="862" x2="482" y2="862" stroke="#1F3A68" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="490" y="824" width="150" height="76" rx="10" fill="#FFF8EC" stroke="#F0A030" stroke-width="1.8"/>
+  <text x="565" y="868" font-size="15" font-weight="700" fill="#8F6100" text-anchor="middle">Compare</text>
+  <line x1="646" y1="848" x2="676" y2="838" stroke="#2E9E5B" stroke-width="2.5" marker-end="url(#ag)"/>
+  <line x1="646" y1="878" x2="676" y2="890" stroke="#D63A40" stroke-width="2.5" marker-end="url(#ar)"/>
+  <rect x="684" y="812" width="240" height="44" rx="10" fill="#E8F7EE" stroke="#2E9E5B" stroke-width="1.8"/>
+  <text x="804" y="840" font-size="14" font-weight="700" fill="#1C7C45" text-anchor="middle">Same → unchanged</text>
+  <rect x="684" y="866" width="240" height="44" rx="10" fill="#FDEBEB" stroke="#E0474C" stroke-width="1.8"/>
+  <text x="804" y="894" font-size="14" font-weight="700" fill="#B8322A" text-anchor="middle">Different → altered</text>
+
+  <text x="72" y="948" font-size="13.5" fill="#243247">Change one pixel and the whole fingerprint changes — so an edit cannot be hidden.</text>
+  <text x="72" y="972" font-size="13.5" fill="#243247">A sent scan is never edited, the same photo sent twice is flagged, and every correction is recorded.</text>
+  <text x="72" y="1000" font-size="12.5" font-style="italic" fill="#55627A">It does not stop tampering — it makes tampering visible.</text>
+
+  <!-- ══ PANEL 5 ══ -->
+  <rect x="972" y="588" width="900" height="444" rx="16" fill="#F5F8FD" stroke="#C9D3E3" stroke-width="1.5"/>
+  <circle cx="1006" cy="624" r="17" fill="#E8871E"/>
+  <text x="1006" y="630" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">5</text>
+  <text x="1034" y="630" font-size="20" font-weight="700" fill="#1F3A68">Two chances to read the barcode</text>
+  <text x="996" y="656" font-size="13.5" fill="#55627A">No barcode means no registry check and no ruler, so we try twice</text>
+
+  <text x="996" y="686" font-size="12.5" font-weight="700" fill="#1F3A68" letter-spacing="0.5">FIRST — ON THE PHONE</text>
+  <rect x="996" y="698" width="290" height="76" rx="10" fill="#FFFFFF" stroke="#4A90E2" stroke-width="1.8"/>
+  <text x="1141" y="728" font-size="15" font-weight="700" fill="#14233C" text-anchor="middle">Google ML Kit reads it</text>
+  <text x="1141" y="752" font-size="12.5" fill="#243247" text-anchor="middle">while the photo is taken</text>
+  <line x1="1292" y1="736" x2="1322" y2="736" stroke="#2E9E5B" stroke-width="2.5" marker-end="url(#ag)"/>
+  <text x="1307" y="722" font-size="12" font-weight="700" fill="#1C7C45" text-anchor="middle">got it</text>
+  <rect x="1330" y="698" width="518" height="76" rx="10" fill="#E8F7EE" stroke="#2E9E5B" stroke-width="1.8"/>
+  <text x="1352" y="728" font-size="15" font-weight="700" fill="#1C7C45">Done — the scan says “read by device”</text>
+  <text x="1352" y="752" font-size="12.5" fill="#243247">the number and its box travel with the scan</text>
+
+  <line x1="1141" y1="780" x2="1141" y2="812" stroke="#1F3A68" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="1158" y="802" font-size="12" font-weight="700" fill="#B8322A">missed it</text>
+
+  <text x="996" y="836" font-size="12.5" font-weight="700" fill="#1F3A68" letter-spacing="0.5">SECOND — ON THE SERVER, WITH pyzbar</text>
+  <rect x="996" y="848" width="290" height="76" rx="10" fill="#FFF2E0" stroke="#F0A030" stroke-width="2"/>
+  <text x="1141" y="876" font-size="14.5" font-weight="700" fill="#14233C" text-anchor="middle">Try the photo, then improve it</text>
+  <text x="1141" y="898" font-size="12.5" fill="#243247" text-anchor="middle">contrast, sharpen, black and white,</text>
+  <text x="1141" y="916" font-size="12.5" fill="#243247" text-anchor="middle">enlarge — up to 24 versions</text>
+  <line x1="1292" y1="872" x2="1322" y2="862" stroke="#2E9E5B" stroke-width="2.5" marker-end="url(#ag)"/>
+  <line x1="1292" y1="900" x2="1322" y2="912" stroke="#D63A40" stroke-width="2.5" marker-end="url(#ar)"/>
+  <rect x="1330" y="838" width="518" height="46" rx="10" fill="#E8F7EE" stroke="#2E9E5B" stroke-width="1.8"/>
+  <text x="1352" y="867" font-size="14" font-weight="700" fill="#1C7C45">Found — the scan says “read by server”</text>
+  <rect x="1330" y="894" width="518" height="60" rx="10" fill="#FDEBEB" stroke="#E0474C" stroke-width="1.8"/>
+  <text x="1352" y="918" font-size="14" font-weight="700" fill="#B8322A">Not found</text>
+  <text x="1352" y="940" font-size="12.5" fill="#243247">no registry check and no font size — both go to REVIEW</text>
+
+  <text x="996" y="982" font-size="13.5" fill="#243247">A missing barcode is never a violation. The pack is simply not verified, and the other checks still run.</text>
+  <text x="996" y="1006" font-size="12.5" font-style="italic" fill="#55627A">On scan #16 all 24 versions failed — the photo was too far and too soft. That is capture, not code.</text>
+</svg>

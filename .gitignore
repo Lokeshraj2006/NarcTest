@@ -1,0 +1,73 @@
+# Environment
+.env
+.env.local
+.env.production
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+docker-compose.override.yml
+
+# Uploads / Evidence (local dev)
+Backend/uploads/
+Backend/evidence_store/
+
+# Node / Dashboard
+node_modules/
+Frontend/dist/
+Frontend/.env.local
+
+# Alembic
+Backend/alembic/versions/__pycache__/
+
+# Local data kept out of version control (restore from backups/)
+backups/
+*.dump
+Backend/fieldproof.db.pre-postgres-backup
+
+# Claude Code local permissions
+.claude/settings.local.json
+
+# Logs
+*.log
+
+# Coverage
+htmlcov/
+.coverage
+.pytest_cache/
+
+# Generated reports
+Backend/generated_reports/
+
+# ── FieldProof (SIH26231) ──
+.env
+**/.env
+backend/venv/
+backend/keys/
+backend/uploads/
+.inventory.json
+docs/ppt_build/
+demo/test_images/*.jpg
+DEMO_LOGINS.txt
+backend/fieldproof.db

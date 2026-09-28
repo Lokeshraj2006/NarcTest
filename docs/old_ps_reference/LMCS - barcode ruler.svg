@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="660" viewBox="0 0 1500 660" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1F3A68"/>
+    </marker>
+  </defs>
+  <rect width="1500" height="660" fill="#FFFFFF"/>
+
+  <text x="40" y="44" font-size="26" font-weight="700" fill="#1F3A68">The barcode as a ruler — measuring letter size from a photo</text>
+  <text x="40" y="70" font-size="15" fill="#55627A">A photo has no sense of real size, so we use something on the pack whose real size is fixed</text>
+
+  <!-- band 1: the measurement -->
+  <rect x="40" y="92" width="1420" height="214" rx="16" fill="#F5F8FD" stroke="#C9D3E3" stroke-width="1.5"/>
+  <text x="66" y="122" font-size="14" font-weight="700" fill="#1F3A68" letter-spacing="0.6">HOW THE MEASUREMENT WORKS</text>
+
+  <rect x="66" y="136" width="310" height="150" rx="12" fill="#FFFFFF" stroke="#4A90E2" stroke-width="2"/>
+  <circle cx="96" cy="166" r="15" fill="#1E6FD9"/>
+  <text x="96" y="172" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+  <text x="120" y="172" font-size="16" font-weight="700" fill="#14233C">Find the barcode</text>
+  <text x="88" y="206" font-size="13.5" fill="#243247">The phone (or the server, if the</text>
+  <text x="88" y="226" font-size="13.5" fill="#243247">phone missed it) gives the box</text>
+  <text x="88" y="246" font-size="13.5" fill="#243247">the barcode sits in.</text>
+  <text x="88" y="270" font-size="14" font-weight="700" fill="#1F3A68">373 pixels wide</text>
+  <line x1="382" y1="211" x2="412" y2="211" stroke="#1F3A68" stroke-width="3" marker-end="url(#a)"/>
+
+  <rect x="418" y="136" width="310" height="150" rx="12" fill="#FFFFFF" stroke="#4A90E2" stroke-width="2"/>
+  <circle cx="448" cy="166" r="15" fill="#1E6FD9"/>
+  <text x="448" y="172" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+  <text x="472" y="172" font-size="16" font-weight="700" fill="#14233C">Use the standard</text>
+  <text x="440" y="206" font-size="13.5" fill="#243247">An EAN-13 barcode is printed</text>
+  <text x="440" y="226" font-size="13.5" fill="#243247">to one fixed width, the same</text>
+  <text x="440" y="246" font-size="13.5" fill="#243247">on every pack in the world.</text>
+  <text x="440" y="270" font-size="14" font-weight="700" fill="#1F3A68">37.29 mm</text>
+  <line x1="734" y1="211" x2="764" y2="211" stroke="#1F3A68" stroke-width="3" marker-end="url(#a)"/>
+
+  <rect x="770" y="136" width="310" height="150" rx="12" fill="#FFF2E0" stroke="#F0A030" stroke-width="2.5"/>
+  <circle cx="800" cy="166" r="15" fill="#E8871E"/>
+  <text x="800" y="172" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+  <text x="824" y="172" font-size="16" font-weight="700" fill="#14233C">Work out the scale</text>
+  <text x="925" y="212" font-size="16" font-family="Consolas, monospace" fill="#243247" text-anchor="middle">37.29 mm ÷ 373 px</text>
+  <text x="925" y="244" font-size="18" font-weight="700" font-family="Consolas, monospace" fill="#B45309" text-anchor="middle">= 0.1 mm per pixel</text>
+  <text x="925" y="270" font-size="12.5" font-style="italic" fill="#55627A" text-anchor="middle">now every pixel has a real size</text>
+  <line x1="1086" y1="211" x2="1116" y2="211" stroke="#1F3A68" stroke-width="3" marker-end="url(#a)"/>
+
+  <rect x="1122" y="136" width="312" height="150" rx="12" fill="#E6F6F0" stroke="#2BA37A" stroke-width="2"/>
+  <circle cx="1152" cy="166" r="15" fill="#138A63"/>
+  <text x="1152" y="172" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">4</text>
+  <text x="1176" y="172" font-size="16" font-weight="700" fill="#14233C">Measure the letters</text>
+  <text x="1144" y="204" font-size="13.5" fill="#243247">Text box 20 px tall → 2.0 mm</text>
+  <text x="1144" y="226" font-size="13.5" fill="#243247">× 0.70, because letters are</text>
+  <text x="1144" y="246" font-size="13.5" fill="#243247">shorter than their box</text>
+  <text x="1144" y="272" font-size="16" font-weight="700" fill="#1C7C45">= 1.4 mm letter height</text>
+
+  <!-- band 2: verdict -->
+  <rect x="40" y="326" width="1420" height="158" rx="16" fill="#F5F8FD" stroke="#C9D3E3" stroke-width="1.5"/>
+  <text x="66" y="356" font-size="14" font-weight="700" fill="#1F3A68" letter-spacing="0.6">WHAT THAT MEASUREMENT MEANS — THE LAW ASKS FOR AT LEAST 1 mm</text>
+
+  <rect x="66" y="370" width="300" height="96" rx="12" fill="#E8F7EE" stroke="#2E9E5B" stroke-width="2"/>
+  <text x="216" y="400" font-size="16" font-weight="700" fill="#1C7C45" text-anchor="middle">PASS</text>
+  <text x="216" y="426" font-size="13.5" fill="#243247" text-anchor="middle">1 mm or more</text>
+  <text x="216" y="448" font-size="13.5" fill="#243247" text-anchor="middle">the print is big enough</text>
+
+  <rect x="396" y="370" width="300" height="96" rx="12" fill="#FFF8EC" stroke="#F0A030" stroke-width="2"/>
+  <text x="546" y="400" font-size="16" font-weight="700" fill="#8F6100" text-anchor="middle">REVIEW</text>
+  <text x="546" y="426" font-size="13.5" fill="#243247" text-anchor="middle">between 0.85 and 1 mm</text>
+  <text x="546" y="448" font-size="13.5" fill="#243247" text-anchor="middle">too close to call — a person checks</text>
+
+  <rect x="726" y="370" width="300" height="96" rx="12" fill="#FDEBEB" stroke="#E0474C" stroke-width="2"/>
+  <text x="876" y="400" font-size="16" font-weight="700" fill="#B8322A" text-anchor="middle">FAIL</text>
+  <text x="876" y="426" font-size="13.5" fill="#243247" text-anchor="middle">under 0.85 mm</text>
+  <text x="876" y="448" font-size="13.5" fill="#243247" text-anchor="middle">clearly below the limit</text>
+
+  <rect x="1056" y="370" width="378" height="96" rx="12" fill="#EEF1F5" stroke="#7A869A" stroke-width="2"/>
+  <text x="1245" y="400" font-size="16" font-weight="700" fill="#4F5B70" text-anchor="middle">NO BARCODE, OR AN ODD SCALE</text>
+  <text x="1245" y="426" font-size="13.5" fill="#243247" text-anchor="middle">The photo is too angled or the box is wrong,</text>
+  <text x="1245" y="448" font-size="13.5" fill="#243247" text-anchor="middle">so we return REVIEW instead of guessing</text>
+
+  <!-- band 3: honesty -->
+  <rect x="40" y="504" width="1420" height="126" rx="14" fill="#FFFFFF" stroke="#8A97AD" stroke-width="1.5" stroke-dasharray="8 6"/>
+  <text x="66" y="534" font-size="15" font-weight="700" fill="#1F3A68">What we assume — and why the reading is deliberately generous</text>
+  <text x="66" y="562" font-size="13.5" fill="#243247">• The text must be on the same flat face as the barcode, photographed square on</text>
+  <text x="66" y="584" font-size="13.5" fill="#243247">• Barcodes may legally be printed from 80% to 200% of standard size; we assume 100%</text>
+  <text x="760" y="562" font-size="13.5" fill="#243247">• 37.29 mm includes the white margins, so heights read about 19% large</text>
+  <text x="760" y="584" font-size="13.5" fill="#243247">• The limit depends on panel size (1–6 mm); we use the smallest, 1 mm</text>
+  <text x="66" y="612" font-size="13.5" font-style="italic" fill="#55627A">All four push the same way: we may miss small print, but we will not wrongly fail a legal pack.</text>
+</svg>

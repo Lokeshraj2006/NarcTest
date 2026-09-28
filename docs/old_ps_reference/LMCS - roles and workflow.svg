@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" font-family="'Segoe UI', Arial, sans-serif">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3E4C63"/></marker><marker id="ahg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8391A6"/></marker></defs>
+<rect width="1920" height="1080" fill="#FFFFFF"/>
+<text x="40.0" y="52.0" font-size="28" font-weight="700" fill="#15213B" text-anchor="start">LMCS roles and workflow</text>
+<text x="40.0" y="80.0" font-size="15" font-weight="400" fill="#566174" text-anchor="start">Consumer (user), Inspector and Controller (admin): who does what, and how a case moves between them</text>
+<rect x="40" y="100" width="460" height="934" fill="#F1F8F6"/>
+<rect x="40" y="100" width="460" height="70" fill="#DDEFEA"/>
+<circle cx="74.0" cy="130.0" r="6.5" fill="none" stroke="#0E7C6B" stroke-width="1.9"/>
+<path d="M63.0,149.0 a11,9.5 0 0 1 22,0" fill="none" stroke="#0E7C6B" stroke-width="1.9" stroke-linecap="round"/>
+<text x="100.0" y="133.0" font-size="20" font-weight="700" fill="#0E7C6B" text-anchor="start">Consumer (user)</text>
+<text x="100.0" y="155.0" font-size="13.5" font-weight="400" fill="#566174" text-anchor="start">Mobile app · signs up in the app</text>
+<rect x="500" y="100" width="460" height="934" fill="#F5F7F9"/>
+<rect x="500" y="100" width="460" height="70" fill="#E5E9EF"/>
+<rect x="523.0" y="124.0" width="22.0" height="10.0" rx="2.5" fill="none" stroke="#475569" stroke-width="1.8"/>
+<circle cx="540.0" cy="129.0" r="1.6" fill="#475569"/>
+<rect x="523.0" y="137.0" width="22.0" height="10.0" rx="2.5" fill="none" stroke="#475569" stroke-width="1.8"/>
+<circle cx="540.0" cy="142.0" r="1.6" fill="#475569"/>
+<text x="560.0" y="133.0" font-size="20" font-weight="700" fill="#475569" text-anchor="start">LMCS server</text>
+<text x="560.0" y="155.0" font-size="13.5" font-weight="400" fill="#566174" text-anchor="start">Automatic · FastAPI + PostgreSQL</text>
+<rect x="960" y="100" width="460" height="934" fill="#F1F6FC"/>
+<rect x="960" y="100" width="460" height="70" fill="#DCE8F6"/>
+<circle cx="994.0" cy="130.0" r="6.5" fill="none" stroke="#1B5FAA" stroke-width="1.9"/>
+<path d="M983.0,149.0 a11,9.5 0 0 1 22,0" fill="none" stroke="#1B5FAA" stroke-width="1.9" stroke-linecap="round"/>
+<text x="1020.0" y="133.0" font-size="20" font-weight="700" fill="#1B5FAA" text-anchor="start">Inspector</text>
+<text x="1020.0" y="155.0" font-size="13.5" font-weight="400" fill="#566174" text-anchor="start">Mobile app · account from the Controller</text>
+<rect x="1420" y="100" width="460" height="934" fill="#F6F2FC"/>
+<rect x="1420" y="100" width="460" height="70" fill="#E8DEF7"/>
+<circle cx="1454.0" cy="130.0" r="6.5" fill="none" stroke="#6B3FB2" stroke-width="1.9"/>
+<path d="M1443.0,149.0 a11,9.5 0 0 1 22,0" fill="none" stroke="#6B3FB2" stroke-width="1.9" stroke-linecap="round"/>
+<text x="1480.0" y="133.0" font-size="20" font-weight="700" fill="#6B3FB2" text-anchor="start">Controller (admin)</text>
+<text x="1480.0" y="155.0" font-size="13.5" font-weight="400" fill="#566174" text-anchor="start">Web dashboard · Legal Metrology officer</text>
+<line x1="500" y1="100" x2="500" y2="1034" stroke="#D5DCE6" stroke-width="1.2"/>
+<line x1="960" y1="100" x2="960" y2="1034" stroke="#D5DCE6" stroke-width="1.2"/>
+<line x1="1420" y1="100" x2="1420" y2="1034" stroke="#D5DCE6" stroke-width="1.2"/>
+<rect x="40" y="100" width="1840" height="934" rx="0" fill="none" stroke="#D5DCE6" stroke-width="1.2"/>
+<rect x="120.0" y="185.0" width="300.0" height="56.0" rx="28.0" fill="#0E7C6B"/>
+<text x="270.0" y="209.0" font-size="15.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">Scans a pack</text>
+<text x="270.0" y="229.0" font-size="13" font-weight="400" fill="#FFFFFF" text-anchor="middle" fill-opacity="0.9">photo, GPS and time, in the app</text>
+<rect x="120.0" y="263.0" width="300.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#0E7C6B" stroke-width="1.6"/>
+<text x="270.0" y="287.0" font-size="15.5" font-weight="600" fill="#15213B" text-anchor="middle">Checks the fields and sends</text>
+<text x="270.0" y="307.0" font-size="13" font-weight="400" fill="#566174" text-anchor="middle">fixes misreads, adds extra photos</text>
+<path d="M270.0,241.0 L270.0,262.0" fill="none" stroke="#3E4C63" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="120.0" y="433.0" width="300.0" height="56.0" rx="28.0" fill="#EEF1F5" stroke="#C9D1DC" stroke-width="1.2"/>
+<text x="270.0" y="457.0" font-size="15.5" font-weight="600" fill="#15213B" text-anchor="middle">Sees the result</text>
+<text x="270.0" y="477.0" font-size="13" font-weight="400" fill="#566174" text-anchor="middle">verdict and complaint number, if any</text>
+<text x="730.0" y="207.0" font-size="13" font-weight="400" fill="#566174" text-anchor="middle">Checks every request:</text>
+<text x="730.0" y="226.0" font-size="13" font-weight="400" fill="#566174" text-anchor="middle">login token (JWT) and role</text>
+<rect x="580.0" y="345.0" width="300.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#475569" stroke-width="1.6"/>
+<text x="730.0" y="369.0" font-size="15.5" font-weight="600" fill="#15213B" text-anchor="middle">Saves evidence, runs checks</text>
+<text x="730.0" y="389.0" font-size="13" font-weight="400" fill="#566174" text-anchor="middle">SHA-256, registry check, 13 rules</text>
+<polygon points="730.0,429.0 820.0,461 730.0,493.0 640.0,461" fill="#FFFFFF" stroke="#475569" stroke-width="1.6"/>
+<text x="730.0" y="466.5" font-size="15" font-weight="600" fill="#15213B" text-anchor="middle">Action needed?</text>
+<rect x="580.0" y="523.0" width="300.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#475569" stroke-width="1.6"/>
+<text x="730.0" y="547.0" font-size="15.5" font-weight="600" fill="#15213B" text-anchor="middle">Files a complaint</text>
+<text x="730.0" y="567.0" font-size="13" font-weight="400" fill="#566174" text-anchor="middle">automatically, for a consumer's scan</text>
+<path d="M730.0,401.0 L730.0,428.0" fill="none" stroke="#3E4C63" stroke-width="1.8" marker-end="url(#ah)"/>
+<path d="M730.0,493.0 L730.0,522.0" fill="none" stroke="#3E4C63" stroke-width="1.8" marker-end="url(#ah)"/>
+<text x="739.0" y="511.0" font-size="12.5" font-weight="600" fill="#566174" text-anchor="start">Yes</text>
+<rect x="846.0" y="446.0" width="106.3" height="30.0" rx="15.0" fill="#EEF1F5" stroke="#C9D1DC" stroke-width="1.2"/>
+<text x="899.2" y="465.5" font-size="13" font-weight="600" fill="#15213B" text-anchor="middle">No complaint</text>
+<path d="M820.0,461.0 L845.0,461.0" fill="none" stroke="#3E4C63" stroke-width="1.8" marker-end="url(#ah)"/>
+<text x="825.0" y="453.0" font-size="12.5" font-weight="600" fill="#566174" text-anchor="start">No</text>
+<path d="M420.0,291.0 L680.0,291.0 L680.0,344.0" fill="none" stroke="#3E4C63" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="501.1" y="280.0" width="97.9" height="22.0" rx="11" fill="#FFFFFF" stroke="#D5DCE6" stroke-width="1"/>
+<text x="550.0" y="295.5" font-size="12.5" font-weight="600" fill="#566174" text-anchor="middle">photo + fields</text>
+<path d="M580.0,373.0 L470.0,373.0 L470.0,461.0 L421.0,461.0" fill="none" stroke="#3E4C63" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="500.2" y="362.0" width="49.6" height="22.0" rx="11" fill="#FFFFFF" stroke="#D5DCE6" stroke-width="1"/>
+<text x="525.0" y="377.5" font-size="12.5" font-weight="600" fill="#566174" text-anchor="middle">result</text>
+<rect x="1040.0" y="185.0" width="300.0" height="56.0" rx="28.0" fill="#1B5FAA"/>
+<text x="1190.0" y="209.0" font-size="15.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">Logs in</text>
+<text x="1190.0" y="229.0" font-size="13" font-weight="400" fill="#FFFFFF" text-anchor="middle" fill-opacity="0.9">account made by the Controller</text>
+<rect x="1040.0" y="263.0" width="300.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#1B5FAA" stroke-width="1.6"/>
+<text x="1190.0" y="287.0" font-size="15.5" font-weight="600" fill="#15213B" text-anchor="middle">Scans a pack on an inspection</text>
+<text x="1190.0" y="307.0" font-size="13" font-weight="400" fill="#566174" text-anchor="middle">same checks; can report it directly</text>
+<path d="M1190.0,241.0 L1190.0,262.0" fill="none" stroke="#3E4C63" stroke-width="1.8" marker-end="url(#ah)"/>
+<path d="M1040.0,291.0 L780.0,291.0 L780.0,344.0" fill="none" stroke="#3E4C63" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="874.7" y="280.0" width="70.6" height="22.0" rx="11" fill="#FFFFFF" stroke="#D5DCE6" stroke-width="1"/>
+<text x="910.0" y="295.5" font-size="12.5" font-weight="600" fill="#566174" text-anchor="middle">own scan</text>
+<rect x="1040.0" y="523.0" width="300.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#1B5FAA" stroke-width="1.6"/>
+<text x="1190.0" y="547.0" font-size="15.5" font-weight="600" fill="#15213B" text-anchor="middle">Gets the complaint</text>
+<text x="1190.0" y="567.0" font-size="13" font-weight="400" fill="#566174" text-anchor="middle">on the list and map, with the photo</text>
+<path d="M880.0,551.0 L1039.0,551.0" fill="none" stroke="#3E4C63" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="922.6" y="540.0" width="74.8" height="22.0" rx="11" fill="#FFFFFF" stroke="#D5DCE6" stroke-width="1"/>
+<text x="960.0" y="555.5" font-size="12.5" font-weight="600" fill="#566174" text-anchor="middle">complaint</text>
+<rect x="1040.0" y="603.0" width="300.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#1B5FAA" stroke-width="1.6"/>
+<text x="1190.0" y="627.0" font-size="15.5" font-weight="600" fill="#15213B" text-anchor="middle">Checks the pack in the shop</text>
+<text x="1190.0" y="647.0" font-size="13" font-weight="400" fill="#566174" text-anchor="middle">may re-scan: a new, linked record</text>
+<path d="M1190.0,579.0 L1190.0,602.0" fill="none" stroke="#3E4C63" stroke-width="1.8" marker-end="url(#ah)"/>
+<polygon points="1190.0,687.0 1292.0,719 1190.0,751.0 1088.0,719" fill="#FFFFFF" stroke="#1B5FAA" stroke-width="1.6"/>
+<text x="1190.0" y="724.5" font-size="15" font-weight="600" fill="#15213B" text-anchor="middle">Breach confirmed?</text>
+<path d="M1190.0,659.0 L1190.0,686.0" fill="none" stroke="#3E4C63" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="977.9" y="704.0" width="84.1" height="30.0" rx="15.0" fill="#EEF1F5" stroke="#C9D1DC" stroke-width="1.2"/>
+<text x="1019.9" y="723.5" font-size="13" font-weight="600" fill="#15213B" text-anchor="middle">No report</text>
+<path d="M1088.0,719.0 L1063.0,719.0" fill="none" stroke="#3E4C63" stroke-width="1.8" marker-end="url(#ah)"/>
+<text x="1081.0" y="711.0" font-size="12.5" font-weight="600" fill="#566174" text-anchor="end">No</text>
+<rect x="1040.0" y="781.0" width="300.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#1B5FAA" stroke-width="1.6"/>
+<text x="1190.0" y="805.0" font-size="15.5" font-weight="600" fill="#15213B" text-anchor="middle">Files a report</text>
+<text x="1190.0" y="825.0" font-size="13" font-weight="400" fill="#566174" text-anchor="middle">failed checks or a Rule 6(3) mismatch</text>
+<path d="M1190.0,751.0 L1190.0,780.0" fill="none" stroke="#3E4C63" stroke-width="1.8" marker-end="url(#ah)"/>
+<text x="1199.0" y="769.0" font-size="12.5" font-weight="600" fill="#566174" text-anchor="start">Yes</text>
+<rect x="1500.0" y="185.0" width="300.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#6B3FB2" stroke-width="1.6"/>
+<text x="1650.0" y="209.0" font-size="15.5" font-weight="600" fill="#15213B" text-anchor="middle">Creates inspector accounts</text>
+<text x="1650.0" y="229.0" font-size="13" font-weight="400" fill="#566174" text-anchor="middle">sign-up can only make consumers</text>
+<path d="M1500.0,213.0 L1341.0,213.0" fill="none" stroke="#8391A6" stroke-width="1.7" stroke-dasharray="6 5" marker-end="url(#ahg)"/>
+<rect x="1388.6" y="202.0" width="62.8" height="22.0" rx="11" fill="#FFFFFF" stroke="#D5DCE6" stroke-width="1"/>
+<text x="1420.0" y="217.5" font-size="12.5" font-weight="600" fill="#566174" text-anchor="middle">account</text>
+<rect x="1500.0" y="345.0" width="300.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#6B3FB2" stroke-width="1.6"/>
+<text x="1650.0" y="369.0" font-size="15.5" font-weight="600" fill="#15213B" text-anchor="middle">Switches rules on or off</text>
+<text x="1650.0" y="389.0" font-size="13" font-weight="400" fill="#566174" text-anchor="middle">on the dashboard's Rules page</text>
+<path d="M1500.0,373.0 L881.0,373.0" fill="none" stroke="#8391A6" stroke-width="1.7" stroke-dasharray="6 5" marker-end="url(#ahg)"/>
+<rect x="1397.4" y="362.0" width="45.1" height="22.0" rx="11" fill="#FFFFFF" stroke="#D5DCE6" stroke-width="1"/>
+<text x="1420.0" y="377.5" font-size="12.5" font-weight="600" fill="#566174" text-anchor="middle">rules</text>
+<rect x="1500.0" y="781.0" width="300.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#6B3FB2" stroke-width="1.6"/>
+<text x="1650.0" y="805.0" font-size="15.5" font-weight="600" fill="#15213B" text-anchor="middle">Reviews the report</text>
+<text x="1650.0" y="825.0" font-size="13" font-weight="400" fill="#566174" text-anchor="middle">photo, live SHA-256 check, GPS, time</text>
+<path d="M1340.0,809.0 L1499.0,809.0" fill="none" stroke="#3E4C63" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="1393.3" y="798.0" width="53.4" height="22.0" rx="11" fill="#FFFFFF" stroke="#D5DCE6" stroke-width="1"/>
+<text x="1420.0" y="813.5" font-size="12.5" font-weight="600" fill="#566174" text-anchor="middle">report</text>
+<polygon points="1650.0,865.0 1725.0,897 1650.0,929.0 1575.0,897" fill="#FFFFFF" stroke="#6B3FB2" stroke-width="1.6"/>
+<text x="1650.0" y="902.5" font-size="15" font-weight="600" fill="#15213B" text-anchor="middle">Confirm?</text>
+<path d="M1650.0,837.0 L1650.0,864.0" fill="none" stroke="#3E4C63" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="1467.8" y="874.0" width="81.2" height="46.0" rx="23.0" fill="#EEF1F5" stroke="#C9D1DC" stroke-width="1.2"/>
+<text x="1508.4" y="893.5" font-size="13" font-weight="600" fill="#15213B" text-anchor="middle">Rejected,</text>
+<text x="1508.4" y="909.5" font-size="13" font-weight="600" fill="#15213B" text-anchor="middle">no notice</text>
+<path d="M1575.0,897.0 L1550.0,897.0" fill="none" stroke="#3E4C63" stroke-width="1.8" marker-end="url(#ah)"/>
+<text x="1568.0" y="889.0" font-size="12.5" font-weight="600" fill="#566174" text-anchor="end">No</text>
+<rect x="1500.0" y="959.0" width="300.0" height="56.0" rx="28.0" fill="#6B3FB2"/>
+<text x="1650.0" y="983.0" font-size="15.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">Issues the GO notice</text>
+<text x="1650.0" y="1003.0" font-size="13" font-weight="400" fill="#FFFFFF" text-anchor="middle" fill-opacity="0.9">show-cause PDF to the maker or shop</text>
+<path d="M1650.0,929.0 L1650.0,958.0" fill="none" stroke="#3E4C63" stroke-width="1.8" marker-end="url(#ah)"/>
+<text x="1659.0" y="947.0" font-size="12.5" font-weight="600" fill="#566174" text-anchor="start">Yes</text>
+<rect x="1440.0" y="470.0" width="420.0" height="162.0" rx="12" fill="#FFFFFF" stroke="#D5DCE6" stroke-width="1.2"/>
+<text x="1456.0" y="496.0" font-size="11.5" font-weight="700" fill="#8B95A7" text-anchor="start" letter-spacing="1.3">ALSO ON THE DASHBOARD</text>
+<circle cx="1460.0" cy="515.5" r="2.6" fill="#8B95A7"/>
+<text x="1470.0" y="520.0" font-size="13.5" font-weight="400" fill="#15213B" text-anchor="start">System log: every scan, searchable</text>
+<circle cx="1460.0" cy="543.5" r="2.6" fill="#8B95A7"/>
+<text x="1470.0" y="548.0" font-size="13.5" font-weight="400" fill="#15213B" text-anchor="start">Map of complaints and reports</text>
+<circle cx="1460.0" cy="571.5" r="2.6" fill="#8B95A7"/>
+<text x="1470.0" y="576.0" font-size="13.5" font-weight="400" fill="#15213B" text-anchor="start">Compliance report PDF for any scan</text>
+<circle cx="1460.0" cy="599.5" r="2.6" fill="#8B95A7"/>
+<text x="1470.0" y="604.0" font-size="13.5" font-weight="400" fill="#15213B" text-anchor="start">CSV export of the log and queue</text>
+<rect x="60.0" y="640.0" width="420.0" height="214.0" rx="12" fill="#FFFFFF" stroke="#D5DCE6" stroke-width="1.2"/>
+<text x="76.0" y="666.0" font-size="11.5" font-weight="700" fill="#8B95A7" text-anchor="start" letter-spacing="1.3">HOW TO READ IT</text>
+<rect x="76.0" y="685.0" width="44.0" height="20.0" rx="10" fill="#475569"/>
+<text x="132.0" y="700.5" font-size="13.5" font-weight="400" fill="#15213B" text-anchor="start">Start or key outcome</text>
+<rect x="276.0" y="685.0" width="44.0" height="20.0" rx="5" fill="#FFFFFF" stroke="#475569" stroke-width="1.5"/>
+<text x="332.0" y="700.5" font-size="13.5" font-weight="400" fill="#15213B" text-anchor="start">Step</text>
+<polygon points="98,720 120,732 98,744 76,732" fill="#FFFFFF" stroke="#475569" stroke-width="1.5"/>
+<text x="132.0" y="736.5" font-size="13.5" font-weight="400" fill="#15213B" text-anchor="start">Decision</text>
+<rect x="276.0" y="722.0" width="44.0" height="20.0" rx="10" fill="#EEF1F5" stroke="#C9D1DC" stroke-width="1.2"/>
+<text x="332.0" y="736.5" font-size="13.5" font-weight="400" fill="#15213B" text-anchor="start">End</text>
+<path d="M76.0,768.0 L118.0,768.0" fill="none" stroke="#3E4C63" stroke-width="1.8" marker-end="url(#ah)"/>
+<text x="132.0" y="772.5" font-size="13.5" font-weight="400" fill="#15213B" text-anchor="start">The case moves on</text>
+<path d="M76.0,804.0 L118.0,804.0" fill="none" stroke="#8391A6" stroke-width="1.7" stroke-dasharray="6 5" marker-end="url(#ahg)"/>
+<text x="132.0" y="808.5" font-size="13.5" font-weight="400" fill="#15213B" text-anchor="start">Setup: accounts and rules</text>
+<rect x="77.3" y="825.0" width="53.4" height="22.0" rx="11" fill="#FFFFFF" stroke="#D5DCE6" stroke-width="1"/>
+<text x="104.0" y="840.5" font-size="12.5" font-weight="600" fill="#566174" text-anchor="middle">report</text>
+<text x="146.0" y="840.5" font-size="13.5" font-weight="400" fill="#15213B" text-anchor="start">What is handed over</text>
+<rect x="520.0" y="640.0" width="420.0" height="162.0" rx="12" fill="#FFFFFF" stroke="#D5DCE6" stroke-width="1.2"/>
+<text x="536.0" y="666.0" font-size="11.5" font-weight="700" fill="#8B95A7" text-anchor="start" letter-spacing="1.3">BUILT-IN SAFEGUARDS</text>
+<circle cx="540.0" cy="685.5" r="2.6" fill="#8B95A7"/>
+<text x="550.0" y="690.0" font-size="13.5" font-weight="400" fill="#15213B" text-anchor="start">Only the Controller confirms reports and sends notices</text>
+<circle cx="540.0" cy="713.5" r="2.6" fill="#8B95A7"/>
+<text x="550.0" y="718.0" font-size="13.5" font-weight="400" fill="#15213B" text-anchor="start">No notice before confirmation, and one notice per report</text>
+<circle cx="540.0" cy="741.5" r="2.6" fill="#8B95A7"/>
+<text x="550.0" y="746.0" font-size="13.5" font-weight="400" fill="#15213B" text-anchor="start">A sent scan is never edited; every step records who and when</text>
+<circle cx="540.0" cy="769.5" r="2.6" fill="#8B95A7"/>
+<text x="550.0" y="774.0" font-size="13.5" font-weight="400" fill="#15213B" text-anchor="start">Consumers see only their own scans</text>
+<text x="1880.0" y="1064.0" font-size="13" font-weight="400" fill="#566174" text-anchor="end">Posting the notice, the firm's reply and any penalty happen outside LMCS.</text>
+</svg>

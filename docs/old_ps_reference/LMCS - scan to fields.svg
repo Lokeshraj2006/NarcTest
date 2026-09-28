@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="560" viewBox="0 0 1500 560" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1F3A68"/>
+    </marker>
+  </defs>
+  <rect width="1500" height="560" fill="#FFFFFF"/>
+
+  <text x="40" y="44" font-size="26" font-weight="700" fill="#1F3A68">From photo to filled-in fields</text>
+  <text x="40" y="70" font-size="15" fill="#55627A">Everything on this row happens on the phone, before anything is sent</text>
+
+  <!-- step 1 -->
+  <rect x="40" y="96" width="250" height="150" rx="14" fill="#EDF5FE" stroke="#4A90E2" stroke-width="2"/>
+  <circle cx="72" cy="128" r="16" fill="#1E6FD9"/>
+  <text x="72" y="134" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+  <text x="98" y="134" font-size="17" font-weight="700" fill="#14233C">Take the photo</text>
+  <text x="62" y="168" font-size="13.5" fill="#243247">One photo of the label, with</text>
+  <text x="62" y="188" font-size="13.5" fill="#243247">the GPS location and the time</text>
+  <text x="62" y="208" font-size="13.5" fill="#243247">checked against a time server.</text>
+  <text x="62" y="232" font-size="12.5" font-style="italic" fill="#55627A">Flutter camera · geolocator · ntp</text>
+  <line x1="292" y1="171" x2="326" y2="171" stroke="#1F3A68" stroke-width="3" marker-end="url(#a)"/>
+
+  <!-- step 2 -->
+  <rect x="330" y="96" width="250" height="150" rx="14" fill="#EDF5FE" stroke="#4A90E2" stroke-width="2"/>
+  <circle cx="362" cy="128" r="16" fill="#1E6FD9"/>
+  <text x="362" y="134" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+  <text x="388" y="134" font-size="17" font-weight="700" fill="#14233C">Read the text</text>
+  <text x="352" y="168" font-size="13.5" fill="#243247">Every line of text is read on</text>
+  <text x="352" y="188" font-size="13.5" fill="#243247">the phone, and we also get the</text>
+  <text x="352" y="208" font-size="13.5" fill="#243247">position of each line.</text>
+  <text x="352" y="232" font-size="12.5" font-style="italic" fill="#55627A">Google ML Kit Text Recognition v2</text>
+  <line x1="582" y1="171" x2="616" y2="171" stroke="#1F3A68" stroke-width="3" marker-end="url(#a)"/>
+
+  <!-- step 3 -->
+  <rect x="620" y="96" width="250" height="150" rx="14" fill="#EDF5FE" stroke="#4A90E2" stroke-width="2"/>
+  <circle cx="652" cy="128" r="16" fill="#1E6FD9"/>
+  <text x="652" y="134" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+  <text x="678" y="134" font-size="17" font-weight="700" fill="#14233C">Read the barcode</text>
+  <text x="642" y="168" font-size="13.5" fill="#243247">The barcode number and where</text>
+  <text x="642" y="188" font-size="13.5" fill="#243247">it sits in the photo — needed for</text>
+  <text x="642" y="208" font-size="13.5" fill="#243247">the registry check and the ruler.</text>
+  <text x="642" y="232" font-size="12.5" font-style="italic" fill="#55627A">Google ML Kit Barcode Scanning</text>
+  <line x1="872" y1="171" x2="906" y2="171" stroke="#1F3A68" stroke-width="3" marker-end="url(#a)"/>
+
+  <!-- step 4 -->
+  <rect x="910" y="96" width="250" height="150" rx="14" fill="#FFF2E0" stroke="#F0A030" stroke-width="2.5"/>
+  <circle cx="942" cy="128" r="16" fill="#E8871E"/>
+  <text x="942" y="134" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">4</text>
+  <text x="968" y="134" font-size="17" font-weight="700" fill="#14233C">Fill the fields</text>
+  <text x="932" y="168" font-size="13.5" fill="#243247">Our code matches each heading</text>
+  <text x="932" y="188" font-size="13.5" fill="#243247">to the value printed beside it,</text>
+  <text x="932" y="208" font-size="13.5" fill="#243247">using position and shape.</text>
+  <text x="932" y="232" font-size="12.5" font-style="italic" fill="#55627A">field_extractor.dart (our code)</text>
+  <line x1="1162" y1="171" x2="1196" y2="171" stroke="#1F3A68" stroke-width="3" marker-end="url(#a)"/>
+
+  <!-- step 5 -->
+  <rect x="1200" y="96" width="260" height="150" rx="14" fill="#E6F6F0" stroke="#2BA37A" stroke-width="2"/>
+  <circle cx="1232" cy="128" r="16" fill="#138A63"/>
+  <text x="1232" y="134" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">5</text>
+  <text x="1258" y="134" font-size="17" font-weight="700" fill="#14233C">Check and send</text>
+  <text x="1222" y="168" font-size="13.5" fill="#243247">The user sees what was read and</text>
+  <text x="1222" y="188" font-size="13.5" fill="#243247">can correct it. Every change is</text>
+  <text x="1222" y="208" font-size="13.5" fill="#243247">saved with the scan.</text>
+  <text x="1222" y="232" font-size="12.5" font-style="italic" fill="#55627A">Review Details screen</text>
+
+  <!-- example panel -->
+  <rect x="40" y="290" width="1420" height="230" rx="16" fill="#F5F8FD" stroke="#C9D3E3" stroke-width="1.5"/>
+  <text x="66" y="324" font-size="17" font-weight="700" fill="#1F3A68">Why step 4 is the hard part</text>
+  <text x="66" y="348" font-size="13.5" fill="#55627A">OCR returns headings and values as separate columns, often out of order, and sometimes misread.</text>
+
+  <!-- raw ocr -->
+  <rect x="66" y="364" width="400" height="132" rx="12" fill="#FFFFFF" stroke="#C9D3E3"/>
+  <text x="86" y="390" font-size="13" font-weight="700" fill="#55627A">WHAT OCR GIVES US</text>
+  <text x="86" y="418" font-size="14.5" font-family="Consolas, monospace" fill="#243247">MRP</text>
+  <text x="86" y="442" font-size="14.5" font-family="Consolas, monospace" fill="#243247">NET QUANTITY</text>
+  <text x="86" y="466" font-size="14.5" font-family="Consolas, monospace" fill="#243247">BATCH N0.</text>
+  <text x="286" y="418" font-size="14.5" font-family="Consolas, monospace" fill="#243247">Rs.109,00</text>
+  <text x="286" y="442" font-size="14.5" font-family="Consolas, monospace" fill="#243247">400 g</text>
+  <text x="286" y="466" font-size="14.5" font-family="Consolas, monospace" fill="#243247">RMG2026</text>
+
+  <line x1="480" y1="430" x2="536" y2="430" stroke="#1F3A68" stroke-width="3" marker-end="url(#a)"/>
+  <text x="508" y="414" font-size="12.5" font-style="italic" fill="#55627A" text-anchor="middle">our code</text>
+
+  <!-- matching -->
+  <rect x="550" y="364" width="430" height="132" rx="12" fill="#FFF8EC" stroke="#F0A030"/>
+  <text x="570" y="390" font-size="13" font-weight="700" fill="#8F6100">HOW WE MATCH THEM</text>
+  <text x="570" y="416" font-size="13.5" fill="#243247">• The value must sit beside its heading, about one row up or down</text>
+  <text x="570" y="440" font-size="13.5" fill="#243247">• It must have the right shape: a price, a quantity, a batch code</text>
+  <text x="570" y="464" font-size="13.5" fill="#243247">• Known misreads are handled: “Rs.109,00”, “BATCH N0.”, “MFD!27/08/26”</text>
+
+  <line x1="994" y1="430" x2="1050" y2="430" stroke="#1F3A68" stroke-width="3" marker-end="url(#a)"/>
+
+  <!-- result -->
+  <rect x="1064" y="364" width="372" height="132" rx="12" fill="#E8F7EE" stroke="#2E9E5B"/>
+  <text x="1084" y="390" font-size="13" font-weight="700" fill="#1C7C45">WHAT THE APP FILLS IN</text>
+  <text x="1084" y="418" font-size="14.5" fill="#243247">MRP</text>
+  <text x="1084" y="442" font-size="14.5" fill="#243247">Net quantity</text>
+  <text x="1084" y="466" font-size="14.5" fill="#243247">Batch</text>
+  <text x="1264" y="418" font-size="14.5" font-weight="700" fill="#14233C">Rs. 109.00</text>
+  <text x="1264" y="442" font-size="14.5" font-weight="700" fill="#14233C">400 g</text>
+  <text x="1264" y="466" font-size="14.5" font-weight="700" fill="#14233C">RMG2026</text>
+</svg>

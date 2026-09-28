@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="560" viewBox="0 0 1500 560" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1F3A68"/>
+    </marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2E9E5B"/>
+    </marker>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#D63A40"/>
+    </marker>
+  </defs>
+  <rect width="1500" height="560" fill="#FFFFFF"/>
+
+  <text x="40" y="44" font-size="26" font-weight="700" fill="#1F3A68">Two chances to read the barcode — the phone, then the server</text>
+  <text x="40" y="70" font-size="15" fill="#55627A">Without a barcode there is no registry check and no ruler for font size, so we try twice</text>
+
+  <!-- row 1 -->
+  <rect x="40" y="96" width="1420" height="150" rx="16" fill="#F5F8FD" stroke="#C9D3E3" stroke-width="1.5"/>
+  <text x="66" y="126" font-size="14" font-weight="700" fill="#1F3A68" letter-spacing="0.6">FIRST TRY — ON THE PHONE</text>
+
+  <rect x="66" y="140" width="330" height="88" rx="12" fill="#FFFFFF" stroke="#4A90E2" stroke-width="2"/>
+  <text x="231" y="172" font-size="16" font-weight="700" fill="#14233C" text-anchor="middle">Google ML Kit reads it</text>
+  <text x="231" y="198" font-size="13.5" fill="#243247" text-anchor="middle">on the device, while taking the photo</text>
+  <line x1="402" y1="184" x2="440" y2="184" stroke="#1F3A68" stroke-width="3" marker-end="url(#a)"/>
+
+  <rect x="450" y="140" width="200" height="88" rx="12" fill="#FFF8EC" stroke="#F0A030" stroke-width="2"/>
+  <text x="550" y="180" font-size="16" font-weight="700" fill="#8F6100" text-anchor="middle">Did it find it?</text>
+  <text x="550" y="204" font-size="13" fill="#55627A" text-anchor="middle">glossy or soft photos fail</text>
+
+  <line x1="656" y1="184" x2="700" y2="184" stroke="#2E9E5B" stroke-width="3" marker-end="url(#ag)"/>
+  <text x="678" y="170" font-size="13" font-weight="700" fill="#1C7C45" text-anchor="middle">yes</text>
+
+  <rect x="710" y="140" width="330" height="88" rx="12" fill="#E8F7EE" stroke="#2E9E5B" stroke-width="2"/>
+  <text x="875" y="172" font-size="16" font-weight="700" fill="#1C7C45" text-anchor="middle">Done — read by “device”</text>
+  <text x="875" y="198" font-size="13.5" fill="#243247" text-anchor="middle">number + box go with the scan</text>
+
+  <text x="1120" y="176" font-size="13.5" font-style="italic" fill="#55627A">If it fails, the photo is already</text>
+  <text x="1120" y="198" font-size="13.5" font-style="italic" fill="#55627A">on the server, so we try again there</text>
+
+  <!-- down arrow -->
+  <line x1="550" y1="234" x2="550" y2="290" stroke="#1F3A68" stroke-width="3" marker-end="url(#a)"/>
+  <text x="566" y="270" font-size="13" font-weight="700" fill="#B8322A">no</text>
+
+  <!-- row 2 -->
+  <rect x="40" y="296" width="1420" height="164" rx="16" fill="#F5F8FD" stroke="#C9D3E3" stroke-width="1.5"/>
+  <text x="66" y="326" font-size="14" font-weight="700" fill="#1F3A68" letter-spacing="0.6">SECOND TRY — ON THE SERVER, WITH pyzbar</text>
+
+  <rect x="66" y="340" width="300" height="100" rx="12" fill="#FFFFFF" stroke="#4A90E2" stroke-width="2"/>
+  <text x="216" y="374" font-size="16" font-weight="700" fill="#14233C" text-anchor="middle">Try the photo as it is</text>
+  <text x="216" y="400" font-size="13.5" fill="#243247" text-anchor="middle">pyzbar (ZBar) reads the</text>
+  <text x="216" y="420" font-size="13.5" fill="#243247" text-anchor="middle">uploaded picture</text>
+  <line x1="372" y1="390" x2="410" y2="390" stroke="#1F3A68" stroke-width="3" marker-end="url(#a)"/>
+
+  <rect x="420" y="340" width="360" height="100" rx="12" fill="#FFF2E0" stroke="#F0A030" stroke-width="2.5"/>
+  <text x="600" y="374" font-size="16" font-weight="700" fill="#14233C" text-anchor="middle">Still nothing? Improve and retry</text>
+  <text x="600" y="400" font-size="13.5" fill="#243247" text-anchor="middle">boost contrast, sharpen, black and white,</text>
+  <text x="600" y="420" font-size="13.5" fill="#243247" text-anchor="middle">enlarge 1× 2× 3× — up to 24 versions</text>
+  <line x1="786" y1="390" x2="824" y2="390" stroke="#1F3A68" stroke-width="3" marker-end="url(#a)"/>
+
+  <rect x="834" y="340" width="180" height="100" rx="12" fill="#FFF8EC" stroke="#F0A030" stroke-width="2"/>
+  <text x="924" y="384" font-size="16" font-weight="700" fill="#8F6100" text-anchor="middle">Found now?</text>
+
+  <line x1="1020" y1="372" x2="1062" y2="362" stroke="#2E9E5B" stroke-width="3" marker-end="url(#ag)"/>
+  <line x1="1020" y1="410" x2="1062" y2="422" stroke="#D63A40" stroke-width="3" marker-end="url(#ar)"/>
+
+  <rect x="1072" y="332" width="362" height="52" rx="12" fill="#E8F7EE" stroke="#2E9E5B" stroke-width="2"/>
+  <text x="1094" y="363" font-size="15" font-weight="700" fill="#1C7C45">Read by “server” — everything works as usual</text>
+
+  <rect x="1072" y="394" width="362" height="56" rx="12" fill="#FDEBEB" stroke="#E0474C" stroke-width="2"/>
+  <text x="1094" y="418" font-size="15" font-weight="700" fill="#B8322A">Barcode not found</text>
+  <text x="1094" y="440" font-size="13.5" fill="#243247">No registry check, no font size — those go to REVIEW</text>
+
+  <!-- footnote -->
+  <rect x="40" y="478" width="1420" height="60" rx="14" fill="#FFFFFF" stroke="#8A97AD" stroke-width="1.5" stroke-dasharray="8 6"/>
+  <text x="66" y="504" font-size="14" fill="#243247">A missing barcode is never treated as a violation — the pack is simply not verified, and the other checks still run.</text>
+  <text x="66" y="526" font-size="13.5" font-style="italic" fill="#55627A">Real case: on scan #16 all 24 versions failed, because the photo was taken from too far and was soft. Hold the pack flat and close.</text>
+</svg>

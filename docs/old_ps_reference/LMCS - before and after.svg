@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="800" viewBox="0 0 1000 800" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1F3A68"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="800" fill="#FFFFFF"/>
+
+  <text x="30" y="44" font-size="28" font-weight="700" fill="#1F3A68">What changes with LMCS</text>
+
+  <!-- column headers -->
+  <rect x="210" y="66" width="360" height="52" rx="12" fill="#FDEBEB" stroke="#E0474C" stroke-width="2"/>
+  <text x="390" y="99" font-size="19" font-weight="700" fill="#B8322A" text-anchor="middle">Today, by hand</text>
+  <rect x="610" y="66" width="360" height="52" rx="12" fill="#E8F7EE" stroke="#2E9E5B" stroke-width="2"/>
+  <text x="790" y="99" font-size="19" font-weight="700" fill="#1C7C45" text-anchor="middle">With LMCS</text>
+
+  <g font-size="16">
+    <!-- row 1 -->
+    <text x="30" y="166" font-size="17" font-weight="700" fill="#14233C">Checking</text>
+    <text x="30" y="188" font-size="17" font-weight="700" fill="#14233C">a pack</text>
+    <rect x="210" y="138" width="360" height="92" rx="10" fill="#FFFFFF" stroke="#F3B6B8"/>
+    <text x="230" y="178" fill="#243247">Inspector reads every line,</text>
+    <text x="230" y="202" fill="#243247">one pack at a time</text>
+    <line x1="576" y1="184" x2="604" y2="184" stroke="#1F3A68" stroke-width="3" marker-end="url(#a)"/>
+    <rect x="610" y="138" width="360" height="92" rx="10" fill="#FFFFFF" stroke="#9FD8B6"/>
+    <text x="630" y="178" fill="#243247">One photo, and all 13 checks</text>
+    <text x="630" y="202" fill="#243247">run on their own</text>
+
+    <!-- row 2 -->
+    <text x="30" y="270" font-size="17" font-weight="700" fill="#14233C">A price</text>
+    <text x="30" y="292" font-size="17" font-weight="700" fill="#14233C">sticker</text>
+    <rect x="210" y="242" width="360" height="92" rx="10" fill="#FFFFFF" stroke="#F3B6B8"/>
+    <text x="230" y="282" fill="#243247">Label looks complete,</text>
+    <text x="230" y="306" fill="#243247">so it is easily missed</text>
+    <line x1="576" y1="288" x2="604" y2="288" stroke="#1F3A68" stroke-width="3" marker-end="url(#a)"/>
+    <rect x="610" y="242" width="360" height="92" rx="10" fill="#FFFFFF" stroke="#9FD8B6"/>
+    <text x="630" y="282" fill="#243247">Caught — the MRP doesn't</text>
+    <text x="630" y="306" fill="#243247">match the registered product</text>
+
+    <!-- row 3 -->
+    <text x="30" y="374" font-size="17" font-weight="700" fill="#14233C">Evidence</text>
+    <rect x="210" y="346" width="360" height="92" rx="10" fill="#FFFFFF" stroke="#F3B6B8"/>
+    <text x="230" y="386" fill="#243247">Loose photos, easy</text>
+    <text x="230" y="410" fill="#243247">to question later</text>
+    <line x1="576" y1="392" x2="604" y2="392" stroke="#1F3A68" stroke-width="3" marker-end="url(#a)"/>
+    <rect x="610" y="346" width="360" height="92" rx="10" fill="#FFFFFF" stroke="#9FD8B6"/>
+    <text x="630" y="386" fill="#243247">Fingerprinted photo, with</text>
+    <text x="630" y="410" fill="#243247">the place and the true time</text>
+
+    <!-- row 4 -->
+    <text x="30" y="478" font-size="17" font-weight="700" fill="#14233C">Consumer</text>
+    <text x="30" y="500" font-size="17" font-weight="700" fill="#14233C">complaints</text>
+    <rect x="210" y="450" width="360" height="92" rx="10" fill="#FFFFFF" stroke="#F3B6B8"/>
+    <text x="230" y="490" fill="#243247">No proof, so hard</text>
+    <text x="230" y="514" fill="#243247">for anyone to act on</text>
+    <line x1="576" y1="496" x2="604" y2="496" stroke="#1F3A68" stroke-width="3" marker-end="url(#a)"/>
+    <rect x="610" y="450" width="360" height="92" rx="10" fill="#FFFFFF" stroke="#9FD8B6"/>
+    <text x="630" y="490" fill="#243247">Filed automatically, with the</text>
+    <text x="630" y="514" fill="#243247">photo as proof, on a map</text>
+
+    <!-- row 5 -->
+    <text x="30" y="582" font-size="17" font-weight="700" fill="#14233C">Wrong</text>
+    <text x="30" y="604" font-size="17" font-weight="700" fill="#14233C">notices</text>
+    <rect x="210" y="554" width="360" height="92" rx="10" fill="#FFFFFF" stroke="#F3B6B8"/>
+    <text x="230" y="594" fill="#243247">Depends on one person's</text>
+    <text x="230" y="618" fill="#243247">judgement</text>
+    <line x1="576" y1="600" x2="604" y2="600" stroke="#1F3A68" stroke-width="3" marker-end="url(#a)"/>
+    <rect x="610" y="554" width="360" height="92" rx="10" fill="#FFFFFF" stroke="#9FD8B6"/>
+    <text x="630" y="594" fill="#243247">Unsure means REVIEW, and</text>
+    <text x="630" y="618" fill="#243247">two people must agree</text>
+
+    <!-- row 6 -->
+    <text x="30" y="686" font-size="17" font-weight="700" fill="#14233C">Paperwork</text>
+    <rect x="210" y="658" width="360" height="92" rx="10" fill="#FFFFFF" stroke="#F3B6B8"/>
+    <text x="230" y="698" fill="#243247">Reports and notices</text>
+    <text x="230" y="722" fill="#243247">typed by hand</text>
+    <line x1="576" y1="704" x2="604" y2="704" stroke="#1F3A68" stroke-width="3" marker-end="url(#a)"/>
+    <rect x="610" y="658" width="360" height="92" rx="10" fill="#FFFFFF" stroke="#9FD8B6"/>
+    <text x="630" y="698" fill="#243247">Report and notice PDF made</text>
+    <text x="630" y="722" fill="#243247">from the saved case</text>
+  </g>
+</svg>

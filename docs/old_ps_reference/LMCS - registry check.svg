@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="700" viewBox="0 0 1500 700" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1F3A68"/>
+    </marker>
+  </defs>
+  <rect width="1500" height="700" fill="#FFFFFF"/>
+
+  <text x="40" y="44" font-size="26" font-weight="700" fill="#1F3A68">The registry check — catching a label that looks complete</text>
+  <text x="40" y="70" font-size="15" fill="#55627A">The barcode is not just detected. It is the key we use to pull up what the product should say.</text>
+
+  <!-- band 1 -->
+  <rect x="40" y="92" width="1420" height="268" rx="16" fill="#F5F8FD" stroke="#C9D3E3" stroke-width="1.5"/>
+
+  <!-- left: label -->
+  <rect x="66" y="118" width="420" height="220" rx="12" fill="#FFFFFF" stroke="#E0474C" stroke-width="2"/>
+  <text x="90" y="148" font-size="13.5" font-weight="700" fill="#B8322A" letter-spacing="0.5">WHAT THIS PACK PRINTS</text>
+  <text x="90" y="182" font-size="14" fill="#55627A">MRP</text>
+  <text x="90" y="212" font-size="14" fill="#55627A">Net quantity</text>
+  <text x="90" y="242" font-size="14" fill="#55627A">FSSAI licence</text>
+  <text x="90" y="272" font-size="14" fill="#55627A">Maker</text>
+  <text x="90" y="302" font-size="14" fill="#55627A">Veg mark</text>
+  <text x="262" y="182" font-size="15" font-weight="700" fill="#B8322A">Rs. 150.00</text>
+  <text x="262" y="212" font-size="15" fill="#14233C">400 g</text>
+  <text x="262" y="242" font-size="15" fill="#14233C">10014011001919</text>
+  <text x="262" y="272" font-size="15" fill="#14233C">Haldiram Snacks Food</text>
+  <text x="262" y="302" font-size="15" fill="#14233C">green (vegetarian)</text>
+
+  <!-- middle: key -->
+  <line x1="492" y1="228" x2="530" y2="228" stroke="#1F3A68" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="540" y="150" width="330" height="156" rx="12" fill="#1F3A68"/>
+  <text x="705" y="184" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">The barcode is the key</text>
+  <text x="705" y="218" font-size="17" font-family="Consolas, monospace" fill="#CFE3FB" text-anchor="middle">8904004400779</text>
+  <text x="705" y="250" font-size="13.5" fill="#CFE3FB" text-anchor="middle">looked up in the product registry</text>
+  <text x="705" y="274" font-size="13.5" fill="#CFE3FB" text-anchor="middle">(Rule 27 registration data,</text>
+  <text x="705" y="294" font-size="13.5" fill="#CFE3FB" text-anchor="middle">in a real deployment)</text>
+  <line x1="876" y1="228" x2="914" y2="228" stroke="#1F3A68" stroke-width="3" marker-end="url(#a)"/>
+
+  <!-- right: registry -->
+  <rect x="924" y="118" width="510" height="220" rx="12" fill="#FFFFFF" stroke="#2E9E5B" stroke-width="2"/>
+  <text x="948" y="148" font-size="13.5" font-weight="700" fill="#1C7C45" letter-spacing="0.5">WHAT THE REGISTRY HOLDS</text>
+  <text x="948" y="182" font-size="14" fill="#55627A">MRP</text>
+  <text x="948" y="212" font-size="14" fill="#55627A">Net quantity</text>
+  <text x="948" y="242" font-size="14" fill="#55627A">FSSAI licences</text>
+  <text x="948" y="272" font-size="14" fill="#55627A">Maker</text>
+  <text x="948" y="302" font-size="14" fill="#55627A">Veg mark</text>
+  <text x="1126" y="182" font-size="15" font-weight="700" fill="#1C7C45">Rs. 109.00</text>
+  <text x="1126" y="212" font-size="15" fill="#14233C">400 g</text>
+  <text x="1126" y="242" font-size="15" fill="#14233C">10014011001919 · 10015022004173</text>
+  <text x="1126" y="272" font-size="15" fill="#14233C">Haldiram Snacks Food Private Limited</text>
+  <text x="1126" y="302" font-size="15" fill="#14233C">vegetarian</text>
+
+  <!-- comparison verdict -->
+  <rect x="66" y="380" width="1368" height="86" rx="12" fill="#FDEBEB" stroke="#E0474C" stroke-width="2.5"/>
+  <text x="96" y="414" font-size="17" font-weight="700" fill="#B8322A">Quantity, licence, maker and veg mark all agree — but the MRP does not: Rs. 109 registered, Rs. 150 printed.</text>
+  <text x="96" y="444" font-size="14.5" fill="#243247">Every declaration is on the pack, so a "is the field there?" check would pass it. The contradiction is what makes this ACTION NEEDED — suspected tampering.</text>
+
+  <!-- band 2: three outcomes -->
+  <text x="40" y="510" font-size="14" font-weight="700" fill="#1F3A68" letter-spacing="0.6">THE THREE POSSIBLE ANSWERS</text>
+  <rect x="40" y="524" width="450" height="90" rx="12" fill="#E8F7EE" stroke="#2E9E5B" stroke-width="2"/>
+  <text x="66" y="554" font-size="16" font-weight="700" fill="#1C7C45">Matches the registry</text>
+  <text x="66" y="580" font-size="13.5" fill="#243247">Printed details agree with the registered</text>
+  <text x="66" y="600" font-size="13.5" fill="#243247">product. Nothing is raised.</text>
+
+  <rect x="510" y="524" width="450" height="90" rx="12" fill="#EEF1F5" stroke="#7A869A" stroke-width="2"/>
+  <text x="536" y="554" font-size="16" font-weight="700" fill="#4F5B70">Not in the registry</text>
+  <text x="536" y="580" font-size="13.5" fill="#243247">We cannot verify it, so we say so.</text>
+  <text x="536" y="600" font-size="13.5" fill="#243247">An unknown product is never a complaint.</text>
+
+  <rect x="980" y="524" width="454" height="90" rx="12" fill="#FDEBEB" stroke="#E0474C" stroke-width="2"/>
+  <text x="1006" y="554" font-size="16" font-weight="700" fill="#B8322A">Contradicts the registry</text>
+  <text x="1006" y="580" font-size="13.5" fill="#243247">Suspected tampering. A complaint goes to</text>
+  <text x="1006" y="600" font-size="13.5" fill="#243247">the inspector, who verifies it on site.</text>
+
+  <!-- footnote -->
+  <rect x="40" y="632" width="1420" height="52" rx="12" fill="#FFFFFF" stroke="#8A97AD" stroke-width="1.5" stroke-dasharray="8 6"/>
+  <text x="66" y="654" font-size="13.5" fill="#243247">We do not ask GS1 whether the barcode is genuine, and dates and batch numbers are not compared, because they change with every batch.</text>
+  <text x="66" y="674" font-size="13.5" fill="#243247">MRP is compared within 0.5% so OCR rounding is never called fraud, and a name that merely reads differently is noted, not treated as tampering.</text>
+</svg>

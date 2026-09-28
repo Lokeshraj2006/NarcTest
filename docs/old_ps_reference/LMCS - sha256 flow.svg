@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="650" viewBox="0 0 1500 650" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1F3A68"/>
+    </marker>
+    <marker id="ared" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#D63A40"/>
+    </marker>
+    <marker id="agreen" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2E9E5B"/>
+    </marker>
+  </defs>
+  <rect width="1500" height="650" fill="#FFFFFF"/>
+
+  <text x="40" y="44" font-size="26" font-weight="700" fill="#1F3A68">How the photo is sealed — SHA-256</text>
+  <text x="40" y="70" font-size="15" fill="#55627A">A fingerprint taken at capture, and checked again before anyone acts on the evidence</text>
+
+  <!-- band 1 -->
+  <rect x="40" y="92" width="1420" height="196" rx="16" fill="#F5F8FD" stroke="#C9D3E3" stroke-width="1.5"/>
+  <text x="66" y="122" font-size="14" font-weight="700" fill="#1F3A68" letter-spacing="0.6">WHEN THE SCAN IS SENT</text>
+
+  <rect x="66" y="136" width="230" height="130" rx="12" fill="#FFFFFF" stroke="#4A90E2" stroke-width="2"/>
+  <text x="181" y="176" font-size="16" font-weight="700" fill="#14233C" text-anchor="middle">The photo</text>
+  <text x="181" y="202" font-size="13.5" fill="#243247" text-anchor="middle">the exact bytes of the</text>
+  <text x="181" y="222" font-size="13.5" fill="#243247" text-anchor="middle">picture that was taken</text>
+  <text x="181" y="248" font-size="12.5" font-style="italic" fill="#55627A" text-anchor="middle">2.4 MB, for example</text>
+
+  <line x1="306" y1="201" x2="372" y2="201" stroke="#1F3A68" stroke-width="3" marker-end="url(#a)"/>
+
+  <rect x="382" y="136" width="210" height="130" rx="12" fill="#1F3A68"/>
+  <text x="487" y="186" font-size="18" font-weight="700" fill="#FFFFFF" text-anchor="middle">SHA-256</text>
+  <text x="487" y="212" font-size="13" fill="#CFE3FB" text-anchor="middle">a one-way calculation</text>
+  <text x="487" y="232" font-size="13" fill="#CFE3FB" text-anchor="middle">over every byte</text>
+
+  <line x1="602" y1="201" x2="668" y2="201" stroke="#1F3A68" stroke-width="3" marker-end="url(#a)"/>
+
+  <rect x="678" y="136" width="420" height="130" rx="12" fill="#FFFFFF" stroke="#4A90E2" stroke-width="2"/>
+  <text x="888" y="172" font-size="16" font-weight="700" fill="#14233C" text-anchor="middle">The fingerprint</text>
+  <text x="888" y="202" font-size="14" font-family="Consolas, monospace" fill="#1F3A68" text-anchor="middle">a3f9c1d8…7c21</text>
+  <text x="888" y="228" font-size="13.5" fill="#243247" text-anchor="middle">64 characters, always the same length,</text>
+  <text x="888" y="248" font-size="13.5" fill="#243247" text-anchor="middle">and it cannot be turned back into the photo</text>
+
+  <line x1="1108" y1="201" x2="1174" y2="201" stroke="#1F3A68" stroke-width="3" marker-end="url(#a)"/>
+
+  <rect x="1184" y="136" width="250" height="130" rx="12" fill="#E6F6F0" stroke="#2BA37A" stroke-width="2"/>
+  <text x="1309" y="172" font-size="16" font-weight="700" fill="#14233C" text-anchor="middle">Saved together</text>
+  <text x="1309" y="200" font-size="13.5" fill="#243247" text-anchor="middle">photo + fingerprint +</text>
+  <text x="1309" y="220" font-size="13.5" fill="#243247" text-anchor="middle">GPS + phone time +</text>
+  <text x="1309" y="240" font-size="13.5" fill="#243247" text-anchor="middle">true internet time</text>
+
+  <!-- band 2 -->
+  <rect x="40" y="308" width="1420" height="212" rx="16" fill="#F5F8FD" stroke="#C9D3E3" stroke-width="1.5"/>
+  <text x="66" y="338" font-size="14" font-weight="700" fill="#1F3A68" letter-spacing="0.6">LATER, WHEN THE CONTROLLER OPENS THE CASE</text>
+
+  <rect x="66" y="352" width="230" height="130" rx="12" fill="#FFFFFF" stroke="#4A90E2" stroke-width="2"/>
+  <text x="181" y="392" font-size="16" font-weight="700" fill="#14233C" text-anchor="middle">The stored photo</text>
+  <text x="181" y="418" font-size="13.5" fill="#243247" text-anchor="middle">read back from the</text>
+  <text x="181" y="438" font-size="13.5" fill="#243247" text-anchor="middle">server, as it is today</text>
+
+  <line x1="306" y1="417" x2="372" y2="417" stroke="#1F3A68" stroke-width="3" marker-end="url(#a)"/>
+
+  <rect x="382" y="352" width="210" height="130" rx="12" fill="#1F3A68"/>
+  <text x="487" y="402" font-size="18" font-weight="700" fill="#FFFFFF" text-anchor="middle">SHA-256</text>
+  <text x="487" y="428" font-size="13" fill="#CFE3FB" text-anchor="middle">the same calculation,</text>
+  <text x="487" y="448" font-size="13" fill="#CFE3FB" text-anchor="middle">run again</text>
+
+  <line x1="602" y1="417" x2="668" y2="417" stroke="#1F3A68" stroke-width="3" marker-end="url(#a)"/>
+
+  <rect x="678" y="352" width="260" height="130" rx="12" fill="#FFF8EC" stroke="#F0A030" stroke-width="2"/>
+  <text x="808" y="392" font-size="16" font-weight="700" fill="#14233C" text-anchor="middle">Compare</text>
+  <text x="808" y="420" font-size="13.5" fill="#243247" text-anchor="middle">new fingerprint against</text>
+  <text x="808" y="440" font-size="13.5" fill="#243247" text-anchor="middle">the one saved at capture</text>
+
+  <line x1="948" y1="400" x2="1020" y2="386" stroke="#2E9E5B" stroke-width="3" marker-end="url(#agreen)"/>
+  <line x1="948" y1="436" x2="1020" y2="452" stroke="#D63A40" stroke-width="3" marker-end="url(#ared)"/>
+
+  <rect x="1030" y="344" width="404" height="72" rx="12" fill="#E8F7EE" stroke="#2E9E5B" stroke-width="2"/>
+  <text x="1054" y="374" font-size="16" font-weight="700" fill="#1C7C45">Same fingerprint → evidence is unchanged</text>
+  <text x="1054" y="398" font-size="13.5" fill="#243247">The dashboard shows “fingerprint matches”, and the case can proceed</text>
+
+  <rect x="1030" y="426" width="404" height="72" rx="12" fill="#FDEBEB" stroke="#E0474C" stroke-width="2"/>
+  <text x="1054" y="456" font-size="16" font-weight="700" fill="#B8322A">Different → the photo was altered</text>
+  <text x="1054" y="480" font-size="13.5" fill="#243247">The mismatch is shown, and the evidence cannot be trusted</text>
+
+  <!-- footnote -->
+  <rect x="40" y="540" width="1420" height="86" rx="14" fill="#FFFFFF" stroke="#8A97AD" stroke-width="1.5" stroke-dasharray="8 6"/>
+  <text x="66" y="570" font-size="15" font-weight="700" fill="#1F3A68">Change one pixel and the whole fingerprint changes.</text>
+  <text x="66" y="594" font-size="14" fill="#243247">So SHA-256 does not stop anyone editing a file — it makes the edit impossible to hide.</text>
+  <text x="66" y="614" font-size="14" fill="#243247">A sent scan is never edited in the app, the same photo sent twice is flagged, and every correction made before sending is recorded.</text>
+</svg>

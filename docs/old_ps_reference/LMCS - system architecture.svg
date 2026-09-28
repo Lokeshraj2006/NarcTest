@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" font-family="'Segoe UI', Arial, sans-serif">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1B5FAA"/></marker><marker id="ahg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9AA4B2"/></marker></defs>
+<rect width="1920" height="1080" fill="#FFFFFF"/>
+<text x="40.0" y="62.0" font-size="30" font-weight="700" fill="#15213B" text-anchor="start">LMCS system architecture</text>
+<text x="40.0" y="90.0" font-size="16" font-weight="400" fill="#566174" text-anchor="start">Legal Metrology Compliance Scanner · SIH26034 · Team HexTech</text>
+<rect x="192.0" y="128.0" width="430.0" height="694.0" rx="16" fill="#F6F8FB" stroke="#D5DCE6" stroke-width="1.5"/>
+<text x="216.0" y="168.0" font-size="22" font-weight="700" fill="#15213B" text-anchor="start">Mobile app</text>
+<text x="216.0" y="191.0" font-size="14" font-weight="600" fill="#1B5FAA" text-anchor="start">Flutter · Dart · Android · Provider</text>
+<line x1="216.0" y1="206.0" x2="598.0" y2="206.0" stroke="#D5DCE6" stroke-width="1.2"/>
+<rect x="722.0" y="128.0" width="600.0" height="694.0" rx="16" fill="#F6F8FB" stroke="#D5DCE6" stroke-width="1.5"/>
+<text x="746.0" y="168.0" font-size="22" font-weight="700" fill="#15213B" text-anchor="start">Server</text>
+<text x="746.0" y="191.0" font-size="14" font-weight="600" fill="#1B5FAA" text-anchor="start">Python 3.11 · FastAPI · Uvicorn · Pydantic</text>
+<line x1="746.0" y1="206.0" x2="1298.0" y2="206.0" stroke="#D5DCE6" stroke-width="1.2"/>
+<rect x="1422.0" y="128.0" width="330.0" height="694.0" rx="16" fill="#F6F8FB" stroke="#D5DCE6" stroke-width="1.5"/>
+<text x="1446.0" y="168.0" font-size="22" font-weight="700" fill="#15213B" text-anchor="start">Controller dashboard</text>
+<text x="1446.0" y="191.0" font-size="14" font-weight="600" fill="#1B5FAA" text-anchor="start">React 18 · Vite · React Router</text>
+<line x1="1446.0" y1="206.0" x2="1728.0" y2="206.0" stroke="#D5DCE6" stroke-width="1.2"/>
+<circle cx="228.0" cy="231.5" r="11.5" fill="#1B5FAA"/>
+<text x="228.0" y="236.1" font-size="12.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="250.0" y="237.0" font-size="16" font-weight="600" fill="#15213B" text-anchor="start">Capture</text>
+<text x="250.0" y="256.0" font-size="14" font-weight="400" fill="#566174" text-anchor="start">Camera or gallery (camera, image_picker), GPS</text>
+<text x="250.0" y="275.0" font-size="14" font-weight="400" fill="#566174" text-anchor="start">(geolocator), internet time (ntp)</text>
+<line x1="228.0" y1="246.0" x2="228.0" y2="313.7" stroke="#C7D3E3" stroke-width="2"/>
+<circle cx="228.0" cy="328.2" r="11.5" fill="#1B5FAA"/>
+<text x="228.0" y="332.8" font-size="12.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="250.0" y="333.7" font-size="16" font-weight="600" fill="#15213B" text-anchor="start">Read the label</text>
+<text x="250.0" y="352.7" font-size="14" font-weight="400" fill="#566174" text-anchor="start">Google ML Kit text recognition and barcode scanning,</text>
+<text x="250.0" y="371.7" font-size="14" font-weight="400" fill="#566174" text-anchor="start">run on the phone</text>
+<line x1="228.0" y1="342.7" x2="228.0" y2="410.3" stroke="#C7D3E3" stroke-width="2"/>
+<circle cx="228.0" cy="424.8" r="11.5" fill="#1B5FAA"/>
+<text x="228.0" y="429.4" font-size="12.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="250.0" y="430.3" font-size="16" font-weight="600" fill="#15213B" text-anchor="start">Extract the fields</text>
+<text x="250.0" y="449.3" font-size="14" font-weight="400" fill="#566174" text-anchor="start">field_extractor.dart pairs each heading with its value:</text>
+<text x="250.0" y="468.3" font-size="14" font-weight="400" fill="#566174" text-anchor="start">MRP, quantity, dates, maker</text>
+<line x1="228.0" y1="439.3" x2="228.0" y2="507.0" stroke="#C7D3E3" stroke-width="2"/>
+<circle cx="228.0" cy="521.5" r="11.5" fill="#1B5FAA"/>
+<text x="228.0" y="526.1" font-size="12.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">4</text>
+<text x="250.0" y="527.0" font-size="16" font-weight="600" fill="#15213B" text-anchor="start">Review</text>
+<text x="250.0" y="546.0" font-size="14" font-weight="400" fill="#566174" text-anchor="start">User fixes misreads (every change is logged) and adds</text>
+<text x="250.0" y="565.0" font-size="14" font-weight="400" fill="#566174" text-anchor="start">up to 3 photos of other sides</text>
+<line x1="228.0" y1="536.0" x2="228.0" y2="603.7" stroke="#C7D3E3" stroke-width="2"/>
+<circle cx="228.0" cy="618.2" r="11.5" fill="#1B5FAA"/>
+<text x="228.0" y="622.8" font-size="12.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">5</text>
+<text x="250.0" y="623.7" font-size="16" font-weight="600" fill="#15213B" text-anchor="start">Seal and send</text>
+<text x="250.0" y="642.7" font-size="14" font-weight="400" fill="#566174" text-anchor="start">SHA-256 fingerprint (crypto), sent with Dio; login token</text>
+<text x="250.0" y="661.7" font-size="14" font-weight="400" fill="#566174" text-anchor="start">in flutter_secure_storage</text>
+<line x1="216.0" y1="709.3" x2="598.0" y2="709.3" stroke="#D5DCE6" stroke-width="1.2"/>
+<text x="216.0" y="735.3" font-size="11.5" font-weight="700" fill="#8B95A7" text-anchor="start" letter-spacing="1.3">INSPECTOR SCREENS</text>
+<text x="216.0" y="754.3" font-size="14" font-weight="400" fill="#566174" text-anchor="start">Complaints list and map (flutter_map + OpenStreetMap),</text>
+<text x="216.0" y="773.3" font-size="14" font-weight="400" fill="#566174" text-anchor="start">every scan, file a report</text>
+<rect x="742.0" y="222.0" width="560.0" height="64.0" rx="10" fill="#FFFFFF" stroke="#D5DCE6" stroke-width="1.5"/>
+<text x="758.0" y="248.0" font-size="15" font-weight="700" fill="#15213B" text-anchor="start">REST API</text>
+<text x="831.6" y="248.0" font-size="13.5" font-weight="400" fill="#566174" text-anchor="start">·  JWT login (python-jose, bcrypt)  ·  roles: consumer, inspector, admin</text>
+<text x="758.0" y="270.0" font-size="13" font-weight="400" fill="#1B5FAA" text-anchor="start" font-family="Consolas, monospace">/auth /scan /inspections /complaints /violations /rules /legal-notice</text>
+<text x="746.0" y="316.0" font-size="11.5" font-weight="700" fill="#8B95A7" text-anchor="start" letter-spacing="1.3">ON EVERY SCAN</text>
+<circle cx="758.0" cy="339.5" r="11.5" fill="#1B5FAA"/>
+<text x="758.0" y="344.1" font-size="12.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">6</text>
+<text x="780.0" y="345.0" font-size="16" font-weight="600" fill="#15213B" text-anchor="start">Save the evidence</text>
+<text x="780.0" y="364.0" font-size="14" font-weight="400" fill="#566174" text-anchor="start">Evidence ID, photo SHA-256 (hashlib), GPS; clock drift over 5 s is flagged</text>
+<line x1="758.0" y1="354.0" x2="758.0" y2="378.0" stroke="#C7D3E3" stroke-width="2"/>
+<circle cx="758.0" cy="392.5" r="11.5" fill="#1B5FAA"/>
+<text x="758.0" y="397.1" font-size="12.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">7</text>
+<text x="780.0" y="398.0" font-size="16" font-weight="600" fill="#15213B" text-anchor="start">Read the barcode</text>
+<text x="780.0" y="417.0" font-size="14" font-weight="400" fill="#566174" text-anchor="start">Uses the phone's ML Kit read, or pyzbar decodes it from the photo</text>
+<line x1="758.0" y1="407.0" x2="758.0" y2="431.0" stroke="#C7D3E3" stroke-width="2"/>
+<circle cx="758.0" cy="445.5" r="11.5" fill="#1B5FAA"/>
+<text x="758.0" y="450.1" font-size="12.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">8</text>
+<text x="780.0" y="451.0" font-size="16" font-weight="600" fill="#15213B" text-anchor="start">Measure the print</text>
+<text x="780.0" y="470.0" font-size="14" font-weight="400" fill="#566174" text-anchor="start">OpenCV + NumPy: the barcode as a ruler for letter height, print contrast</text>
+<line x1="758.0" y1="460.0" x2="758.0" y2="484.0" stroke="#C7D3E3" stroke-width="2"/>
+<circle cx="758.0" cy="498.5" r="11.5" fill="#1B5FAA"/>
+<text x="758.0" y="503.1" font-size="12.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">9</text>
+<text x="780.0" y="504.0" font-size="16" font-weight="600" fill="#15213B" text-anchor="start">Find the FSSAI veg mark</text>
+<text x="780.0" y="523.0" font-size="14" font-weight="400" fill="#566174" text-anchor="start">OpenCV shape detector, run on every photo of the pack</text>
+<line x1="758.0" y1="513.0" x2="758.0" y2="537.0" stroke="#C7D3E3" stroke-width="2"/>
+<circle cx="758.0" cy="551.5" r="11.5" fill="#1B5FAA"/>
+<text x="758.0" y="556.1" font-size="12.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">10</text>
+<text x="780.0" y="557.0" font-size="16" font-weight="600" fill="#15213B" text-anchor="start">Registry cross-check</text>
+<text x="780.0" y="576.0" font-size="14" font-weight="400" fill="#566174" text-anchor="start">By barcode (GTIN): MRP, net quantity, licence, GSTIN, veg mark, maker</text>
+<line x1="758.0" y1="566.0" x2="758.0" y2="590.0" stroke="#C7D3E3" stroke-width="2"/>
+<circle cx="758.0" cy="604.5" r="11.5" fill="#1B5FAA"/>
+<text x="758.0" y="609.1" font-size="12.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">11</text>
+<text x="780.0" y="610.0" font-size="16" font-weight="600" fill="#15213B" text-anchor="start">13 compliance rules</text>
+<text x="780.0" y="629.0" font-size="14" font-weight="400" fill="#566174" text-anchor="start">LMPC Rules 6–9, 27 + CGST Rule 46: PASS, FAIL, REVIEW or EXEMPT</text>
+<line x1="758.0" y1="619.0" x2="758.0" y2="643.0" stroke="#C7D3E3" stroke-width="2"/>
+<circle cx="758.0" cy="657.5" r="11.5" fill="#1B5FAA"/>
+<text x="758.0" y="662.1" font-size="12.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">12</text>
+<text x="780.0" y="663.0" font-size="16" font-weight="600" fill="#15213B" text-anchor="start">Verdict</text>
+<rect x="780.0" y="674.0" width="87.3" height="28.0" rx="14" fill="#E4F3EA"/>
+<text x="823.7" y="693.0" font-size="13.5" font-weight="600" fill="#1E7B4B" text-anchor="middle">Compliant</text>
+<rect x="877.3" y="674.0" width="106.2" height="28.0" rx="14" fill="#FBF0D9"/>
+<text x="930.4" y="693.0" font-size="13.5" font-weight="600" fill="#8A5A00" text-anchor="middle">Needs review</text>
+<rect x="993.5" y="674.0" width="112.8" height="28.0" rx="14" fill="#FBE7E5"/>
+<text x="1049.9" y="693.0" font-size="13.5" font-weight="600" fill="#B3261E" text-anchor="middle">Action needed</text>
+<text x="746.0" y="732.0" font-size="11.5" font-weight="700" fill="#8B95A7" text-anchor="start" letter-spacing="1.3">WHEN ACTION IS NEEDED</text>
+<rect x="746.0" y="744.0" width="89.3" height="30.0" rx="15" fill="#E7EFF9"/>
+<text x="790.7" y="764.0" font-size="13.5" font-weight="600" fill="#1B5FAA" text-anchor="middle">Complaint</text>
+<line x1="840.3" y1="759.0" x2="858.3" y2="759.0" stroke="#1B5FAA" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="863.3" y="744.0" width="134.3" height="30.0" rx="15" fill="#E7EFF9"/>
+<text x="930.4" y="764.0" font-size="13.5" font-weight="600" fill="#1B5FAA" text-anchor="middle">Inspector's report</text>
+<line x1="1002.6" y1="759.0" x2="1020.6" y2="759.0" stroke="#1B5FAA" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="1025.6" y="744.0" width="144.3" height="30.0" rx="15" fill="#E7EFF9"/>
+<text x="1097.7" y="764.0" font-size="13.5" font-weight="600" fill="#1B5FAA" text-anchor="middle">Controller confirms</text>
+<line x1="1174.8" y1="759.0" x2="1192.8" y2="759.0" stroke="#1B5FAA" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="1197.8" y="744.0" width="87.2" height="30.0" rx="15" fill="#E7EFF9"/>
+<text x="1241.4" y="764.0" font-size="13.5" font-weight="600" fill="#1B5FAA" text-anchor="middle">GO notice</text>
+<text x="746.0" y="800.0" font-size="13" font-weight="400" fill="#566174" text-anchor="start">PDFs by ReportLab: compliance report, GO show-cause notice · one notice per report</text>
+<rect x="1446.0" y="227.0" width="11.0" height="11.0" rx="3" fill="#1B5FAA"/>
+<text x="1466.0" y="237.0" font-size="16" font-weight="600" fill="#15213B" text-anchor="start">Report queue</text>
+<text x="1466.0" y="256.0" font-size="14" font-weight="400" fill="#566174" text-anchor="start">Inspectors' reports waiting for a decision</text>
+<rect x="1446.0" y="324.0" width="11.0" height="11.0" rx="3" fill="#1B5FAA"/>
+<text x="1466.0" y="334.0" font-size="16" font-weight="600" fill="#15213B" text-anchor="start">Report review</text>
+<text x="1466.0" y="353.0" font-size="14" font-weight="400" fill="#566174" text-anchor="start">Evidence photos with a live SHA-256</text>
+<text x="1466.0" y="372.0" font-size="14" font-weight="400" fill="#566174" text-anchor="start">check; confirm, reject, send the GO notice</text>
+<rect x="1446.0" y="440.0" width="11.0" height="11.0" rx="3" fill="#1B5FAA"/>
+<text x="1466.0" y="450.0" font-size="16" font-weight="600" fill="#15213B" text-anchor="start">System log</text>
+<text x="1466.0" y="469.0" font-size="14" font-weight="400" fill="#566174" text-anchor="start">Search every scan; download its PDF</text>
+<text x="1466.0" y="488.0" font-size="14" font-weight="400" fill="#566174" text-anchor="start">report or a CSV</text>
+<rect x="1446.0" y="556.0" width="11.0" height="11.0" rx="3" fill="#1B5FAA"/>
+<text x="1466.0" y="566.0" font-size="16" font-weight="600" fill="#15213B" text-anchor="start">Map</text>
+<text x="1466.0" y="585.0" font-size="14" font-weight="400" fill="#566174" text-anchor="start">Complaints and reports on Leaflet +</text>
+<text x="1466.0" y="604.0" font-size="14" font-weight="400" fill="#566174" text-anchor="start">OpenStreetMap</text>
+<rect x="1446.0" y="672.0" width="11.0" height="11.0" rx="3" fill="#1B5FAA"/>
+<text x="1466.0" y="682.0" font-size="16" font-weight="600" fill="#15213B" text-anchor="start">Rules</text>
+<text x="1466.0" y="701.0" font-size="14" font-weight="400" fill="#566174" text-anchor="start">All 13 rules with their legal provisions;</text>
+<text x="1466.0" y="720.0" font-size="14" font-weight="400" fill="#566174" text-anchor="start">switch any off</text>
+<circle cx="100.0" cy="245.0" r="8.5" fill="none" stroke="#1B5FAA" stroke-width="2"/>
+<path d="M85.0,271.0 a15,13 0 0 1 30,0" fill="none" stroke="#1B5FAA" stroke-width="2" stroke-linecap="round"/>
+<text x="100.0" y="296.0" font-size="15" font-weight="700" fill="#15213B" text-anchor="middle">Consumer</text>
+<text x="100.0" y="314.0" font-size="12.5" font-weight="400" fill="#566174" text-anchor="middle">scans a pack</text>
+<circle cx="100.0" cy="395.0" r="8.5" fill="none" stroke="#1B5FAA" stroke-width="2"/>
+<path d="M85.0,421.0 a15,13 0 0 1 30,0" fill="none" stroke="#1B5FAA" stroke-width="2" stroke-linecap="round"/>
+<text x="100.0" y="446.0" font-size="15" font-weight="700" fill="#15213B" text-anchor="middle">Inspector</text>
+<text x="100.0" y="464.0" font-size="12.5" font-weight="400" fill="#566174" text-anchor="middle">checks complaints,</text>
+<text x="100.0" y="480.0" font-size="12.5" font-weight="400" fill="#566174" text-anchor="middle">files reports</text>
+<circle cx="1826.0" cy="245.0" r="8.5" fill="none" stroke="#1B5FAA" stroke-width="2"/>
+<path d="M1811.0,271.0 a15,13 0 0 1 30,0" fill="none" stroke="#1B5FAA" stroke-width="2" stroke-linecap="round"/>
+<text x="1826.0" y="296.0" font-size="15" font-weight="700" fill="#15213B" text-anchor="middle">Controller</text>
+<text x="1826.0" y="314.0" font-size="12.5" font-weight="400" fill="#566174" text-anchor="middle">confirms reports,</text>
+<text x="1826.0" y="330.0" font-size="12.5" font-weight="400" fill="#566174" text-anchor="middle">sends notices</text>
+<line x1="126.0" y1="254.0" x2="188.0" y2="254.0" stroke="#1B5FAA" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="126.0" y1="404.0" x2="188.0" y2="404.0" stroke="#1B5FAA" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="628.0" y1="254.0" x2="716.0" y2="254.0" stroke="#1B5FAA" stroke-width="2" marker-start="url(#ah)" marker-end="url(#ah)"/>
+<text x="672.0" y="243.0" font-size="12.5" font-weight="600" fill="#566174" text-anchor="middle">HTTPS · REST</text>
+<text x="672.0" y="276.0" font-size="12.5" font-weight="400" fill="#566174" text-anchor="middle">JSON + photos</text>
+<text x="672.0" y="292.0" font-size="12.5" font-weight="400" fill="#566174" text-anchor="middle">JWT</text>
+<line x1="1328.0" y1="254.0" x2="1416.0" y2="254.0" stroke="#1B5FAA" stroke-width="2" marker-start="url(#ah)" marker-end="url(#ah)"/>
+<text x="1372.0" y="243.0" font-size="12.5" font-weight="600" fill="#566174" text-anchor="middle">HTTPS · REST</text>
+<text x="1372.0" y="276.0" font-size="12.5" font-weight="400" fill="#566174" text-anchor="middle">JSON + PDFs</text>
+<text x="1372.0" y="292.0" font-size="12.5" font-weight="400" fill="#566174" text-anchor="middle">JWT</text>
+<line x1="1800.0" y1="254.0" x2="1756.0" y2="254.0" stroke="#1B5FAA" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="192.0" y="858.0" width="430.0" height="124.0" rx="12" fill="#FFFFFF" stroke="#D5DCE6" stroke-width="1.5"/>
+<text x="208.0" y="882.0" font-size="11.5" font-weight="700" fill="#8B95A7" text-anchor="start" letter-spacing="1.3">EXTERNAL SERVICES</text>
+<text x="208.0" y="908.0" font-size="14" font-weight="600" fill="#15213B" text-anchor="start">OpenStreetMap</text>
+<text x="316.8" y="908.0" font-size="14" font-weight="400" fill="#566174" text-anchor="start">map tiles for the app and dashboard</text>
+<text x="208.0" y="930.0" font-size="14" font-weight="600" fill="#15213B" text-anchor="start">NTP time servers</text>
+<text x="323.1" y="930.0" font-size="14" font-weight="400" fill="#566174" text-anchor="start">pool.ntp.org, true time for each scan</text>
+<text x="208.0" y="952.0" font-size="14" font-weight="600" fill="#15213B" text-anchor="start">Google Play services</text>
+<text x="345.2" y="952.0" font-size="14" font-weight="400" fill="#566174" text-anchor="start">delivers the ML Kit models to the phone</text>
+<rect x="722.0" y="858.0" width="236.0" height="124.0" rx="12" fill="#FFFFFF" stroke="#D5DCE6" stroke-width="1.5"/>
+<text x="738.0" y="882.0" font-size="11.5" font-weight="700" fill="#8B95A7" text-anchor="start" letter-spacing="1.3">DATA</text>
+<text x="738.0" y="906.0" font-size="16" font-weight="700" fill="#15213B" text-anchor="start">PostgreSQL</text>
+<text x="738.0" y="924.0" font-size="13.5" font-weight="400" fill="#566174" text-anchor="start">SQLAlchemy 2 + Alembic. Users,</text>
+<text x="738.0" y="942.0" font-size="13.5" font-weight="400" fill="#566174" text-anchor="start">scans, checks, verdicts,</text>
+<text x="738.0" y="960.0" font-size="13.5" font-weight="400" fill="#566174" text-anchor="start">complaints, reports, notices, rules</text>
+<line x1="840.0" y1="828.0" x2="840.0" y2="852.0" stroke="#1B5FAA" stroke-width="1.8" marker-start="url(#ah)" marker-end="url(#ah)"/>
+<rect x="968.0" y="858.0" width="172.0" height="124.0" rx="12" fill="#FFFFFF" stroke="#D5DCE6" stroke-width="1.5"/>
+<text x="984.0" y="882.0" font-size="11.5" font-weight="700" fill="#8B95A7" text-anchor="start" letter-spacing="1.3">DATA</text>
+<text x="984.0" y="906.0" font-size="16" font-weight="700" fill="#15213B" text-anchor="start">Evidence files</text>
+<text x="984.0" y="924.0" font-size="13.5" font-weight="400" fill="#566174" text-anchor="start">Photos on the server's</text>
+<text x="984.0" y="942.0" font-size="13.5" font-weight="400" fill="#566174" text-anchor="start">disk, each named by its</text>
+<text x="984.0" y="960.0" font-size="13.5" font-weight="400" fill="#566174" text-anchor="start">SHA-256</text>
+<line x1="1054.0" y1="828.0" x2="1054.0" y2="852.0" stroke="#1B5FAA" stroke-width="1.8" marker-start="url(#ah)" marker-end="url(#ah)"/>
+<rect x="1150.0" y="858.0" width="172.0" height="124.0" rx="12" fill="#FFFFFF" stroke="#D5DCE6" stroke-width="1.5"/>
+<text x="1166.0" y="882.0" font-size="11.5" font-weight="700" fill="#8B95A7" text-anchor="start" letter-spacing="1.3">DATA</text>
+<text x="1166.0" y="906.0" font-size="16" font-weight="700" fill="#15213B" text-anchor="start">Product registry</text>
+<text x="1166.0" y="924.0" font-size="13.5" font-weight="400" fill="#566174" text-anchor="start">8 products today,</text>
+<text x="1166.0" y="942.0" font-size="13.5" font-weight="400" fill="#566174" text-anchor="start">looked up by barcode</text>
+<text x="1166.0" y="960.0" font-size="13.5" font-weight="400" fill="#566174" text-anchor="start">(GTIN)</text>
+<line x1="1236.0" y1="828.0" x2="1236.0" y2="852.0" stroke="#1B5FAA" stroke-width="1.8" marker-start="url(#ah)" marker-end="url(#ah)"/>
+<rect x="1422.0" y="858.0" width="330.0" height="124.0" rx="12" fill="none" stroke="#9AA4B2" stroke-width="1.5" stroke-dasharray="7 5"/>
+<text x="1438.0" y="882.0" font-size="11.5" font-weight="700" fill="#8B95A7" text-anchor="start" letter-spacing="1.3">PLANNED · NOT CONNECTED</text>
+<text x="1438.0" y="906.0" font-size="16" font-weight="700" fill="#566174" text-anchor="start">GS1 India DataKart</text>
+<text x="1438.0" y="924.0" font-size="13.5" font-weight="400" fill="#566174" text-anchor="start">Live product data from brand owners; would feed</text>
+<text x="1438.0" y="942.0" font-size="13.5" font-weight="400" fill="#566174" text-anchor="start">the product registry</text>
+<line x1="1416.0" y1="920.0" x2="1328.0" y2="920.0" stroke="#9AA4B2" stroke-width="1.8" stroke-dasharray="6 5" marker-end="url(#ahg)"/>
+<line x1="40.0" y1="1021.0" x2="80.0" y2="1021.0" stroke="#1B5FAA" stroke-width="2" marker-end="url(#ah)"/>
+<text x="90.0" y="1026.0" font-size="13" font-weight="400" fill="#566174" text-anchor="start">request or data flow</text>
+<line x1="250.0" y1="1021.0" x2="290.0" y2="1021.0" stroke="#9AA4B2" stroke-width="1.8" stroke-dasharray="6 5" marker-end="url(#ahg)"/>
+<text x="300.0" y="1026.0" font-size="13" font-weight="400" fill="#566174" text-anchor="start">planned, not built yet</text>
+<text x="1880.0" y="1026.0" font-size="13" font-weight="400" fill="#566174" text-anchor="end">Prototype: server and PostgreSQL on a laptop · app on an Android phone (USB or Wi-Fi) · dashboard in a browser</text>
+</svg>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Paths open_filex may hand out via FileProvider content:// URIs. -->
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- getTemporaryDirectory() on Android resolves under the app's cache dir. -->
+    <cache-path name="temp_cache" path="." />
+    <files-path name="app_files" path="." />
+    <external-files-path name="external_app_files" path="." />
+</paths>
