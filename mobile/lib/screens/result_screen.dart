@@ -26,7 +26,11 @@ class ResultScreen extends StatelessWidget {
             '${parsed.hour.toString().padLeft(2, '0')}:'
             '${parsed.minute.toString().padLeft(2, '0')}:'
             '${parsed.second.toString().padLeft(2, '0')}';
-    final src = record.timeSource == 'ntp' ? 'internet time' : 'server clock';
+    final src = record.timeSource == 'ntp'
+        ? 'internet time (NTP)'
+        : record.timeSource == 'https'
+            ? 'internet time (HTTPS)'
+            : 'server clock';
     return '$shown ($src)';
   }
 

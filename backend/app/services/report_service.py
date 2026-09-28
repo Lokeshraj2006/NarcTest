@@ -20,6 +20,8 @@ from reportlab.lib.units import mm
 from reportlab.lib.utils import ImageReader
 from reportlab.platypus import Image, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
 
+from app.services import time_service
+
 TITLE = "FieldProof - Field Test Record"
 DISCLAIMER = (
     "Presumptive field result — not a substitute for laboratory confirmatory testing."
@@ -127,7 +129,7 @@ def build_test_pdf(record: Dict[str, Any], image_bytes: Optional[bytes]) -> byte
     rows = [
         ("Test number", record.get("id")),
         ("Test ID", record.get("test_uid")),
-        ("Saved at (UTC)", f"{record.get('created_at')}  (time from: {record.get('time_source')})"),
+        ("Saved at (UTC)", f"{record.get('created_at')}  (time from: {time_service.label(record.get('time_source'))})"),
         ("Phone time", f"{record.get('device_time') or '-'}  (difference: {record.get('clock_drift_s')} s)"),
         ("GPS location", gps),
         ("Officer", f"{record.get('officer_name') or '-'} (user id {record.get('officer_id')})"),

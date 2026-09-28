@@ -102,7 +102,7 @@ export function TestDetailPanel({ testId, onClose }) {
             <dt>Time</dt>
             <dd>
               {fmt(test.ntp_time || test.created_at)}{' '}
-              <span className="muted">({test.time_source === 'ntp' ? 'internet time' : 'server clock'})</span>
+              <span className="muted">({({ ntp: 'internet time (NTP)', https: 'internet time (HTTPS)' })[test.time_source] || 'server clock'})</span>
             </dd>
             <dt>Officer</dt>
             <dd>{test.officer_name || test.officer_id}</dd>

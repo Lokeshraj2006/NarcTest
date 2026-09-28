@@ -10,7 +10,7 @@ from sqlalchemy.orm import Session, selectinload
 
 from app.database import get_db
 from app.models.test_record import TestRecord
-from app.services import record_service, signing
+from app.services import record_service, signing, time_service
 
 router = APIRouter(tags=["verify"])
 
@@ -108,7 +108,7 @@ def verify_page(test_id: int, db: Session = Depends(get_db)):
         ("How sure", "-" if r["confidence"] is None else f'{r["confidence"]}%', False),
         ("Kit", escape(f'{r["kit_name"]} (version {r["kit_version"]})'), True),
         ("Officer", escape(r["officer_name"] or "-"), True),
-        ("Saved at (UTC)", escape(f'{r["created_at"]} ({"internet time" if r["time_source"] == "ntp" else "server clock"})'), True),
+        ("Saved at (UTC)", escape(f'{r["created_at"]} ({time_service.label(r["time_source"])})'), True),
         ("GPS", escape(gps), True),
         ("Test ID", f'<span class="mono">{escape(r["test_uid"])}</span>', True),
         ("Photo fingerprint (SHA-256)", f'<span class="mono">{escape(r["image_sha256"])}</span>', True),

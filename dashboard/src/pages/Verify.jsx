@@ -78,7 +78,7 @@ export default function Verify() {
               <dd>
                 {fmt(rec.created_at)}{' '}
                 <span className="muted">
-                  ({rec.time_source === 'ntp' ? 'internet time' : 'server clock'})
+                  ({({ ntp: 'internet time (NTP)', https: 'internet time (HTTPS)' })[rec.time_source] || 'server clock'})
                 </span>
               </dd>
               <dt>Place (GPS)</dt>

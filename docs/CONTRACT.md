@@ -110,7 +110,7 @@ Auth (unchanged from old code): `POST /auth/login` body `{"username_or_email","p
 
 TestRecord JSON:
 ```json
-{"id": 1, "test_uid": "uuid4", "created_at": "ISO", "ntp_time": "ISO or null", "time_source": "ntp | server_clock",
+{"id": 1, "test_uid": "uuid4", "created_at": "ISO", "ntp_time": "ISO or null", "time_source": "ntp | https | server_clock",
  "device_time": "ISO", "clock_drift_s": 0.4, "latitude": 0, "longitude": 0, "gps_accuracy_m": 0, "gps_is_mock": false,
  "officer_id": 1, "officer_name": "…", "device_id": "…", "kit_id": 1, "kit_code": "…", "kit_name": "…", "kit_version": 1,
  "kit_outcomes": [{"label","category","srgb"}],
@@ -120,7 +120,7 @@ TestRecord JSON:
  "lab_sample_id": null, "prev_record_hash": "hex | GENESIS", "record_hash": "hex", "signature": "base64", "key_id": "ed25519-1",
  "review_status": "NOT_NEEDED | PENDING | CONFIRMED | RETEST", "verify_url": "http://<host>:8000/v/1"}
 ```
-- Server time: try `ntplib` (pool.ntp.org, 2 s timeout) → `time_source="ntp"`; else server clock → `"server_clock"`.
+- Server time: try `ntplib` (pool.ntp.org, 2 s timeout) → `time_source="ntp"`; if NTP is blocked, internet time from the HTTPS `Date` header of google.com / cloudflare.com / microsoft.com (±1 s) → `"https"`; else server clock → `"server_clock"`.
 - `verify_url` built from the incoming request's base URL (so a phone on LAN gets a LAN URL), overridable by env `PUBLIC_BASE_URL`.
 - Image stored as original upload bytes at `backend/uploads/tests/<test_uid>.<ext>`; `image_sha256` = SHA-256 of those exact bytes.
 

@@ -21,3 +21,10 @@
 - Backend: kit profiles, test records, Ed25519 signing + hash chain, `/verify`, PDF with QR, CSV, reviews. Old Legal Metrology modules removed from the new copy.
 - Flutter: login → pick kit → camera with card guide + timer → result → my tests. ML Kit removed.
 - Dashboard: test log, map, kit editor, review queue, public verify page.
+
+### Step 3 — Prototype running on a real phone (USB)
+- Phone on mobile data + laptop on college Wi-Fi → app talks to the laptop over the USB cable (`adb reverse tcp:8000 tcp:8000`); `usb_connect.bat` / `start_fieldproof.bat` helpers.
+- App id changed to `gov.in.ncb.fieldproof` so it installs next to the old LMCS app.
+- First real tests on the phone: purple swatch → POSITIVE (opium-type), record verified (5/5 checks), phone hash = server hash, GPS recorded, chain linked.
+- Colour-card fit limit raised 6 → 9 (real phone photos score 5–7).
+- **Internet time backup:** the college Wi-Fi blocks NTP, so the server now falls back to the HTTPS `Date` header of Google / Cloudflare / Microsoft (±1 s) → `time_source = "https"`, shown as "internet time (HTTPS)"; server clock only if offline. 4 new tests (34 total passing).
