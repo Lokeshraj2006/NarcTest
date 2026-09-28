@@ -248,6 +248,22 @@
     "expected_label": null
   },
   {
+    "file": "blurred_orange.jpg",
+    "kit": "DEMO-MARQUIS-SIM",
+    "lighting": "daylight",
+    "kind": "blurred",
+    "expected": "INCONCLUSIVE",
+    "expected_label": null
+  },
+  {
+    "file": "blurred_heavy_noreact.jpg",
+    "kit": "DEMO-MARQUIS-SIM",
+    "lighting": "daylight",
+    "kind": "blurred",
+    "expected": "INCONCLUSIVE",
+    "expected_label": null
+  },
+  {
     "file": "glare_orange.jpg",
     "kit": "DEMO-MARQUIS-SIM",
     "lighting": "daylight",

@@ -1,9 +1,10 @@
 """
 FieldProof — Create an account of any role from the command line.
 
-Public sign-up (POST /auth/register) only creates consumers, and admins
-create officers through POST /auth/users. This script bootstraps the first
-admin, or any account, directly in the database.
+Public sign-up is closed; admins create accounts through POST /auth/users.
+This script bootstraps the first admin, or any account, directly in the
+database. For the demo users use: python -m app.scripts.seed_demo
+Roles: field_officer, supervisor, admin.
 
 Usage (from Backend/):
     python -m app.scripts.create_user --username controller1 --email c1@lm.gov.in \

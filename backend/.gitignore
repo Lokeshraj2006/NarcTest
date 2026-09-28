@@ -1,0 +1,5 @@
+# FieldProof backend local data (never commit)
+keys/
+uploads/
+*.db
+.env

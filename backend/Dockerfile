@@ -3,10 +3,9 @@ FROM python:3.11-slim AS builder
 
 WORKDIR /app
 
-# System deps for OpenCV headless, pyzbar, psycopg2
+# System deps for OpenCV headless, psycopg2
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
-    libzbar0 \
     libpq-dev \
     && rm -rf /var/lib/apt/lists/*
 
@@ -20,7 +19,6 @@ WORKDIR /app
 
 # Runtime-only system libs
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libzbar0 \
     libpq5 \
     libgl1-mesa-glx \
     libglib2.0-0 \

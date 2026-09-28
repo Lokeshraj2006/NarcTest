@@ -1,27 +1,20 @@
-"""
-Smoke test — verifies the FastAPI app starts and the health endpoint responds.
-"""
-
-from fastapi.testclient import TestClient
-
-from app.main import app
-
-client = TestClient(app)
+"""Smoke test — the app starts and /health responds."""
 
 
-def test_health_check():
-    """GET /health returns 200 with app metadata."""
+def test_health_check(client):
     response = client.get("/health")
     assert response.status_code == 200
-
     data = response.json()
     assert data["status"] == "healthy"
+    assert data["app"] == "FieldProof"
     assert "version" in data
-    assert "app" in data
 
 
-def test_openapi_docs_accessible():
-    """Swagger UI JSON schema is reachable."""
+def test_openapi_lists_fieldproof_routes(client):
     response = client.get("/openapi.json")
     assert response.status_code == 200
-    assert "paths" in response.json()
+    paths = response.json()["paths"]
+    for p in ["/kits", "/tests", "/tests/{test_id}", "/verify/{test_id}", "/v/{test_id}",
+              "/reviews/pending", "/verify/pubkey"]:
+        assert p in paths
+    assert not any(p.startswith(("/scan", "/inspections", "/violations", "/rules")) for p in paths)

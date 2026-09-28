@@ -147,11 +147,15 @@ def main() -> None:
         img, _ = photo(NO_MATCH, light)
         add(f"marquis_nomatch_{light}", "DEMO-MARQUIS-SIM", light, "INCONCLUSIVE", None, "no_match", img)
 
-    # 3) blurred
-    for key, kit, table in (("purple", "DEMO-MARQUIS-SIM", MARQUIS), ("starch", "DEMO-IODINE", IODINE)):
-        img, _ = photo(table[key][2], "daylight")
-        img = cv2.GaussianBlur(img, (41, 41), 12)
-        add(f"blurred_{key}", kit, "daylight", "INCONCLUSIVE", None, "blurred", img)
+    # 3) blurred: soft (card still found, blur check fails) and very blurred (card lost)
+    for key, kit, table in (("purple", "DEMO-MARQUIS-SIM", MARQUIS), ("starch", "DEMO-IODINE", IODINE),
+                            ("orange", "DEMO-MARQUIS-SIM", MARQUIS)):
+        img, _ = photo(table[key][2], "daylight", 0.65)
+        add(f"blurred_{key}", kit, "daylight", "INCONCLUSIVE", None, "blurred",
+            cv2.GaussianBlur(img, (0, 0), 3.5))
+    img, _ = photo(MARQUIS["noreact"][2], "daylight")
+    add("blurred_heavy_noreact", "DEMO-MARQUIS-SIM", "daylight", "INCONCLUSIVE", None, "blurred",
+        cv2.GaussianBlur(img, (41, 41), 12))
 
     # 4) glare blob over the window
     for key, kit, table in (("orange", "DEMO-MARQUIS-SIM", MARQUIS), ("amber", "DEMO-IODINE", IODINE)):

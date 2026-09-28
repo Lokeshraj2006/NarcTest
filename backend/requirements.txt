@@ -17,10 +17,10 @@ python-jose[cryptography]==3.3.0
 passlib[bcrypt]==1.7.4
 bcrypt==4.2.0
 
-# Image Processing & CV
+# Image Processing & CV (cv2.aruco is in opencv 4.10)
 opencv-python-headless==4.10.0.84
 numpy==1.26.4
-pyzbar==0.1.9
+cryptography>=42
 Pillow==10.4.0
 
 # NTP Time Sync

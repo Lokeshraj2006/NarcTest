@@ -23,7 +23,8 @@ SPEC_PATH = Path(__file__).resolve().parent / "card_spec.json"
 
 # Tuned on the synthetic photos from demo/make_test_images.py
 THRESHOLDS = {
-    "min_blur_score": 60.0,     # variance of Laplacian on the warped card (grey, 0-255)
+    "min_blur_score": 300.0,    # variance of Laplacian on the warped card (grey, scaled to 2 px/mm)
+    "blur_px_per_mm": 2,
     "max_glare_pct": 3.0,       # % of window+patch pixels with R,G,B all > 245 (white patch excluded)
     "glare_level": 245,
     "max_ccm_fit_de": 6.0,      # mean dE2000 of the corrected patches vs their known values
@@ -219,7 +220,10 @@ def measure(image_bytes: bytes) -> dict:
 
     # blur
     grey = cv2.cvtColor(warped, cv2.COLOR_BGR2GRAY)
-    blur = float(cv2.Laplacian(grey, cv2.CV_64F).var())
+    k = THRESHOLDS["blur_px_per_mm"]
+    small = cv2.resize(grey, (int(spec["card_w_mm"] * k), int(spec["card_h_mm"] * k)),
+                       interpolation=cv2.INTER_AREA)  # averages away sensor noise, keeps edges
+    blur = float(cv2.Laplacian(small, cv2.CV_64F).var())
     quality["blur_score"] = round(blur, 1)
     if blur < THRESHOLDS["min_blur_score"]:
         return _fail("blur", quality)
