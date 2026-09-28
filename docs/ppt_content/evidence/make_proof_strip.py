@@ -30,37 +30,65 @@ for key, name in lights:
     sel.append((it, name))
 sel.append((pick(lambda i: 'glare' in str(i.get('kind', '')).lower() or 'glare' in str(i.get('file', '')).lower()), 'Glare on card'))
 
-W, H = 2400, 500
-img = Image.new('RGB', (W, H), 'white'); d = ImageDraw.Draw(img)
+VERTICAL = '--vertical' in sys.argv
 F = lambda s, b=False: ImageFont.truetype('C:/Windows/Fonts/' + ('arialbd.ttf' if b else 'arial.ttf'), s)
 ACC, INK, GREY, RULE = (0x7A, 0x2F, 0x00), (0x1F, 0x1F, 0x1F), (0x6B, 0x6B, 0x6B), (0xD9, 0xD9, 0xD9)
-tw, th, x0, y0, gap = 250, 250, 40, 60, 22
 results = []
-for i, (it, name) in enumerate(sel):
+thumbs = []
+for it, name in sel:
     raw = (TI / it['file']).read_bytes()
     r = ce.classify(raw, prof(it.get('kit', 'DEMO-MARQUIS-SIM')))
     results.append((it['file'], name, r['result'], r['confidence'], it['expected']))
     bgr = cv2.imdecode(np.frombuffer(raw, np.uint8), cv2.IMREAD_COLOR)
-    h, w = bgr.shape[:2]; s = min(h, w); crop = bgr[(h - s)//2:(h + s)//2, (w - s)//2:(w + s)//2]
-    th_img = Image.fromarray(cv2.cvtColor(cv2.resize(crop, (tw, th), interpolation=cv2.INTER_AREA), cv2.COLOR_BGR2RGB))
-    x = x0 + i * (tw + gap)
-    img.paste(th_img, (x, y0)); d.rectangle([x - 1, y0 - 1, x + tw, y0 + th], outline=RULE, width=2)
-    d.text((x, y0 + th + 16), name, font=F(28), fill=GREY)
-    ans = 'NOT SURE' if r['result'] == 'INCONCLUSIVE' else r['result'].title()
-    tail = '' if r['result'] == 'INCONCLUSIVE' else f"  {r['confidence']}%"
-    d.text((x, y0 + th + 54), ans + tail, font=F(34, True), fill=ACC if r['result'] == it['expected'] else (0xC0, 0, 0))
-    d.text((x, y0 + th + 100), 'correct' if r['result'] == it['expected'] else 'WRONG', font=F(26), fill=GREY)
-d.line([(1685, 60), (1685, 460)], fill=RULE, width=2)
-tx = 1720
-d.text((tx, 58), 'Test run, ' + time.strftime('%d %b %Y'), font=F(30), fill=GREY)
-d.text((tx, 100), '15 passed, 0 failed', font=F(52, True), fill=ACC)
-d.text((tx, 175), '37/37 test photos correct', font=F(34), fill=INK)
-d.text((tx, 222), '12/12 bad photos said NOT SURE', font=F(34), fill=INK)
-d.text((tx, 269), 'Tamper: 4/4 caught', font=F(34), fill=INK)
-d.text((tx, 316), 'Real phone: 5 right, 1 not sure, 0 wrong', font=F(30), fill=INK)
-d.text((tx, 400), 'Same purple kit colour, 5 lights.', font=F(26), fill=GREY)
-d.text((tx, 434), 'Simulated swatches, not real reagent.', font=F(26), fill=GREY)
-out = ROOT / 'docs' / 'ppt_content' / 'evidence' / 'proof_strip.png'
+    h, w = bgr.shape[:2]; s_ = min(h, w); crop = bgr[(h - s_)//2:(h + s_)//2, (w - s_)//2:(w + s_)//2]
+    thumbs.append((it, name, r, crop))
+
+def tile(d, img, x, y, tw, it, name, r, fs):
+    img.paste(Image.fromarray(cv2.cvtColor(cv2.resize(r_crop(it), (tw, tw), interpolation=cv2.INTER_AREA), cv2.COLOR_BGR2RGB)), (x, y))
+
+if not VERTICAL:
+    W, H = 2400, 500
+    img = Image.new('RGB', (W, H), 'white'); d = ImageDraw.Draw(img)
+    tw, x0, y0, gap = 250, 40, 60, 22
+    for i, (it, name, r, crop) in enumerate(thumbs):
+        x = x0 + i * (tw + gap)
+        img.paste(Image.fromarray(cv2.cvtColor(cv2.resize(crop, (tw, tw), interpolation=cv2.INTER_AREA), cv2.COLOR_BGR2RGB)), (x, y0))
+        d.rectangle([x - 1, y0 - 1, x + tw, y0 + tw], outline=RULE, width=2)
+        ok = r['result'] == it['expected']
+        d.text((x, y0 + tw + 16), name, font=F(28), fill=GREY)
+        ans = 'NOT SURE' if r['result'] == 'INCONCLUSIVE' else r['result'].title() + f"  {r['confidence']}%"
+        d.text((x, y0 + tw + 54), ans, font=F(34, True), fill=ACC if ok else (0xC0, 0, 0))
+        d.text((x, y0 + tw + 100), 'correct' if ok else 'WRONG', font=F(26), fill=GREY)
+    d.line([(1685, 60), (1685, 460)], fill=RULE, width=2)
+    tx, ty, big, mid, small = 1720, 58, 52, 34, 26
+else:
+    W, H = 1000, 2600
+    img = Image.new('RGB', (W, H), 'white'); d = ImageDraw.Draw(img)
+    tw, x0, y0, gapx, rowh = 430, 50, 50, 40, 560
+    for i, (it, name, r, crop) in enumerate(thumbs):
+        x = x0 + (i % 2) * (tw + gapx); y = y0 + (i // 2) * rowh
+        img.paste(Image.fromarray(cv2.cvtColor(cv2.resize(crop, (tw, tw), interpolation=cv2.INTER_AREA), cv2.COLOR_BGR2RGB)), (x, y))
+        d.rectangle([x - 1, y - 1, x + tw, y + tw], outline=RULE, width=2)
+        ok = r['result'] == it['expected']
+        d.text((x, y + tw + 14), name, font=F(32), fill=GREY)
+        ans = 'NOT SURE' if r['result'] == 'INCONCLUSIVE' else r['result'].title() + f"  {r['confidence']}%"
+        d.text((x, y + tw + 56), ans + ('  - correct' if ok else '  - WRONG'), font=F(36, True), fill=ACC if ok else (0xC0, 0, 0))
+    ly = y0 + 3 * rowh + 10
+    d.line([(x0, ly), (W - x0, ly)], fill=RULE, width=2)
+    tx, ty, big, mid, small = x0, ly + 30, 58, 36, 28
+
+d.text((tx, ty), 'Test run, ' + time.strftime('%d %b %Y'), font=F(30), fill=GREY)
+d.text((tx, ty + 42), '15 passed, 0 failed', font=F(big, True), fill=ACC)
+lines = ['37/37 test photos correct', '12/12 bad photos said NOT SURE', 'Tamper: 4/4 caught', 'Real phone: 5 right, 1 not sure, 0 wrong']
+yy = ty + 42 + big + 24
+for ln in lines:
+    d.text((tx, yy), ln, font=F(mid if not ln.startswith('Real') or VERTICAL else 30), fill=INK); yy += mid + 13
+yy += 30
+d.text((tx, yy), 'Same purple kit colour, 5 lights.', font=F(small), fill=GREY)
+d.text((tx, yy + small + 8), 'Simulated swatches, not real reagent.', font=F(small), fill=GREY)
+if VERTICAL:
+    img = img.crop((0, 0, W, min(H, yy + 2 * small + 60)))
+out = ROOT / 'docs' / 'ppt_content' / 'evidence' / ('proof_vertical.png' if VERTICAL else 'proof_strip.png')
 img.save(out)
 for r in results: print(r)
 print('saved', out)
