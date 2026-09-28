@@ -114,6 +114,10 @@ def build_test_pdf(record: Dict[str, Any], image_bytes: Optional[bytes]) -> byte
     # Photo + QR side by side
     photo = _photo(image_bytes) or _p("(Photo could not be shown)")
     url = record.get("verify_url") or ""
+    # The QR is scanned by OTHER phones, so it must use the laptop's network address, not 127.0.0.1.
+    from app.config import settings
+    if settings.qr_base_url and record.get("id") is not None:
+        url = f"{settings.qr_base_url.rstrip('/')}/v/{record['id']}"
     qr_cell = [_qr(url), _p("Scan to check this record", _SMALL), _p(url, _SMALL)]
     top = Table([[photo, qr_cell]], colWidths=[125 * mm, 55 * mm])
     top.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "TOP")]))

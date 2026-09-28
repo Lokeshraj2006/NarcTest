@@ -47,6 +47,7 @@ class Settings(BaseSettings):
     # ── FieldProof ─────────────────────────────────────────────
     # Base URL printed into QR codes / verify links. Empty = use the request URL.
     public_base_url: Optional[str] = None
+    qr_base_url: Optional[str] = None  # address other phones use to open the PDF's QR link (laptop Wi-Fi IP)
     # Password for the demo users (officer1 / supervisor1 / admin1).
     demo_password: Optional[str] = None
     # Where the Ed25519 signing key lives (gitignored).
