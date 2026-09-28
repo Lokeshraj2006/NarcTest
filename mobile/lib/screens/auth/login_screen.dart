@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../models/user_model.dart';
 import '../../providers/auth_provider.dart';
 import '../../widgets/custom_button.dart';
-import '../admin/admin_home_screen.dart';
-import '../consumer/consumer_home_screen.dart';
-import '../inspector/inspector_home_screen.dart';
+import '../home_screen.dart';
 import '../settings_screen.dart';
 
 /// Role-aware login screen authenticating against the FastAPI backend.
@@ -17,6 +14,9 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  /// Given at build time with --dart-define=DEMO_PASSWORD=... (never hard-coded).
+  static const String _demoPassword = String.fromEnvironment('DEMO_PASSWORD');
+
   final _formKey = GlobalKey<FormState>();
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
@@ -41,20 +41,8 @@ class _LoginScreenState extends State<LoginScreen> {
     if (!mounted) return;
 
     if (success) {
-      Widget target;
-      switch (auth.userRole ?? UserRole.consumer) {
-        case UserRole.admin:
-          target = const AdminHomeScreen();
-          break;
-        case UserRole.inspector:
-          target = const InspectorHomeScreen();
-          break;
-        case UserRole.consumer:
-          target = const ConsumerHomeScreen();
-          break;
-      }
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => target),
+        MaterialPageRoute(builder: (_) => const HomeScreen()),
       );
     } else if (auth.errorMessage != null) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -106,7 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         shape: BoxShape.circle,
                       ),
                       child: Icon(
-                        Icons.qr_code_scanner,
+                        Icons.science_outlined,
                         size: 48,
                         color: Colors.indigo.shade700,
                       ),
@@ -134,14 +122,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   TextFormField(
                     controller: _usernameController,
                     decoration: InputDecoration(
-                      labelText: 'Username or Email',
+                      labelText: 'Username',
                       prefixIcon: const Icon(Icons.person_outline),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
                     validator: (v) =>
-                        v == null || v.trim().isEmpty ? 'Required field' : null,
+                        v == null || v.trim().isEmpty ? 'Please fill this' : null,
                   ),
                   const SizedBox(height: 16),
 
@@ -169,13 +157,13 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     validator: (v) =>
-                        v == null || v.isEmpty ? 'Required field' : null,
+                        v == null || v.isEmpty ? 'Please fill this' : null,
                   ),
                   const SizedBox(height: 24),
 
                   // Submit button
                   CustomButton(
-                    text: 'Sign In',
+                    text: 'Log in',
                     isLoading: auth.isLoading,
                     onPressed: _handleLogin,
                     backgroundColor: Colors.indigo.shade700,
@@ -194,7 +182,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text(
-                          'Demo Quick Sign-In:',
+                          'Demo login (tap to fill):',
                           style: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
@@ -206,10 +194,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           spacing: 8,
                           runSpacing: 6,
                           children: [
-                            // Admin deliberately absent: administrators work
-                            // from the web dashboard, not the field app.
-                            _demoChip('Inspector', 'test_inspector', 'Password123!'),
-                            _demoChip('Consumer', 'test_consumer', 'Password123!'),
+                            _demoChip('officer1'),
+                            _demoChip('supervisor1'),
                           ],
                         ),
                       ],
@@ -224,12 +210,14 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Widget _demoChip(String label, String username, String password) {
+  Widget _demoChip(String username) {
     return ActionChip(
-      label: Text(label, style: const TextStyle(fontSize: 11)),
+      label: Text(username, style: const TextStyle(fontSize: 13)),
       onPressed: () {
         _usernameController.text = username;
-        _passwordController.text = password;
+        if (_demoPassword.isNotEmpty) {
+          _passwordController.text = _demoPassword;
+        }
       },
     );
   }

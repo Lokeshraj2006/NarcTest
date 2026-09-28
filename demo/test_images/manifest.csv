@@ -1,0 +1,36 @@
+file,kit,lighting,kind,expected,expected_label
+marquis_purple_daylight.jpg,DEMO-MARQUIS-SIM,daylight,good,POSITIVE,Opium-type drug (purple)
+marquis_purple_tungsten.jpg,DEMO-MARQUIS-SIM,tungsten,good,POSITIVE,Opium-type drug (purple)
+marquis_purple_cool.jpg,DEMO-MARQUIS-SIM,cool,good,POSITIVE,Opium-type drug (purple)
+marquis_purple_dim.jpg,DEMO-MARQUIS-SIM,dim,good,POSITIVE,Opium-type drug (purple)
+marquis_purple_sodium.jpg,DEMO-MARQUIS-SIM,sodium,good,POSITIVE,Opium-type drug (purple)
+marquis_orange_daylight.jpg,DEMO-MARQUIS-SIM,daylight,good,POSITIVE,Amphetamine-type drug (orange)
+marquis_orange_tungsten.jpg,DEMO-MARQUIS-SIM,tungsten,good,POSITIVE,Amphetamine-type drug (orange)
+marquis_orange_cool.jpg,DEMO-MARQUIS-SIM,cool,good,POSITIVE,Amphetamine-type drug (orange)
+marquis_orange_dim.jpg,DEMO-MARQUIS-SIM,dim,good,POSITIVE,Amphetamine-type drug (orange)
+marquis_orange_sodium.jpg,DEMO-MARQUIS-SIM,sodium,good,POSITIVE,Amphetamine-type drug (orange)
+marquis_noreact_daylight.jpg,DEMO-MARQUIS-SIM,daylight,good,NEGATIVE,No reaction (no colour change)
+marquis_noreact_tungsten.jpg,DEMO-MARQUIS-SIM,tungsten,good,NEGATIVE,No reaction (no colour change)
+marquis_noreact_cool.jpg,DEMO-MARQUIS-SIM,cool,good,NEGATIVE,No reaction (no colour change)
+marquis_noreact_dim.jpg,DEMO-MARQUIS-SIM,dim,good,NEGATIVE,No reaction (no colour change)
+marquis_noreact_sodium.jpg,DEMO-MARQUIS-SIM,sodium,good,NEGATIVE,No reaction (no colour change)
+iodine_starch_daylight.jpg,DEMO-IODINE,daylight,good,POSITIVE,Starch found (blue-black)
+iodine_starch_tungsten.jpg,DEMO-IODINE,tungsten,good,POSITIVE,Starch found (blue-black)
+iodine_starch_cool.jpg,DEMO-IODINE,cool,good,POSITIVE,Starch found (blue-black)
+iodine_starch_dim.jpg,DEMO-IODINE,dim,good,POSITIVE,Starch found (blue-black)
+iodine_starch_sodium.jpg,DEMO-IODINE,sodium,good,POSITIVE,Starch found (blue-black)
+iodine_amber_daylight.jpg,DEMO-IODINE,daylight,good,NEGATIVE,No starch (amber)
+iodine_amber_tungsten.jpg,DEMO-IODINE,tungsten,good,NEGATIVE,No starch (amber)
+iodine_amber_cool.jpg,DEMO-IODINE,cool,good,NEGATIVE,No starch (amber)
+iodine_amber_dim.jpg,DEMO-IODINE,dim,good,NEGATIVE,No starch (amber)
+iodine_amber_sodium.jpg,DEMO-IODINE,sodium,good,NEGATIVE,No starch (amber)
+marquis_ambiguous_daylight.jpg,DEMO-MARQUIS-SIM,daylight,ambiguous,INCONCLUSIVE,
+marquis_ambiguous_tungsten.jpg,DEMO-MARQUIS-SIM,tungsten,ambiguous,INCONCLUSIVE,
+marquis_nomatch_daylight.jpg,DEMO-MARQUIS-SIM,daylight,no_match,INCONCLUSIVE,
+marquis_nomatch_cool.jpg,DEMO-MARQUIS-SIM,cool,no_match,INCONCLUSIVE,
+blurred_purple.jpg,DEMO-MARQUIS-SIM,daylight,blurred,INCONCLUSIVE,
+blurred_starch.jpg,DEMO-IODINE,daylight,blurred,INCONCLUSIVE,
+glare_orange.jpg,DEMO-MARQUIS-SIM,daylight,glare,INCONCLUSIVE,
+glare_amber.jpg,DEMO-IODINE,daylight,glare,INCONCLUSIVE,
+card_missing.jpg,DEMO-MARQUIS-SIM,daylight,missing,INCONCLUSIVE,
+marker_covered.jpg,DEMO-MARQUIS-SIM,daylight,missing,INCONCLUSIVE,

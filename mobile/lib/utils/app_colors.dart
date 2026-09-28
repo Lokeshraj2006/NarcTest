@@ -43,6 +43,23 @@ class AppColors {
   static const Color textPrimary = Color(0xFF111827);
   static const Color textSecondary = Color(0xFF6B7280);
 
+  /// FieldProof test result colours.
+  static const Color positive = Color(0xFFD32F2F); // red
+  static const Color negative = Color(0xFF2E7D32); // green
+  static const Color inconclusive = Color(0xFF6A1B9A); // purple
+
+  static Color forResult(String result) => switch (result.toUpperCase()) {
+        'POSITIVE' => positive,
+        'NEGATIVE' => negative,
+        _ => inconclusive,
+      };
+
+  static String resultTitle(String result) => switch (result.toUpperCase()) {
+        'POSITIVE' => 'POSITIVE',
+        'NEGATIVE' => 'NEGATIVE',
+        _ => 'NOT SURE (INCONCLUSIVE)',
+      };
+
   /// Map pin colour for a given backend `pin_color` string.
   static Color pin(String pinColor) => switch (pinColor) {
         'red' => potentialViolation,

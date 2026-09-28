@@ -1,12 +1,13 @@
-/* FieldProof Controller Dashboard — palette mirrors the mobile app's
-   AppColors so the two surfaces read as one system. */
+/* FieldProof Supervisor Dashboard. Result colours match the mobile app:
+   POSITIVE red, NEGATIVE green, INCONCLUSIVE purple. */
 :root {
-  --primary: #1e3a8a;
-  --primary-dark: #172f6e;
-  --accent: #f59e0b;
-  --compliant: #15803d;
-  --violation: #dc2626;
-  --review: #b45309;
+  --primary: #0f766e;
+  --primary-dark: #115e59;
+  --positive: #dc2626;
+  --negative: #16a34a;
+  --inconclusive: #7c3aed;
+  --compliant: var(--negative);
+  --violation: var(--positive);
   --exempt: #6b7280;
 
   --bg: #f3f4f6;
@@ -149,12 +150,11 @@ tbody tr.clickable { cursor: pointer; }
   letter-spacing: 0.35px;
   white-space: nowrap;
 }
-.badge.pass, .badge.compliant, .badge.confirmed { background: #dcfce7; color: var(--compliant); }
-.badge.fail, .badge.action_needed, .badge.critical { background: #fee2e2; color: var(--violation); }
-.badge.review, .badge.needs_review, .badge.pending_admin_confirmation, .badge.major { background: #fef3c7; color: var(--review); }
-.badge.exempt, .badge.rejected, .badge.closed, .badge.minor { background: #f3f4f6; color: var(--exempt); }
-.badge.notice_generated { background: #dbeafe; color: var(--primary); }
-.badge.moderate { background: #ffedd5; color: #c2410c; }
+.badge.positive, .badge.fail, .badge.retest { background: #fee2e2; color: var(--positive); }
+.badge.negative, .badge.pass, .badge.confirmed { background: #dcfce7; color: #15803d; }
+.badge.inconclusive, .badge.pending { background: #ede9fe; color: var(--inconclusive); }
+.badge.version { background: #e0f2fe; color: #0369a1; }
+.badge.off { background: #f3f4f6; color: var(--exempt); }
 
 /* ── Buttons & inputs ───────────────────────────────────────────── */
 button {
@@ -205,7 +205,7 @@ label { display: block; font-size: 12px; color: var(--text-dim); margin: 10px 0 
   min-height: 100vh;
   display: grid;
   place-items: center;
-  background: linear-gradient(160deg, #0f172a, #1e3a8a);
+  background: linear-gradient(160deg, #0f172a, #0f766e);
   padding: 20px;
 }
 .login-card {
@@ -256,7 +256,7 @@ label { display: block; font-size: 12px; color: var(--text-dim); margin: 10px 0 
 .kv dt { color: var(--text-dim); font-size: 12px; }
 .kv dd { margin: 0; word-break: break-word; }
 
-/* ── Scan audit flags (System Log) ──────────────────────────────── */
+/* ── Small flags ──────────────────────────────── */
 .flag {
   display: inline-block;
   margin: 5px 5px 0 0;
@@ -280,7 +280,7 @@ label { display: block; font-size: 12px; color: var(--text-dim); margin: 10px 0 
 .edits { margin: 0; padding-left: 16px; }
 .edits li { margin-bottom: 2px; }
 
-/* ── Evidence photo (report detail) ─────────────────────────────── */
+/* ── Test photo ─────────────────────────────── */
 .photo-frame {
   display: block;
   width: 100%;
@@ -320,21 +320,53 @@ label { display: block; font-size: 12px; color: var(--text-dim); margin: 10px 0 
   cursor: zoom-out;
 }
 .lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 6px; }
-.extra-photos-block { margin-top: 14px; font-size: 13px; }
-.extra-photos {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 10px;
-}
-.extra-photos figure { margin: 0; }
-.extra-photos .photo-frame img { height: 140px; object-fit: cover; }
-.extra-photos .photo-empty { min-height: 140px; }
-.extra-photos figcaption {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 6px;
-  margin-top: 6px;
-  font-size: 12px;
-  color: var(--text-dim);
-}
+
+/* ── FieldProof additions ───────────────────────────────────────── */
+.spacer { flex: 1; }
+.btn-link { display: inline-block; text-decoration: none; padding: 8px 14px; border-radius: 7px; border: 1px solid var(--border); }
+tbody tr.selected { background: #ecfeff; }
+
+.filters { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0 12px; align-items: end; }
+.filters label { margin-top: 0; }
+.filter-btns { padding-top: 8px; }
+
+.split { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+@media (max-width: 1000px) { .split { grid-template-columns: 1fr; } }
+
+.panel-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+.panel-head h3 { margin: 0; }
+.detail-panel .photo-frame img { max-height: 320px; }
+
+.result-banner { color: #fff; border-radius: 10px; padding: 14px 16px; margin: 14px 0; }
+.result-banner.positive { background: var(--positive); }
+.result-banner.negative { background: var(--negative); }
+.result-banner.inconclusive { background: var(--inconclusive); }
+.result-banner .big { font-size: 22px; font-weight: 800; letter-spacing: 0.5px; }
+.result-banner .small { font-size: 12px; opacity: 0.9; margin-top: 2px; }
+
+.chip { display: inline-block; border-radius: 5px; border: 1px solid rgba(0, 0, 0, 0.2); vertical-align: middle; }
+.chips { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+
+.form-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0 14px; }
+.rgb-inputs { display: flex; gap: 4px; min-width: 190px; }
+.rgb-inputs input { padding: 7px 6px; }
+.switch { display: inline-flex; align-items: center; gap: 6px; margin: 0; font-size: 13px; color: var(--text); }
+.switch input { width: auto; }
+.outcome-list { display: flex; gap: 12px; flex-wrap: wrap; }
+.outcome { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; }
+
+/* ── Public verify page ─────────────────────────────────────────── */
+.verify-wrap { min-height: 100vh; background: var(--bg); padding: 16px; display: flex; justify-content: center; }
+.verify-card { background: var(--surface); width: 100%; max-width: 560px; border-radius: 14px; padding: 22px; box-shadow: var(--shadow); align-self: flex-start; }
+.verify-brand { color: var(--text-dim); margin-bottom: 12px; }
+.verify-brand strong { color: var(--primary); font-size: 16px; }
+.verify-banner { color: #fff; border-radius: 12px; padding: 22px 18px; text-align: center; margin-bottom: 18px; }
+.verify-banner.good { background: var(--negative); }
+.verify-banner.bad { background: var(--positive); }
+.verify-banner .big { font-size: 30px; font-weight: 800; margin-bottom: 6px; }
+.checks { list-style: none; padding: 0; margin: 0 0 16px; }
+.checks li { padding: 8px 10px; border-radius: 8px; margin-bottom: 6px; font-size: 14px; }
+.checks li.pass { background: #f0fdf4; color: #166534; }
+.checks li.fail { background: #fef2f2; color: #991b1b; font-weight: 600; }
+.checks .tick { font-weight: 800; margin-right: 6px; }
+@media (max-width: 560px) { .kv { grid-template-columns: 120px 1fr; } .shell { flex-direction: column; } .sidebar { width: 100%; } }

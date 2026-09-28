@@ -11,21 +11,21 @@ export default function Login() {
   const location = useLocation();
 
   if (user) {
-    const to = location.state?.from?.pathname || '/queue';
+    const to = location.state?.from?.pathname || '/tests';
     return <Navigate to={to} replace />;
   }
 
   const submit = async (e) => {
     e.preventDefault();
     const ok = await login(username.trim(), password);
-    if (ok) navigate(location.state?.from?.pathname || '/queue', { replace: true });
+    if (ok) navigate(location.state?.from?.pathname || '/tests', { replace: true });
   };
 
   return (
     <div className="login-wrap">
       <form className="login-card" onSubmit={submit}>
         <h1>FieldProof</h1>
-        <div className="sub">Supervisor / Admin sign in</div>
+        <div className="sub">Field Drug Testing - Supervisor Dashboard</div>
 
         {error && <div className="alert error">{error}</div>}
 
@@ -54,13 +54,13 @@ export default function Login() {
           style={{ width: '100%', marginTop: 18 }}
           disabled={busy || !username || !password}
         >
-          {busy ? 'Signing in…' : 'Sign in'}
+          {busy ? 'Signing in...' : 'Sign in'}
         </button>
 
         <div className="muted" style={{ marginTop: 16, textAlign: 'center' }}>
-          Inspectors and consumers use the mobile app.
+          Demo users: officer1, supervisor1, admin1
           <br />
-          <span className="mono" style={{ fontSize: 10.5 }}>{API_BASE}</span>
+          <span className="mono" style={{ fontSize: 10.5 }}>Server: {API_BASE}</span>
         </div>
       </form>
     </div>

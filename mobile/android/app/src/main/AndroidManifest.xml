@@ -38,12 +38,6 @@
             android:name="flutterEmbedding"
             android:value="2" />
 
-        <!-- Google ML Kit — pre-download OCR + barcode models at install time
-             instead of on first scan (avoids the first-run cold-start delay). -->
-        <meta-data
-            android:name="com.google.mlkit.vision.DEPENDENCIES"
-            android:value="ocr,barcode" />
-
         <!-- FileProvider so open_filex can hand downloaded legal-notice PDFs
              to the system PDF viewer on Android 7+ (avoids FileUriExposedException). -->
         <provider
@@ -63,6 +57,15 @@
         <intent>
             <action android:name="android.intent.action.VIEW" />
             <data android:mimeType="application/pdf" />
+        </intent>
+        <!-- url_launcher: open the public verify page in the browser. -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="http" />
         </intent>
     </queries>
 </manifest>

@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "FieldProof — Field Drug Testing Dashboard admin dashboard (SIH26231)",
+  "description": "FieldProof - Field Drug Testing Supervisor Dashboard (SIH26231)",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

@@ -1,13 +1,14 @@
 import { Component, useEffect, useState } from 'react';
-import { NavLink, Navigate, Outlet, Route, Routes, useNavigate } from 'react-router-dom';
+import { NavLink, Navigate, Outlet, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { API_BASE, api } from './api';
-import { RequireAuth, useAuth } from './auth';
+import { RequireAuth, isSupervisor, useAuth } from './auth';
+import Kits from './pages/Kits';
 import Login from './pages/Login';
-import MapView from './pages/MapView';
-import Queue from './pages/Queue';
-import ReportDetail from './pages/ReportDetail';
-import Rules from './pages/Rules';
-import SystemLog from './pages/SystemLog';
+import Review from './pages/Review';
+import TestDetail from './pages/TestDetail';
+import TestLog from './pages/TestLog';
+import TestMap from './pages/TestMap';
+import Verify from './pages/Verify';
 
 /**
  * Without this, any render error produces a blank white page with the cause
@@ -27,8 +28,8 @@ class ErrorBoundary extends Component {
     if (!this.state.error) return this.props.children;
     return (
       <div style={{ padding: 32, fontFamily: 'system-ui, sans-serif' }}>
-        <h2 style={{ color: '#dc2626', marginTop: 0 }}>Dashboard error</h2>
-        <p>Something failed while rendering. The details:</p>
+        <h2 style={{ color: '#dc2626', marginTop: 0 }}>Oops, the page crashed</h2>
+        <p>Something went wrong. Details for the tech team:</p>
         <pre
           style={{
             background: '#fef2f2',
@@ -48,7 +49,7 @@ class ErrorBoundary extends Component {
             padding: '8px 14px',
             borderRadius: 7,
             border: 0,
-            background: '#1e3a8a',
+            background: '#0f766e',
             color: '#fff',
             cursor: 'pointer',
           }}
@@ -60,9 +61,12 @@ class ErrorBoundary extends Component {
   }
 }
 
+const ROLE_NAMES = { field_officer: 'Field officer', supervisor: 'Supervisor', admin: 'Admin' };
+
 function Sidebar({ pendingCount }) {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
+  const sup = isSupervisor(user);
 
   const signOut = () => {
     logout();
@@ -73,20 +77,24 @@ function Sidebar({ pendingCount }) {
     <aside className="sidebar">
       <div className="brand">
         <h1>FieldProof</h1>
-        <span>Field Drug Testing Dashboard</span>
+        <span>Field Drug Testing - Supervisor Dashboard</span>
       </div>
 
-      <NavLink to="/queue" className="nav-link">
-        Violation Queue
-        {pendingCount > 0 && <span className="nav-badge">{pendingCount}</span>}
-      </NavLink>
+      <NavLink to="/tests" className="nav-link">Test Log</NavLink>
       <NavLink to="/map" className="nav-link">Map</NavLink>
-      <NavLink to="/log" className="nav-link">System Log</NavLink>
-      <NavLink to="/rules" className="nav-link">Rule Catalogue</NavLink>
+      <NavLink to="/kits" className="nav-link">Kits</NavLink>
+      {sup && (
+        <NavLink to="/review" className="nav-link">
+          Review
+          {pendingCount > 0 && <span className="nav-badge">{pendingCount}</span>}
+        </NavLink>
+      )}
 
       <div className="sidebar-footer">
         <div style={{ marginBottom: 4 }}>{user?.fullName}</div>
-        <div style={{ fontSize: 11, marginBottom: 10 }}>{user?.username} · admin</div>
+        <div style={{ fontSize: 11, marginBottom: 10 }}>
+          {user?.username} - {ROLE_NAMES[user?.role] || user?.role}
+        </div>
         <button
           className="btn-ghost"
           style={{ width: '100%', color: '#cbd5e1', borderColor: '#334155' }}
@@ -99,20 +107,22 @@ function Sidebar({ pendingCount }) {
   );
 }
 
-/** Layout route — renders the matched child page through <Outlet />. */
+/** Layout route: renders the matched page through <Outlet />. */
 function Shell() {
+  const { user } = useAuth();
+  const sup = isSupervisor(user);
   const [pendingCount, setPendingCount] = useState(0);
 
-  // Poll the pending queue so the badge reflects newly filed reports without
-  // the Controller needing to refresh. Cheap query, 20s is plenty.
+  // Poll the review list so the badge stays fresh.
   useEffect(() => {
+    if (!sup) return undefined;
     let alive = true;
     const load = async () => {
       try {
-        const res = await api.listReports('pending_admin_confirmation');
-        if (alive) setPendingCount(res.total ?? 0);
+        const rows = await api.pendingReviews();
+        if (alive) setPendingCount(rows.length);
       } catch {
-        /* badge is non-critical; page-level errors surface elsewhere */
+        /* badge is not critical */
       }
     };
     load();
@@ -121,7 +131,7 @@ function Shell() {
       alive = false;
       clearInterval(t);
     };
-  }, []);
+  }, [sup]);
 
   return (
     <div className="shell">
@@ -133,8 +143,15 @@ function Shell() {
   );
 }
 
+function SupervisorOnly({ children }) {
+  const { user } = useAuth();
+  if (!isSupervisor(user)) return <Navigate to="/tests" replace />;
+  return children;
+}
+
 export default function App() {
   const [backendUp, setBackendUp] = useState(null);
+  const isPublic = useLocation().pathname.startsWith('/verify/');
 
   useEffect(() => {
     api.health().then(() => setBackendUp(true)).catch(() => setBackendUp(false));
@@ -142,11 +159,11 @@ export default function App() {
 
   return (
     <ErrorBoundary>
-      {backendUp === false && (
+      {backendUp === false && !isPublic && (
         <div className="alert error" style={{ margin: 0, borderRadius: 0 }}>
-          Cannot reach the backend at <strong>{API_BASE}</strong>. Start it with{' '}
+          Cannot reach the server at <strong>{API_BASE}</strong>. Start it with{' '}
           <span className="mono">python -m uvicorn app.main:app --port 8000</span> from
-          the Backend folder.
+          the backend folder.
         </div>
       )}
 
@@ -155,6 +172,7 @@ export default function App() {
           rejects absolute child paths in that arrangement. */}
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/verify/:id" element={<Verify />} />
         <Route
           element={
             <RequireAuth>
@@ -162,13 +180,20 @@ export default function App() {
             </RequireAuth>
           }
         >
-          <Route path="/queue" element={<Queue />} />
-          <Route path="/reports/:id" element={<ReportDetail />} />
-          <Route path="/map" element={<MapView />} />
-          <Route path="/log" element={<SystemLog />} />
-          <Route path="/rules" element={<Rules />} />
+          <Route path="/tests" element={<TestLog />} />
+          <Route path="/tests/:id" element={<TestDetail />} />
+          <Route path="/map" element={<TestMap />} />
+          <Route path="/kits" element={<Kits />} />
+          <Route
+            path="/review"
+            element={
+              <SupervisorOnly>
+                <Review />
+              </SupervisorOnly>
+            }
+          />
         </Route>
-        <Route path="*" element={<Navigate to="/queue" replace />} />
+        <Route path="*" element={<Navigate to="/tests" replace />} />
       </Routes>
     </ErrorBoundary>
   );

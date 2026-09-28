@@ -1,5 +1,5 @@
 name: labelguard_mobile
-description: "FieldProof — Mobile app for Legal Metrology Packaged Commodities compliance checking (SIH26231)"
+description: "FieldProof — Digital companion for field drug testing (SIH26231)"
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -19,9 +19,6 @@ dependencies:
   # Secure Storage & JWT
   flutter_secure_storage: ^9.2.2
 
-  # Machine Learning (On-device OCR & Barcode)
-  google_mlkit_text_recognition: ^0.13.0
-  google_mlkit_barcode_scanning: ^0.12.0
 
   # Hardware & Location
   camera: ^0.11.0+2

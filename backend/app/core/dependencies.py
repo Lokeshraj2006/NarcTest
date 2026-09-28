@@ -90,6 +90,10 @@ def require_roles(*allowed_roles: UserRole | str) -> Callable[[User], User]:
 
 # Convenience role dependencies for route declarations
 require_admin = require_roles(UserRole.ADMIN)
-require_inspector = require_roles(UserRole.INSPECTOR)
-require_inspector_or_admin = require_roles(UserRole.INSPECTOR, UserRole.ADMIN)
+require_supervisor_or_admin = require_roles(UserRole.SUPERVISOR, UserRole.ADMIN)
 require_authenticated_user = get_current_active_user
+
+
+def role_of(user: User) -> str:
+    """Role as a plain lowercase string."""
+    return user.role.value if isinstance(user.role, UserRole) else str(user.role)

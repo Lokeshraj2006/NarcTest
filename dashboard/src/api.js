@@ -58,14 +58,14 @@ async function request(
     });
   } catch {
     throw new ApiError(
-      `Cannot reach the backend at ${BASE}. Is it running?`,
+      `Cannot reach the backend at ${BASE}. Is the backend running?`,
       0,
     );
   }
 
   if (res.status === 401) {
     clearSession();
-    throw new ApiError('Session expired — please sign in again.', 401);
+    throw new ApiError('Your login has expired. Please sign in again.', 401);
   }
 
   if (!res.ok) {
@@ -86,72 +86,48 @@ async function request(
   return res.json();
 }
 
+const withHash = async (res) => ({
+  blob: await res.blob(),
+  hashMatches: res.headers.get('X-Evidence-Sha256-Match') === 'true',
+});
+
+// Lists may come back as a plain array or wrapped as {rows}/{items}.
+export const asList = (x) =>
+  Array.isArray(x) ? x : x?.rows || x?.items || x?.tests || x?.kits || [];
+
 export const api = {
-  // ── auth ───────────────────────────────────────────────────────────
   login: (usernameOrEmail, password) =>
     request('/auth/login', {
       method: 'POST',
       body: { username_or_email: usernameOrEmail, password },
     }),
-
   health: () => request('/health'),
 
-  // ── violation queue (the admin's core workflow) ────────────────────
-  listReports: (status) => request('/violations', { params: { status, limit: 500 } }),
-  getReport: (id) => request(`/violations/${id}`),
-  confirmReport: (id, adminNotes) =>
-    request(`/violations/${id}/confirm`, {
-      method: 'POST',
-      body: { admin_notes: adminNotes || null },
-    }),
-  rejectReport: (id, adminNotes) =>
-    request(`/violations/${id}/reject`, {
-      method: 'POST',
-      body: { admin_notes: adminNotes || null },
-    }),
-  issueNotice: (id, days = 15) =>
-    request(`/violations/${id}/notice`, {
-      method: 'POST',
-      params: { response_deadline_days: days },
-    }),
-  noticePdf: (id) => request(`/violations/${id}/notice.pdf`, { raw: true }),
-  // The compliance report of one scan (the inspection report, not the notice).
-  complianceReportPdf: (evidenceId) =>
-    request(`/legal-notice/${evidenceId}/generate`, { raw: true }),
+  // tests
+  listTests: (filters) => request('/tests', { params: filters }).then(asList),
+  getTest: (id) => request(`/tests/${id}`),
+  testImage: async (id) =>
+    withHash(await request(`/tests/${id}/image`, { accept: 'image/*', rawResponse: true })),
+  testPdf: (id) => request(`/tests/${id}/pdf`, { raw: true }),
+  exportCsv: (filters) =>
+    request('/tests/export.csv', { params: filters, accept: 'text/csv', rawResponse: true }).then(
+      (r) => r.blob(),
+    ),
 
-  // ── rule catalogue ─────────────────────────────────────────────────
-  listRules: () => request('/rules'),
-  updateRule: (id, patch) => request(`/rules/${id}`, { method: 'PATCH', body: patch }),
+  // review
+  pendingReviews: () => request('/reviews/pending').then(asList),
+  reviewTest: (id, decision, note) =>
+    request(`/tests/${id}/review`, { method: 'POST', body: { decision, note: note || '' } }),
 
-  // ── system-wide view ───────────────────────────────────────────────
-  inspectionLog: (onlyActionNeeded = false) =>
-    request('/inspections/log', {
-      params: { limit: 500, only_action_needed: onlyActionNeeded },
-    }),
-  inspectionDetail: (evidenceId) => request(`/inspections/${evidenceId}`),
-  // The label photo, and whether it still matches the SHA-256 recorded at capture.
-  evidenceImage: async (evidenceId) => {
-    const res = await request(`/inspections/${evidenceId}/image`, {
-      accept: 'image/*',
-      rawResponse: true,
-    });
-    return {
-      blob: await res.blob(),
-      hashMatches: res.headers.get('X-Evidence-Sha256-Match') === 'true',
-    };
-  },
-  // A photo of another face of the pack sent with the scan, same fingerprint check.
-  extraImage: async (evidenceId, index) => {
-    const res = await request(`/inspections/${evidenceId}/extra-image/${index}`, {
-      accept: 'image/*',
-      rawResponse: true,
-    });
-    return {
-      blob: await res.blob(),
-      hashMatches: res.headers.get('X-Evidence-Sha256-Match') === 'true',
-    };
-  },
-  pendingComplaints: () => request('/complaints/pending', { params: { limit: 500 } }),
+  // kits
+  listKits: () => request('/kits').then(asList),
+  listAllKits: () => request('/kits/all').then(asList),
+  updateKit: (id, kit) => request(`/kits/${id}`, { method: 'PUT', body: kit }),
+  setKitActive: (id, isActive) =>
+    request(`/kits/${id}/active`, { method: 'PATCH', body: { is_active: isActive } }),
+
+  // public
+  verify: (id) => request(`/verify/${id}`),
 };
 
 export const API_BASE = BASE;

@@ -1,0 +1,282 @@
+[
+  {
+    "file": "marquis_purple_daylight.jpg",
+    "kit": "DEMO-MARQUIS-SIM",
+    "lighting": "daylight",
+    "kind": "good",
+    "expected": "POSITIVE",
+    "expected_label": "Opium-type drug (purple)"
+  },
+  {
+    "file": "marquis_purple_tungsten.jpg",
+    "kit": "DEMO-MARQUIS-SIM",
+    "lighting": "tungsten",
+    "kind": "good",
+    "expected": "POSITIVE",
+    "expected_label": "Opium-type drug (purple)"
+  },
+  {
+    "file": "marquis_purple_cool.jpg",
+    "kit": "DEMO-MARQUIS-SIM",
+    "lighting": "cool",
+    "kind": "good",
+    "expected": "POSITIVE",
+    "expected_label": "Opium-type drug (purple)"
+  },
+  {
+    "file": "marquis_purple_dim.jpg",
+    "kit": "DEMO-MARQUIS-SIM",
+    "lighting": "dim",
+    "kind": "good",
+    "expected": "POSITIVE",
+    "expected_label": "Opium-type drug (purple)"
+  },
+  {
+    "file": "marquis_purple_sodium.jpg",
+    "kit": "DEMO-MARQUIS-SIM",
+    "lighting": "sodium",
+    "kind": "good",
+    "expected": "POSITIVE",
+    "expected_label": "Opium-type drug (purple)"
+  },
+  {
+    "file": "marquis_orange_daylight.jpg",
+    "kit": "DEMO-MARQUIS-SIM",
+    "lighting": "daylight",
+    "kind": "good",
+    "expected": "POSITIVE",
+    "expected_label": "Amphetamine-type drug (orange)"
+  },
+  {
+    "file": "marquis_orange_tungsten.jpg",
+    "kit": "DEMO-MARQUIS-SIM",
+    "lighting": "tungsten",
+    "kind": "good",
+    "expected": "POSITIVE",
+    "expected_label": "Amphetamine-type drug (orange)"
+  },
+  {
+    "file": "marquis_orange_cool.jpg",
+    "kit": "DEMO-MARQUIS-SIM",
+    "lighting": "cool",
+    "kind": "good",
+    "expected": "POSITIVE",
+    "expected_label": "Amphetamine-type drug (orange)"
+  },
+  {
+    "file": "marquis_orange_dim.jpg",
+    "kit": "DEMO-MARQUIS-SIM",
+    "lighting": "dim",
+    "kind": "good",
+    "expected": "POSITIVE",
+    "expected_label": "Amphetamine-type drug (orange)"
+  },
+  {
+    "file": "marquis_orange_sodium.jpg",
+    "kit": "DEMO-MARQUIS-SIM",
+    "lighting": "sodium",
+    "kind": "good",
+    "expected": "POSITIVE",
+    "expected_label": "Amphetamine-type drug (orange)"
+  },
+  {
+    "file": "marquis_noreact_daylight.jpg",
+    "kit": "DEMO-MARQUIS-SIM",
+    "lighting": "daylight",
+    "kind": "good",
+    "expected": "NEGATIVE",
+    "expected_label": "No reaction (no colour change)"
+  },
+  {
+    "file": "marquis_noreact_tungsten.jpg",
+    "kit": "DEMO-MARQUIS-SIM",
+    "lighting": "tungsten",
+    "kind": "good",
+    "expected": "NEGATIVE",
+    "expected_label": "No reaction (no colour change)"
+  },
+  {
+    "file": "marquis_noreact_cool.jpg",
+    "kit": "DEMO-MARQUIS-SIM",
+    "lighting": "cool",
+    "kind": "good",
+    "expected": "NEGATIVE",
+    "expected_label": "No reaction (no colour change)"
+  },
+  {
+    "file": "marquis_noreact_dim.jpg",
+    "kit": "DEMO-MARQUIS-SIM",
+    "lighting": "dim",
+    "kind": "good",
+    "expected": "NEGATIVE",
+    "expected_label": "No reaction (no colour change)"
+  },
+  {
+    "file": "marquis_noreact_sodium.jpg",
+    "kit": "DEMO-MARQUIS-SIM",
+    "lighting": "sodium",
+    "kind": "good",
+    "expected": "NEGATIVE",
+    "expected_label": "No reaction (no colour change)"
+  },
+  {
+    "file": "iodine_starch_daylight.jpg",
+    "kit": "DEMO-IODINE",
+    "lighting": "daylight",
+    "kind": "good",
+    "expected": "POSITIVE",
+    "expected_label": "Starch found (blue-black)"
+  },
+  {
+    "file": "iodine_starch_tungsten.jpg",
+    "kit": "DEMO-IODINE",
+    "lighting": "tungsten",
+    "kind": "good",
+    "expected": "POSITIVE",
+    "expected_label": "Starch found (blue-black)"
+  },
+  {
+    "file": "iodine_starch_cool.jpg",
+    "kit": "DEMO-IODINE",
+    "lighting": "cool",
+    "kind": "good",
+    "expected": "POSITIVE",
+    "expected_label": "Starch found (blue-black)"
+  },
+  {
+    "file": "iodine_starch_dim.jpg",
+    "kit": "DEMO-IODINE",
+    "lighting": "dim",
+    "kind": "good",
+    "expected": "POSITIVE",
+    "expected_label": "Starch found (blue-black)"
+  },
+  {
+    "file": "iodine_starch_sodium.jpg",
+    "kit": "DEMO-IODINE",
+    "lighting": "sodium",
+    "kind": "good",
+    "expected": "POSITIVE",
+    "expected_label": "Starch found (blue-black)"
+  },
+  {
+    "file": "iodine_amber_daylight.jpg",
+    "kit": "DEMO-IODINE",
+    "lighting": "daylight",
+    "kind": "good",
+    "expected": "NEGATIVE",
+    "expected_label": "No starch (amber)"
+  },
+  {
+    "file": "iodine_amber_tungsten.jpg",
+    "kit": "DEMO-IODINE",
+    "lighting": "tungsten",
+    "kind": "good",
+    "expected": "NEGATIVE",
+    "expected_label": "No starch (amber)"
+  },
+  {
+    "file": "iodine_amber_cool.jpg",
+    "kit": "DEMO-IODINE",
+    "lighting": "cool",
+    "kind": "good",
+    "expected": "NEGATIVE",
+    "expected_label": "No starch (amber)"
+  },
+  {
+    "file": "iodine_amber_dim.jpg",
+    "kit": "DEMO-IODINE",
+    "lighting": "dim",
+    "kind": "good",
+    "expected": "NEGATIVE",
+    "expected_label": "No starch (amber)"
+  },
+  {
+    "file": "iodine_amber_sodium.jpg",
+    "kit": "DEMO-IODINE",
+    "lighting": "sodium",
+    "kind": "good",
+    "expected": "NEGATIVE",
+    "expected_label": "No starch (amber)"
+  },
+  {
+    "file": "marquis_ambiguous_daylight.jpg",
+    "kit": "DEMO-MARQUIS-SIM",
+    "lighting": "daylight",
+    "kind": "ambiguous",
+    "expected": "INCONCLUSIVE",
+    "expected_label": null
+  },
+  {
+    "file": "marquis_ambiguous_tungsten.jpg",
+    "kit": "DEMO-MARQUIS-SIM",
+    "lighting": "tungsten",
+    "kind": "ambiguous",
+    "expected": "INCONCLUSIVE",
+    "expected_label": null
+  },
+  {
+    "file": "marquis_nomatch_daylight.jpg",
+    "kit": "DEMO-MARQUIS-SIM",
+    "lighting": "daylight",
+    "kind": "no_match",
+    "expected": "INCONCLUSIVE",
+    "expected_label": null
+  },
+  {
+    "file": "marquis_nomatch_cool.jpg",
+    "kit": "DEMO-MARQUIS-SIM",
+    "lighting": "cool",
+    "kind": "no_match",
+    "expected": "INCONCLUSIVE",
+    "expected_label": null
+  },
+  {
+    "file": "blurred_purple.jpg",
+    "kit": "DEMO-MARQUIS-SIM",
+    "lighting": "daylight",
+    "kind": "blurred",
+    "expected": "INCONCLUSIVE",
+    "expected_label": null
+  },
+  {
+    "file": "blurred_starch.jpg",
+    "kit": "DEMO-IODINE",
+    "lighting": "daylight",
+    "kind": "blurred",
+    "expected": "INCONCLUSIVE",
+    "expected_label": null
+  },
+  {
+    "file": "glare_orange.jpg",
+    "kit": "DEMO-MARQUIS-SIM",
+    "lighting": "daylight",
+    "kind": "glare",
+    "expected": "INCONCLUSIVE",
+    "expected_label": null
+  },
+  {
+    "file": "glare_amber.jpg",
+    "kit": "DEMO-IODINE",
+    "lighting": "daylight",
+    "kind": "glare",
+    "expected": "INCONCLUSIVE",
+    "expected_label": null
+  },
+  {
+    "file": "card_missing.jpg",
+    "kit": "DEMO-MARQUIS-SIM",
+    "lighting": "daylight",
+    "kind": "missing",
+    "expected": "INCONCLUSIVE",
+    "expected_label": null
+  },
+  {
+    "file": "marker_covered.jpg",
+    "kit": "DEMO-MARQUIS-SIM",
+    "lighting": "daylight",
+    "kind": "missing",
+    "expected": "INCONCLUSIVE",
+    "expected_label": null
+  }
+]

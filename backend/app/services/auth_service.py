@@ -38,7 +38,7 @@ def create_user(db: Session, user_in: UserCreate) -> User:
         username=user_in.username.lower(),
         hashed_password=get_password_hash(user_in.password),
         full_name=user_in.full_name,
-        role=user_in.role,
+        role=user_in.role.value if hasattr(user_in.role, "value") else str(user_in.role),
         badge_number=user_in.badge_number,
         phone_number=user_in.phone_number,
         is_active=True,

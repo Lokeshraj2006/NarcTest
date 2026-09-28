@@ -1,38 +1,37 @@
 """
 FieldProof — Application Configuration
 
-Centralised settings loaded from environment variables / .env file.
-Uses pydantic-settings for validation and type coercion.
+Centralised settings loaded from environment variables / backend/.env.
 """
 
 from __future__ import annotations
 
-from typing import List
+from pathlib import Path
+from typing import List, Optional
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+BACKEND_DIR = Path(__file__).resolve().parent.parent
 
 
 class Settings(BaseSettings):
     """Application-wide settings, sourced from env vars / .env file."""
 
     model_config = SettingsConfigDict(
-        env_file=".env",
+        env_file=str(BACKEND_DIR / ".env"),
         env_file_encoding="utf-8",
         case_sensitive=False,
+        extra="ignore",
     )
 
     # ── Database ───────────────────────────────────────────────
-    database_url: str = "postgresql://fieldproof:fieldproof_dev@localhost:5432/fieldproof_db"
+    # SQLite for the quick demo, PostgreSQL later (both work).
+    database_url: str = "sqlite:///./fieldproof.db"
 
     # ── JWT / Auth ─────────────────────────────────────────────
     secret_key: str = "CHANGE_ME"
     algorithm: str = "HS256"
-    access_token_expire_minutes: int = 60
-
-    # ── Evidence storage ───────────────────────────────────────
-    storage_backend: str = "local"  # "local" | "gcs"
-    local_storage_path: str = "./uploads"
-    gcs_bucket_name: str | None = None
+    access_token_expire_minutes: int = 480
 
     # ── NTP ────────────────────────────────────────────────────
     ntp_server: str = "pool.ntp.org"
@@ -44,6 +43,16 @@ class Settings(BaseSettings):
     debug: bool = False
     log_level: str = "INFO"
     cors_origins: List[str] = ["http://localhost:5173", "http://localhost:3000"]
+
+    # ── FieldProof ─────────────────────────────────────────────
+    # Base URL printed into QR codes / verify links. Empty = use the request URL.
+    public_base_url: Optional[str] = None
+    # Password for the demo users (officer1 / supervisor1 / admin1).
+    demo_password: Optional[str] = None
+    # Where the Ed25519 signing key lives (gitignored).
+    keys_dir: str = str(BACKEND_DIR / "keys")
+    # Where uploaded test photos are stored (gitignored).
+    uploads_dir: str = str(BACKEND_DIR / "uploads")
 
 
 # Singleton instance — import this everywhere

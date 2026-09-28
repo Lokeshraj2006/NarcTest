@@ -3,6 +3,9 @@ import { Navigate, useLocation } from 'react-router-dom';
 import { api, clearSession, getUser, setToken, setUser } from './api';
 
 const AuthContext = createContext(null);
+export const ROLES = ['field_officer', 'supervisor', 'admin'];
+export const isSupervisor = (u) => u?.role === 'supervisor' || u?.role === 'admin';
+export const isAdmin = (u) => u?.role === 'admin';
 
 export function AuthProvider({ children }) {
   const [user, setUserState] = useState(getUser);
@@ -18,17 +21,12 @@ export function AuthProvider({ children }) {
         id: res.user_id ?? null,
         username: res.username ?? username,
         fullName: res.full_name ?? username,
-        role: res.role ?? 'consumer',
+        role: res.role ?? '',
       };
-      // The dashboard is the Controller's tool. An inspector or consumer
-      // signing in here would see an empty, confusing shell, so refuse
-      // clearly rather than degrading.
-      if (profile.role !== 'admin') {
+      profile.role = String(profile.role).toLowerCase();
+      if (!ROLES.includes(profile.role)) {
         clearSession();
-        setError(
-          `This dashboard is for administrators. '${profile.username}' is a ${profile.role} — ` +
-            'please use the mobile app instead.',
-        );
+        setError(`'${profile.username}' has role '${profile.role}', which cannot use this dashboard.`);
         return false;
       }
       setToken(res.access_token);
@@ -36,7 +34,7 @@ export function AuthProvider({ children }) {
       setUserState(profile);
       return true;
     } catch (e) {
-      setError(e.message || 'Sign in failed.');
+      setError(e.message || 'Sign in failed. Check your username and password.');
       return false;
     } finally {
       setBusy(false);

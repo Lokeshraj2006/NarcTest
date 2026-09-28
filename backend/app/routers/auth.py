@@ -31,21 +31,16 @@ router = APIRouter(prefix="/auth", tags=["authentication"])
     summary="Register a new user account",
 )
 def register(user_in: UserCreate, db: Session = Depends(get_db)):
-    """Public sign-up, for consumers only.
+    """Public sign-up is switched off.
 
-    Inspector and admin accounts carry enforcement powers, so a stranger must
-    not be able to give themselves one: the Controller creates them through
-    ``POST /auth/users``, and the first admin comes from ``app.scripts.create_user``.
+    Every FieldProof account can create or read legal evidence, so only an
+    admin creates accounts (``POST /auth/users``). The first admin comes from
+    ``app.scripts.create_user`` or ``app.scripts.seed_demo``.
     """
-    if user_in.role != UserRole.CONSUMER:
-        raise HTTPException(
-            status_code=status.HTTP_403_FORBIDDEN,
-            detail=(
-                "Public sign-up creates consumer accounts only. Inspector and admin "
-                "accounts are created by an administrator."
-            ),
-        )
-    return _create(user_in, db)
+    raise HTTPException(
+        status_code=status.HTTP_403_FORBIDDEN,
+        detail="Sign-up is closed. Please ask your admin to make an account for you.",
+    )
 
 
 @router.post(
@@ -59,7 +54,7 @@ def create_account(
     db: Session = Depends(get_db),
     _: User = Depends(require_admin),
 ):
-    """The Controller creates inspector and admin accounts."""
+    """An admin creates field officer, supervisor and admin accounts."""
     return _create(user_in, db)
 
 

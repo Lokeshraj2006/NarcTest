@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../models/user_model.dart';
 import '../providers/auth_provider.dart';
-import 'admin/admin_home_screen.dart';
 import 'auth/login_screen.dart';
-import 'consumer/consumer_home_screen.dart';
-import 'inspector/inspector_home_screen.dart';
+import 'home_screen.dart';
 
 /// Initial splash screen checking session and routing by RBAC role.
 class SplashScreen extends StatefulWidget {
@@ -32,20 +29,8 @@ class _SplashScreenState extends State<SplashScreen> {
     if (!mounted) return;
 
     if (auth.userRole != null) {
-      Widget targetScreen;
-      switch (auth.userRole!) {
-        case UserRole.admin:
-          targetScreen = const AdminHomeScreen();
-          break;
-        case UserRole.inspector:
-          targetScreen = const InspectorHomeScreen();
-          break;
-        case UserRole.consumer:
-          targetScreen = const ConsumerHomeScreen();
-          break;
-      }
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => targetScreen),
+        MaterialPageRoute(builder: (_) => const HomeScreen()),
       );
     } else {
       Navigator.of(context).pushReplacement(

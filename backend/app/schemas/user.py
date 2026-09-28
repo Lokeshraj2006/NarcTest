@@ -19,7 +19,7 @@ class UserBase(BaseModel):
     email: EmailStr
     username: str = Field(..., min_length=3, max_length=100)
     full_name: str = Field(..., min_length=1, max_length=150)
-    role: UserRole = UserRole.CONSUMER
+    role: UserRole = UserRole.FIELD_OFFICER
     badge_number: Optional[str] = None
     phone_number: Optional[str] = None
 
