@@ -27,7 +27,7 @@ THRESHOLDS = {
     "blur_px_per_mm": 2,
     "max_glare_pct": 3.0,       # % of window+patch pixels with R,G,B all > 245 (white patch excluded)
     "glare_level": 245,
-    "max_ccm_fit_de": 6.0,      # mean dE2000 of the corrected patches vs their known values
+    "max_ccm_fit_de": 9.0,      # mean dE2000 of corrected patches vs known values (real phone photos: 5-7; synthetic: <1)
     "patch_inner": 0.60,        # use the inner 60% of each patch
     "window_inner": 0.40,       # use the inner 40% of the kit window
     "max_image_side": 2400,     # large phone photos are scaled down before marker detection
