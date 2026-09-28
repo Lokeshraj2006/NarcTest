@@ -115,9 +115,12 @@ def build_test_pdf(record: Dict[str, Any], image_bytes: Optional[bytes]) -> byte
     photo = _photo(image_bytes) or _p("(Photo could not be shown)")
     url = record.get("verify_url") or ""
     # The QR is scanned by OTHER phones, so it must use the laptop's network address, not 127.0.0.1.
+    from pathlib import Path
     from app.config import settings
-    if settings.qr_base_url and record.get("id") is not None:
-        url = f"{settings.qr_base_url.rstrip('/')}/v/{record['id']}"
+    tunnel_file = Path(__file__).resolve().parents[2] / "qr_base_url.txt"  # written by scripts/public_link.py
+    qr_base = tunnel_file.read_text(encoding="utf-8").strip() if tunnel_file.exists() else settings.qr_base_url
+    if qr_base and record.get("id") is not None:
+        url = f"{qr_base.rstrip('/')}/v/{record['id']}"
     qr_cell = [_qr(url), _p("Scan to check this record", _SMALL), _p(url, _SMALL)]
     top = Table([[photo, qr_cell]], colWidths=[125 * mm, 55 * mm])
     top.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "TOP")]))

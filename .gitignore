@@ -71,3 +71,4 @@ docs/ppt_build/
 demo/test_images/*.jpg
 DEMO_LOGINS.txt
 backend/fieldproof.db
+backend/qr_base_url.txt
