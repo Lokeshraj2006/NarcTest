@@ -1,0 +1,180 @@
+[
+ {
+  "id": 7,
+  "created_at": "2026-09-28T05:49:17.663Z",
+  "time_source": "server_clock",
+  "kit_code": "DEMO-MARQUIS-SIM",
+  "result": "INCONCLUSIVE",
+  "outcome_label": null,
+  "confidence": 0,
+  "reason": "Colour card could not be read properly — retake in even light",
+  "measured_rgb": null,
+  "delta_e_by_outcome": {},
+  "quality": {
+   "card_found": true,
+   "markers_found": 4,
+   "blur_score": 461.8,
+   "glare_pct": 0.0,
+   "ccm_fit_de": 6.16
+  },
+  "client_hash_match": true,
+  "device_time": "2026-09-28T11:19:13+05:30",
+  "verify_ok": true,
+  "image_file": "test_7.jpg"
+ },
+ {
+  "id": 8,
+  "created_at": "2026-09-28T05:49:46.023Z",
+  "time_source": "server_clock",
+  "kit_code": "DEMO-MARQUIS-SIM",
+  "result": "POSITIVE",
+  "outcome_label": "Opium-type drug (purple)",
+  "confidence": 75,
+  "reason": null,
+  "measured_rgb": [
+   111,
+   0,
+   138
+  ],
+  "delta_e_by_outcome": {
+   "Opium-type drug (purple)": 6.75,
+   "Amphetamine-type drug (orange)": 47.93,
+   "No reaction (no colour change)": 69.74
+  },
+  "quality": {
+   "card_found": true,
+   "markers_found": 4,
+   "blur_score": 496.8,
+   "glare_pct": 0.0,
+   "ccm_fit_de": 5.92
+  },
+  "client_hash_match": true,
+  "device_time": "2026-09-28T11:19:42+05:30",
+  "verify_ok": true,
+  "image_file": "test_8.jpg"
+ },
+ {
+  "id": 9,
+  "created_at": "2026-09-28T06:51:11.703Z",
+  "time_source": "https",
+  "kit_code": "DEMO-MARQUIS-SIM",
+  "result": "POSITIVE",
+  "outcome_label": "Amphetamine-type drug (orange)",
+  "confidence": 81,
+  "reason": null,
+  "measured_rgb": [
+   158,
+   98,
+   55
+  ],
+  "delta_e_by_outcome": {
+   "Opium-type drug (purple)": 41.71,
+   "Amphetamine-type drug (orange)": 5.1,
+   "No reaction (no colour change)": 39.81
+  },
+  "quality": {
+   "card_found": true,
+   "markers_found": 4,
+   "blur_score": 971.2,
+   "glare_pct": 0.0,
+   "ccm_fit_de": 7.43
+  },
+  "client_hash_match": true,
+  "device_time": "2026-09-28T12:21:07+05:30",
+  "verify_ok": true,
+  "image_file": "test_9.jpg"
+ },
+ {
+  "id": 10,
+  "created_at": "2026-09-28T06:53:15.594Z",
+  "time_source": "https",
+  "kit_code": "DEMO-MARQUIS-SIM",
+  "result": "POSITIVE",
+  "outcome_label": "Amphetamine-type drug (orange)",
+  "confidence": 68,
+  "reason": null,
+  "measured_rgb": [
+   162,
+   96,
+   73
+  ],
+  "delta_e_by_outcome": {
+   "Opium-type drug (purple)": 35.54,
+   "Amphetamine-type drug (orange)": 8.7,
+   "No reaction (no colour change)": 40.62
+  },
+  "quality": {
+   "card_found": true,
+   "markers_found": 4,
+   "blur_score": 856.4,
+   "glare_pct": 0.0,
+   "ccm_fit_de": 8.67
+  },
+  "client_hash_match": true,
+  "device_time": "2026-09-28T12:23:12+05:30",
+  "verify_ok": true,
+  "image_file": "test_10.jpg"
+ },
+ {
+  "id": 11,
+  "created_at": "2026-09-28T06:58:23.601Z",
+  "time_source": "https",
+  "kit_code": "DEMO-MARQUIS-SIM",
+  "result": "POSITIVE",
+  "outcome_label": "Opium-type drug (purple)",
+  "confidence": 76,
+  "reason": null,
+  "measured_rgb": [
+   119,
+   0,
+   131
+  ],
+  "delta_e_by_outcome": {
+   "Opium-type drug (purple)": 6.63,
+   "Amphetamine-type drug (orange)": 46.64,
+   "No reaction (no colour change)": 68.26
+  },
+  "quality": {
+   "card_found": true,
+   "markers_found": 4,
+   "blur_score": 1064.5,
+   "glare_pct": 0.0,
+   "ccm_fit_de": 6.53
+  },
+  "client_hash_match": true,
+  "device_time": "2026-09-28T12:28:21+05:30",
+  "verify_ok": true,
+  "image_file": "test_11.jpg"
+ },
+ {
+  "id": 12,
+  "created_at": "2026-09-28T07:41:47.796Z",
+  "time_source": "https",
+  "kit_code": "DEMO-MARQUIS-SIM",
+  "result": "POSITIVE",
+  "outcome_label": "Opium-type drug (purple)",
+  "confidence": 73,
+  "reason": null,
+  "measured_rgb": [
+   127,
+   0,
+   137
+  ],
+  "delta_e_by_outcome": {
+   "Opium-type drug (purple)": 7.29,
+   "Amphetamine-type drug (orange)": 46.2,
+   "No reaction (no colour change)": 66.52
+  },
+  "quality": {
+   "card_found": true,
+   "markers_found": 4,
+   "blur_score": 931.6,
+   "glare_pct": 0.0,
+   "ccm_fit_de": 7.13
+  },
+  "client_hash_match": true,
+  "device_time": "2026-09-28T13:11:44+05:30",
+  "verify_ok": true,
+  "image_file": "test_12.jpg"
+ }
+]

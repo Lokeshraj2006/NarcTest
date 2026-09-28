@@ -1,0 +1,91 @@
+{
+ "photo": "test_11.jpg",
+ "photo_size": [
+  1080,
+  1920
+ ],
+ "markers_found": 4,
+ "marker_ids": [
+  0,
+  1,
+  2,
+  3
+ ],
+ "detection_scale": 1.0,
+ "blur_score": 1064.5,
+ "blur_min": 300.0,
+ "ccm_fit_de": 6.53,
+ "ccm_fit_max": 9.0,
+ "patch_de_before_mean": 7.71,
+ "patch_de_after_mean": 6.53,
+ "window_rgb_before": [
+  135,
+  67,
+  144
+ ],
+ "window_lab_before": [
+  39.88,
+  41.02,
+  -30.29
+ ],
+ "window_rgb_after": [
+  119,
+  0,
+  131
+ ],
+ "window_lab_after": [
+  28.35,
+  58.02,
+  -41.07
+ ],
+ "de_before_correction": {
+  "Opium-type drug (purple)": 9.28,
+  "Amphetamine-type drug (orange)": 40.68,
+  "No reaction (no colour change)": 55.12
+ },
+ "engine_result": {
+  "result": "POSITIVE",
+  "outcome_label": "Opium-type drug (purple)",
+  "confidence": 76,
+  "reason": null,
+  "measured_rgb": [
+   119,
+   0,
+   131
+  ],
+  "measured_lab": [
+   28.35,
+   58.02,
+   -41.07
+  ],
+  "delta_e_by_outcome": {
+   "Opium-type drug (purple)": 6.63,
+   "Amphetamine-type drug (orange)": 46.64,
+   "No reaction (no colour change)": 68.26
+  },
+  "quality": {
+   "card_found": true,
+   "markers_found": 4,
+   "blur_score": 1064.5,
+   "glare_pct": 0.0,
+   "ccm_fit_de": 6.53
+  }
+ },
+ "outcome_labs": {
+  "Opium-type drug (purple)": [
+   28.98,
+   37.06,
+   -33.02
+  ],
+  "Amphetamine-type drug (orange)": [
+   49.04,
+   30.09,
+   44.5
+  ],
+  "No reaction (no colour change)": [
+   91.86,
+   -1.7,
+   9.23
+  ]
+ }
+}

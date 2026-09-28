@@ -1,0 +1,1112 @@
+{
+ "synthetic": [
+  {
+   "file": "marquis_purple_daylight.jpg",
+   "kit": "DEMO-MARQUIS-SIM",
+   "lighting": "daylight",
+   "kind": "good",
+   "expected": "POSITIVE",
+   "expected_label": "Opium-type drug (purple)",
+   "got": "POSITIVE",
+   "got_label": "Opium-type drug (purple)",
+   "confidence": 98,
+   "reason": null,
+   "ms": 122.2,
+   "correct": true,
+   "delta_e": {
+    "Opium-type drug (purple)": 0.27,
+    "Amphetamine-type drug (orange)": 43.78,
+    "No reaction (no colour change)": 64.94
+   },
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 1908.7,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 0.35
+   }
+  },
+  {
+   "file": "marquis_purple_tungsten.jpg",
+   "kit": "DEMO-MARQUIS-SIM",
+   "lighting": "tungsten",
+   "kind": "good",
+   "expected": "POSITIVE",
+   "expected_label": "Opium-type drug (purple)",
+   "got": "POSITIVE",
+   "got_label": "Opium-type drug (purple)",
+   "confidence": 98,
+   "reason": null,
+   "ms": 116.8,
+   "correct": true,
+   "delta_e": {
+    "Opium-type drug (purple)": 0.29,
+    "Amphetamine-type drug (orange)": 43.79,
+    "No reaction (no colour change)": 65.26
+   },
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 1909.7,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 0.43
+   }
+  },
+  {
+   "file": "marquis_purple_cool.jpg",
+   "kit": "DEMO-MARQUIS-SIM",
+   "lighting": "cool",
+   "kind": "good",
+   "expected": "POSITIVE",
+   "expected_label": "Opium-type drug (purple)",
+   "got": "POSITIVE",
+   "got_label": "Opium-type drug (purple)",
+   "confidence": 97,
+   "reason": null,
+   "ms": 129.9,
+   "correct": true,
+   "delta_e": {
+    "Opium-type drug (purple)": 0.48,
+    "Amphetamine-type drug (orange)": 44.09,
+    "No reaction (no colour change)": 65.24
+   },
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 1931.9,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 0.46
+   }
+  },
+  {
+   "file": "marquis_purple_dim.jpg",
+   "kit": "DEMO-MARQUIS-SIM",
+   "lighting": "dim",
+   "kind": "good",
+   "expected": "POSITIVE",
+   "expected_label": "Opium-type drug (purple)",
+   "got": "POSITIVE",
+   "got_label": "Opium-type drug (purple)",
+   "confidence": 98,
+   "reason": null,
+   "ms": 236.0,
+   "correct": true,
+   "delta_e": {
+    "Opium-type drug (purple)": 0.14,
+    "Amphetamine-type drug (orange)": 43.92,
+    "No reaction (no colour change)": 65.26
+   },
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 1200.6,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 0.36
+   }
+  },
+  {
+   "file": "marquis_purple_sodium.jpg",
+   "kit": "DEMO-MARQUIS-SIM",
+   "lighting": "sodium",
+   "kind": "good",
+   "expected": "POSITIVE",
+   "expected_label": "Opium-type drug (purple)",
+   "got": "POSITIVE",
+   "got_label": "Opium-type drug (purple)",
+   "confidence": 99,
+   "reason": null,
+   "ms": 152.0,
+   "correct": true,
+   "delta_e": {
+    "Opium-type drug (purple)": 0.06,
+    "Amphetamine-type drug (orange)": 43.91,
+    "No reaction (no colour change)": 65.27
+   },
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 1307.0,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 0.44
+   }
+  },
+  {
+   "file": "marquis_orange_daylight.jpg",
+   "kit": "DEMO-MARQUIS-SIM",
+   "lighting": "daylight",
+   "kind": "good",
+   "expected": "POSITIVE",
+   "expected_label": "Amphetamine-type drug (orange)",
+   "got": "POSITIVE",
+   "got_label": "Amphetamine-type drug (orange)",
+   "confidence": 98,
+   "reason": null,
+   "ms": 115.1,
+   "correct": true,
+   "delta_e": {
+    "Opium-type drug (purple)": 44.09,
+    "Amphetamine-type drug (orange)": 0.27,
+    "No reaction (no colour change)": 40.1
+   },
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 2065.9,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 0.33
+   }
+  },
+  {
+   "file": "marquis_orange_tungsten.jpg",
+   "kit": "DEMO-MARQUIS-SIM",
+   "lighting": "tungsten",
+   "kind": "good",
+   "expected": "POSITIVE",
+   "expected_label": "Amphetamine-type drug (orange)",
+   "got": "POSITIVE",
+   "got_label": "Amphetamine-type drug (orange)",
+   "confidence": 96,
+   "reason": null,
+   "ms": 119.8,
+   "correct": true,
+   "delta_e": {
+    "Opium-type drug (purple)": 43.25,
+    "Amphetamine-type drug (orange)": 0.97,
+    "No reaction (no colour change)": 40.22
+   },
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 1834.3,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 0.47
+   }
+  },
+  {
+   "file": "marquis_orange_cool.jpg",
+   "kit": "DEMO-MARQUIS-SIM",
+   "lighting": "cool",
+   "kind": "good",
+   "expected": "POSITIVE",
+   "expected_label": "Amphetamine-type drug (orange)",
+   "got": "POSITIVE",
+   "got_label": "Amphetamine-type drug (orange)",
+   "confidence": 98,
+   "reason": null,
+   "ms": 145.0,
+   "correct": true,
+   "delta_e": {
+    "Opium-type drug (purple)": 44.01,
+    "Amphetamine-type drug (orange)": 0.25,
+    "No reaction (no colour change)": 40.03
+   },
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 1934.8,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 0.35
+   }
+  },
+  {
+   "file": "marquis_orange_dim.jpg",
+   "kit": "DEMO-MARQUIS-SIM",
+   "lighting": "dim",
+   "kind": "good",
+   "expected": "POSITIVE",
+   "expected_label": "Amphetamine-type drug (orange)",
+   "got": "POSITIVE",
+   "got_label": "Amphetamine-type drug (orange)",
+   "confidence": 97,
+   "reason": null,
+   "ms": 224.4,
+   "correct": true,
+   "delta_e": {
+    "Opium-type drug (purple)": 43.34,
+    "Amphetamine-type drug (orange)": 0.68,
+    "No reaction (no colour change)": 40.63
+   },
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 1164.5,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 0.27
+   }
+  },
+  {
+   "file": "marquis_orange_sodium.jpg",
+   "kit": "DEMO-MARQUIS-SIM",
+   "lighting": "sodium",
+   "kind": "good",
+   "expected": "POSITIVE",
+   "expected_label": "Amphetamine-type drug (orange)",
+   "got": "POSITIVE",
+   "got_label": "Amphetamine-type drug (orange)",
+   "confidence": 98,
+   "reason": null,
+   "ms": 132.5,
+   "correct": true,
+   "delta_e": {
+    "Opium-type drug (purple)": 43.75,
+    "Amphetamine-type drug (orange)": 0.36,
+    "No reaction (no colour change)": 40.52
+   },
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 1486.9,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 0.45
+   }
+  },
+  {
+   "file": "marquis_noreact_daylight.jpg",
+   "kit": "DEMO-MARQUIS-SIM",
+   "lighting": "daylight",
+   "kind": "good",
+   "expected": "NEGATIVE",
+   "expected_label": "No reaction (no colour change)",
+   "got": "NEGATIVE",
+   "got_label": "No reaction (no colour change)",
+   "confidence": 95,
+   "reason": null,
+   "ms": 112.5,
+   "correct": true,
+   "delta_e": {
+    "Opium-type drug (purple)": 65.51,
+    "Amphetamine-type drug (orange)": 40.26,
+    "No reaction (no colour change)": 1.08
+   },
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 2169.0,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 0.36
+   }
+  },
+  {
+   "file": "marquis_noreact_tungsten.jpg",
+   "kit": "DEMO-MARQUIS-SIM",
+   "lighting": "tungsten",
+   "kind": "good",
+   "expected": "NEGATIVE",
+   "expected_label": "No reaction (no colour change)",
+   "got": "NEGATIVE",
+   "got_label": "No reaction (no colour change)",
+   "confidence": 98,
+   "reason": null,
+   "ms": 137.5,
+   "correct": true,
+   "delta_e": {
+    "Opium-type drug (purple)": 64.97,
+    "Amphetamine-type drug (orange)": 39.92,
+    "No reaction (no colour change)": 0.38
+   },
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 1699.6,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 0.44
+   }
+  },
+  {
+   "file": "marquis_noreact_cool.jpg",
+   "kit": "DEMO-MARQUIS-SIM",
+   "lighting": "cool",
+   "kind": "good",
+   "expected": "NEGATIVE",
+   "expected_label": "No reaction (no colour change)",
+   "got": "NEGATIVE",
+   "got_label": "No reaction (no colour change)",
+   "confidence": 97,
+   "reason": null,
+   "ms": 161.7,
+   "correct": true,
+   "delta_e": {
+    "Opium-type drug (purple)": 65.32,
+    "Amphetamine-type drug (orange)": 40.6,
+    "No reaction (no colour change)": 0.49
+   },
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 1656.1,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 0.36
+   }
+  },
+  {
+   "file": "marquis_noreact_dim.jpg",
+   "kit": "DEMO-MARQUIS-SIM",
+   "lighting": "dim",
+   "kind": "good",
+   "expected": "NEGATIVE",
+   "expected_label": "No reaction (no colour change)",
+   "got": "NEGATIVE",
+   "got_label": "No reaction (no colour change)",
+   "confidence": 97,
+   "reason": null,
+   "ms": 298.2,
+   "correct": true,
+   "delta_e": {
+    "Opium-type drug (purple)": 64.74,
+    "Amphetamine-type drug (orange)": 39.81,
+    "No reaction (no colour change)": 0.56
+   },
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 1126.0,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 0.44
+   }
+  },
+  {
+   "file": "marquis_noreact_sodium.jpg",
+   "kit": "DEMO-MARQUIS-SIM",
+   "lighting": "sodium",
+   "kind": "good",
+   "expected": "NEGATIVE",
+   "expected_label": "No reaction (no colour change)",
+   "got": "NEGATIVE",
+   "got_label": "No reaction (no colour change)",
+   "confidence": 97,
+   "reason": null,
+   "ms": 145.4,
+   "correct": true,
+   "delta_e": {
+    "Opium-type drug (purple)": 65.71,
+    "Amphetamine-type drug (orange)": 40.71,
+    "No reaction (no colour change)": 0.53
+   },
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 1617.6,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 0.65
+   }
+  },
+  {
+   "file": "iodine_starch_daylight.jpg",
+   "kit": "DEMO-IODINE",
+   "lighting": "daylight",
+   "kind": "good",
+   "expected": "POSITIVE",
+   "expected_label": "Starch found (blue-black)",
+   "got": "POSITIVE",
+   "got_label": "Starch found (blue-black)",
+   "confidence": 96,
+   "reason": null,
+   "ms": 108.1,
+   "correct": true,
+   "delta_e": {
+    "Starch found (blue-black)": 1.02,
+    "No starch (amber)": 53.17
+   },
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 2024.5,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 0.29
+   }
+  },
+  {
+   "file": "iodine_starch_tungsten.jpg",
+   "kit": "DEMO-IODINE",
+   "lighting": "tungsten",
+   "kind": "good",
+   "expected": "POSITIVE",
+   "expected_label": "Starch found (blue-black)",
+   "got": "POSITIVE",
+   "got_label": "Starch found (blue-black)",
+   "confidence": 93,
+   "reason": null,
+   "ms": 120.8,
+   "correct": true,
+   "delta_e": {
+    "Starch found (blue-black)": 2.18,
+    "No starch (amber)": 52.32
+   },
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 1759.4,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 0.5
+   }
+  },
+  {
+   "file": "iodine_starch_cool.jpg",
+   "kit": "DEMO-IODINE",
+   "lighting": "cool",
+   "kind": "good",
+   "expected": "POSITIVE",
+   "expected_label": "Starch found (blue-black)",
+   "got": "POSITIVE",
+   "got_label": "Starch found (blue-black)",
+   "confidence": 95,
+   "reason": null,
+   "ms": 123.7,
+   "correct": true,
+   "delta_e": {
+    "Starch found (blue-black)": 1.44,
+    "No starch (amber)": 52.57
+   },
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 1899.5,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 0.41
+   }
+  },
+  {
+   "file": "iodine_starch_dim.jpg",
+   "kit": "DEMO-IODINE",
+   "lighting": "dim",
+   "kind": "good",
+   "expected": "POSITIVE",
+   "expected_label": "Starch found (blue-black)",
+   "got": "POSITIVE",
+   "got_label": "Starch found (blue-black)",
+   "confidence": 97,
+   "reason": null,
+   "ms": 254.7,
+   "correct": true,
+   "delta_e": {
+    "Starch found (blue-black)": 0.68,
+    "No starch (amber)": 54.17
+   },
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 1093.0,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 0.34
+   }
+  },
+  {
+   "file": "iodine_starch_sodium.jpg",
+   "kit": "DEMO-IODINE",
+   "lighting": "sodium",
+   "kind": "good",
+   "expected": "POSITIVE",
+   "expected_label": "Starch found (blue-black)",
+   "got": "POSITIVE",
+   "got_label": "Starch found (blue-black)",
+   "confidence": 97,
+   "reason": null,
+   "ms": 143.6,
+   "correct": true,
+   "delta_e": {
+    "Starch found (blue-black)": 0.56,
+    "No starch (amber)": 53.81
+   },
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 1440.7,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 0.5
+   }
+  },
+  {
+   "file": "iodine_amber_daylight.jpg",
+   "kit": "DEMO-IODINE",
+   "lighting": "daylight",
+   "kind": "good",
+   "expected": "NEGATIVE",
+   "expected_label": "No starch (amber)",
+   "got": "NEGATIVE",
+   "got_label": "No starch (amber)",
+   "confidence": 98,
+   "reason": null,
+   "ms": 99.7,
+   "correct": true,
+   "delta_e": {
+    "Starch found (blue-black)": 53.85,
+    "No starch (amber)": 0.38
+   },
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 2078.3,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 0.29
+   }
+  },
+  {
+   "file": "iodine_amber_tungsten.jpg",
+   "kit": "DEMO-IODINE",
+   "lighting": "tungsten",
+   "kind": "good",
+   "expected": "NEGATIVE",
+   "expected_label": "No starch (amber)",
+   "got": "NEGATIVE",
+   "got_label": "No starch (amber)",
+   "confidence": 97,
+   "reason": null,
+   "ms": 107.0,
+   "correct": true,
+   "delta_e": {
+    "Starch found (blue-black)": 53.14,
+    "No starch (amber)": 0.7
+   },
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 1693.9,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 0.38
+   }
+  },
+  {
+   "file": "iodine_amber_cool.jpg",
+   "kit": "DEMO-IODINE",
+   "lighting": "cool",
+   "kind": "good",
+   "expected": "NEGATIVE",
+   "expected_label": "No starch (amber)",
+   "got": "NEGATIVE",
+   "got_label": "No starch (amber)",
+   "confidence": 98,
+   "reason": null,
+   "ms": 110.4,
+   "correct": true,
+   "delta_e": {
+    "Starch found (blue-black)": 53.32,
+    "No starch (amber)": 0.53
+   },
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 1596.6,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 0.35
+   }
+  },
+  {
+   "file": "iodine_amber_dim.jpg",
+   "kit": "DEMO-IODINE",
+   "lighting": "dim",
+   "kind": "good",
+   "expected": "NEGATIVE",
+   "expected_label": "No starch (amber)",
+   "got": "NEGATIVE",
+   "got_label": "No starch (amber)",
+   "confidence": 98,
+   "reason": null,
+   "ms": 190.1,
+   "correct": true,
+   "delta_e": {
+    "Starch found (blue-black)": 54.1,
+    "No starch (amber)": 0.39
+   },
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 1090.9,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 0.34
+   }
+  },
+  {
+   "file": "iodine_amber_sodium.jpg",
+   "kit": "DEMO-IODINE",
+   "lighting": "sodium",
+   "kind": "good",
+   "expected": "NEGATIVE",
+   "expected_label": "No starch (amber)",
+   "got": "NEGATIVE",
+   "got_label": "No starch (amber)",
+   "confidence": 98,
+   "reason": null,
+   "ms": 120.4,
+   "correct": true,
+   "delta_e": {
+    "Starch found (blue-black)": 53.33,
+    "No starch (amber)": 0.39
+   },
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 1456.2,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 0.51
+   }
+  },
+  {
+   "file": "marquis_ambiguous_daylight.jpg",
+   "kit": "DEMO-MARQUIS-SIM",
+   "lighting": "daylight",
+   "kind": "ambiguous",
+   "expected": "INCONCLUSIVE",
+   "expected_label": null,
+   "got": "INCONCLUSIVE",
+   "got_label": null,
+   "confidence": 0,
+   "reason": "Colour does not match any result of this kit",
+   "ms": 103.0,
+   "correct": true,
+   "delta_e": {
+    "Opium-type drug (purple)": 22.12,
+    "Amphetamine-type drug (orange)": 23.12,
+    "No reaction (no colour change)": 51.13
+   },
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 2173.2,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 0.4
+   }
+  },
+  {
+   "file": "marquis_ambiguous_tungsten.jpg",
+   "kit": "DEMO-MARQUIS-SIM",
+   "lighting": "tungsten",
+   "kind": "ambiguous",
+   "expected": "INCONCLUSIVE",
+   "expected_label": null,
+   "got": "INCONCLUSIVE",
+   "got_label": null,
+   "confidence": 0,
+   "reason": "Colour does not match any result of this kit",
+   "ms": 106.0,
+   "correct": true,
+   "delta_e": {
+    "Opium-type drug (purple)": 22.02,
+    "Amphetamine-type drug (orange)": 23.37,
+    "No reaction (no colour change)": 51.09
+   },
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 1863.8,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 0.41
+   }
+  },
+  {
+   "file": "marquis_nomatch_daylight.jpg",
+   "kit": "DEMO-MARQUIS-SIM",
+   "lighting": "daylight",
+   "kind": "no_match",
+   "expected": "INCONCLUSIVE",
+   "expected_label": null,
+   "got": "INCONCLUSIVE",
+   "got_label": null,
+   "confidence": 0,
+   "reason": "Colour does not match any result of this kit",
+   "ms": 103.6,
+   "correct": true,
+   "delta_e": {
+    "Opium-type drug (purple)": 54.9,
+    "Amphetamine-type drug (orange)": 49.1,
+    "No reaction (no colour change)": 32.78
+   },
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 2232.1,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 0.32
+   }
+  },
+  {
+   "file": "marquis_nomatch_cool.jpg",
+   "kit": "DEMO-MARQUIS-SIM",
+   "lighting": "cool",
+   "kind": "no_match",
+   "expected": "INCONCLUSIVE",
+   "expected_label": null,
+   "got": "INCONCLUSIVE",
+   "got_label": null,
+   "confidence": 0,
+   "reason": "Colour does not match any result of this kit",
+   "ms": 106.7,
+   "correct": true,
+   "delta_e": {
+    "Opium-type drug (purple)": 54.57,
+    "Amphetamine-type drug (orange)": 48.92,
+    "No reaction (no colour change)": 32.99
+   },
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 1983.9,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 0.43
+   }
+  },
+  {
+   "file": "blurred_purple.jpg",
+   "kit": "DEMO-MARQUIS-SIM",
+   "lighting": "daylight",
+   "kind": "blurred",
+   "expected": "INCONCLUSIVE",
+   "expected_label": null,
+   "got": "INCONCLUSIVE",
+   "got_label": null,
+   "confidence": 0,
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake",
+   "ms": 65.7,
+   "correct": true,
+   "delta_e": {},
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 154.6,
+    "glare_pct": null,
+    "ccm_fit_de": null
+   }
+  },
+  {
+   "file": "blurred_starch.jpg",
+   "kit": "DEMO-IODINE",
+   "lighting": "daylight",
+   "kind": "blurred",
+   "expected": "INCONCLUSIVE",
+   "expected_label": null,
+   "got": "INCONCLUSIVE",
+   "got_label": null,
+   "confidence": 0,
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake",
+   "ms": 63.6,
+   "correct": true,
+   "delta_e": {},
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 124.6,
+    "glare_pct": null,
+    "ccm_fit_de": null
+   }
+  },
+  {
+   "file": "blurred_orange.jpg",
+   "kit": "DEMO-MARQUIS-SIM",
+   "lighting": "daylight",
+   "kind": "blurred",
+   "expected": "INCONCLUSIVE",
+   "expected_label": null,
+   "got": "INCONCLUSIVE",
+   "got_label": null,
+   "confidence": 0,
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake",
+   "ms": 63.6,
+   "correct": true,
+   "delta_e": {},
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 156.9,
+    "glare_pct": null,
+    "ccm_fit_de": null
+   }
+  },
+  {
+   "file": "blurred_heavy_noreact.jpg",
+   "kit": "DEMO-MARQUIS-SIM",
+   "lighting": "daylight",
+   "kind": "blurred",
+   "expected": "INCONCLUSIVE",
+   "expected_label": null,
+   "got": "INCONCLUSIVE",
+   "got_label": null,
+   "confidence": 0,
+   "reason": "Colour card not found \u2014 keep all 4 corner squares in the photo",
+   "ms": 57.5,
+   "correct": true,
+   "delta_e": {},
+   "quality": {
+    "card_found": false,
+    "markers_found": 0,
+    "blur_score": null,
+    "glare_pct": null,
+    "ccm_fit_de": null
+   }
+  },
+  {
+   "file": "glare_orange.jpg",
+   "kit": "DEMO-MARQUIS-SIM",
+   "lighting": "daylight",
+   "kind": "glare",
+   "expected": "INCONCLUSIVE",
+   "expected_label": null,
+   "got": "INCONCLUSIVE",
+   "got_label": null,
+   "confidence": 0,
+   "reason": "Shine/glare on the card \u2014 tilt the phone a little and retake",
+   "ms": 190.3,
+   "correct": true,
+   "delta_e": {},
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 2081.8,
+    "glare_pct": 17.02,
+    "ccm_fit_de": null
+   }
+  },
+  {
+   "file": "glare_amber.jpg",
+   "kit": "DEMO-IODINE",
+   "lighting": "daylight",
+   "kind": "glare",
+   "expected": "INCONCLUSIVE",
+   "expected_label": null,
+   "got": "INCONCLUSIVE",
+   "got_label": null,
+   "confidence": 0,
+   "reason": "Shine/glare on the card \u2014 tilt the phone a little and retake",
+   "ms": 155.8,
+   "correct": true,
+   "delta_e": {},
+   "quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 2080.8,
+    "glare_pct": 15.51,
+    "ccm_fit_de": null
+   }
+  },
+  {
+   "file": "card_missing.jpg",
+   "kit": "DEMO-MARQUIS-SIM",
+   "lighting": "daylight",
+   "kind": "missing",
+   "expected": "INCONCLUSIVE",
+   "expected_label": null,
+   "got": "INCONCLUSIVE",
+   "got_label": null,
+   "confidence": 0,
+   "reason": "Colour card not found \u2014 keep all 4 corner squares in the photo",
+   "ms": 109.5,
+   "correct": true,
+   "delta_e": {},
+   "quality": {
+    "card_found": false,
+    "markers_found": 0,
+    "blur_score": null,
+    "glare_pct": null,
+    "ccm_fit_de": null
+   }
+  },
+  {
+   "file": "marker_covered.jpg",
+   "kit": "DEMO-MARQUIS-SIM",
+   "lighting": "daylight",
+   "kind": "missing",
+   "expected": "INCONCLUSIVE",
+   "expected_label": null,
+   "got": "INCONCLUSIVE",
+   "got_label": null,
+   "confidence": 0,
+   "reason": "Colour card not found \u2014 keep all 4 corner squares in the photo",
+   "ms": 104.9,
+   "correct": true,
+   "delta_e": {},
+   "quality": {
+    "card_found": false,
+    "markers_found": 3,
+    "blur_score": null,
+    "glare_pct": null,
+    "ccm_fit_de": null
+   }
+  }
+ ],
+ "real": [
+  {
+   "id": 7,
+   "file": "test_7.jpg",
+   "truth": "Opium-type drug (purple)",
+   "shown_on": "phone screen (2 cards in frame)",
+   "live_result": "INCONCLUSIVE",
+   "live_label": null,
+   "live_conf": 0,
+   "live_reason": "Colour card could not be read properly \u2014 retake in even light",
+   "live_verdict": "not_sure",
+   "rerun_result": "POSITIVE",
+   "rerun_label": "Opium-type drug (purple)",
+   "rerun_conf": 77,
+   "rerun_reason": null,
+   "rerun_verdict": "correct",
+   "rerun_ms": 114.7,
+   "rerun_quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 461.8,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 6.16
+   },
+   "rerun_delta_e": {
+    "Opium-type drug (purple)": 6.28,
+    "Amphetamine-type drug (orange)": 44.78,
+    "No reaction (no colour change)": 62.29
+   }
+  },
+  {
+   "id": 8,
+   "file": "test_8.jpg",
+   "truth": "Opium-type drug (purple)",
+   "shown_on": "phone screen",
+   "live_result": "POSITIVE",
+   "live_label": "Opium-type drug (purple)",
+   "live_conf": 75,
+   "live_reason": null,
+   "live_verdict": "correct",
+   "rerun_result": "POSITIVE",
+   "rerun_label": "Opium-type drug (purple)",
+   "rerun_conf": 75,
+   "rerun_reason": null,
+   "rerun_verdict": "correct",
+   "rerun_ms": 196.8,
+   "rerun_quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 496.8,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 5.92
+   },
+   "rerun_delta_e": {
+    "Opium-type drug (purple)": 6.75,
+    "Amphetamine-type drug (orange)": 47.93,
+    "No reaction (no colour change)": 69.74
+   }
+  },
+  {
+   "id": 9,
+   "file": "test_9.jpg",
+   "truth": "Amphetamine-type drug (orange)",
+   "shown_on": "laptop screen",
+   "live_result": "POSITIVE",
+   "live_label": "Amphetamine-type drug (orange)",
+   "live_conf": 81,
+   "live_reason": null,
+   "live_verdict": "correct",
+   "rerun_result": "POSITIVE",
+   "rerun_label": "Amphetamine-type drug (orange)",
+   "rerun_conf": 81,
+   "rerun_reason": null,
+   "rerun_verdict": "correct",
+   "rerun_ms": 142.5,
+   "rerun_quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 971.2,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 7.43
+   },
+   "rerun_delta_e": {
+    "Opium-type drug (purple)": 41.71,
+    "Amphetamine-type drug (orange)": 5.1,
+    "No reaction (no colour change)": 39.81
+   }
+  },
+  {
+   "id": 10,
+   "file": "test_10.jpg",
+   "truth": "Amphetamine-type drug (orange)",
+   "shown_on": "laptop screen",
+   "live_result": "POSITIVE",
+   "live_label": "Amphetamine-type drug (orange)",
+   "live_conf": 68,
+   "live_reason": null,
+   "live_verdict": "correct",
+   "rerun_result": "POSITIVE",
+   "rerun_label": "Amphetamine-type drug (orange)",
+   "rerun_conf": 68,
+   "rerun_reason": null,
+   "rerun_verdict": "correct",
+   "rerun_ms": 174.9,
+   "rerun_quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 856.4,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 8.67
+   },
+   "rerun_delta_e": {
+    "Opium-type drug (purple)": 35.54,
+    "Amphetamine-type drug (orange)": 8.7,
+    "No reaction (no colour change)": 40.62
+   }
+  },
+  {
+   "id": 11,
+   "file": "test_11.jpg",
+   "truth": "Opium-type drug (purple)",
+   "shown_on": "laptop screen",
+   "live_result": "POSITIVE",
+   "live_label": "Opium-type drug (purple)",
+   "live_conf": 76,
+   "live_reason": null,
+   "live_verdict": "correct",
+   "rerun_result": "POSITIVE",
+   "rerun_label": "Opium-type drug (purple)",
+   "rerun_conf": 76,
+   "rerun_reason": null,
+   "rerun_verdict": "correct",
+   "rerun_ms": 140.9,
+   "rerun_quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 1064.5,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 6.53
+   },
+   "rerun_delta_e": {
+    "Opium-type drug (purple)": 6.63,
+    "Amphetamine-type drug (orange)": 46.64,
+    "No reaction (no colour change)": 68.26
+   }
+  },
+  {
+   "id": 12,
+   "file": "test_12.jpg",
+   "truth": "Opium-type drug (purple)",
+   "shown_on": "laptop screen",
+   "live_result": "POSITIVE",
+   "live_label": "Opium-type drug (purple)",
+   "live_conf": 73,
+   "live_reason": null,
+   "live_verdict": "correct",
+   "rerun_result": "POSITIVE",
+   "rerun_label": "Opium-type drug (purple)",
+   "rerun_conf": 73,
+   "rerun_reason": null,
+   "rerun_verdict": "correct",
+   "rerun_ms": 139.6,
+   "rerun_quality": {
+    "card_found": true,
+    "markers_found": 4,
+    "blur_score": 931.6,
+    "glare_pct": 0.0,
+    "ccm_fit_de": 7.13
+   },
+   "rerun_delta_e": {
+    "Opium-type drug (purple)": 7.29,
+    "Amphetamine-type drug (orange)": 46.2,
+    "No reaction (no colour change)": 66.52
+   }
+  }
+ ],
+ "thresholds": {
+  "min_blur_score": 300.0,
+  "blur_px_per_mm": 2,
+  "max_glare_pct": 3.0,
+  "glare_level": 245,
+  "max_ccm_fit_de": 9.0,
+  "patch_inner": 0.6,
+  "window_inner": 0.4,
+  "max_image_side": 2400
+ },
+ "machine": "AMD64 Family 23 Model 160 Stepping 0, AuthenticAMD",
+ "python": "3.11.15"
+}
