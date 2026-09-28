@@ -117,7 +117,7 @@ nxt = copy.deepcopy(note.paragraphs[0]._p)
 nr = nxt.findall(qn('a:r'))
 for r in nr[1:]:
     nxt.remove(r)
-nr[0].find(qn('a:t')).text = 'Next: real-kit trial with Regional FSL Coimbatore, in lab + field light.'
+nr[0].find(qn('a:t')).text = 'Next step (not done yet): real-kit trial with an FSL, in lab + field light.'
 note.paragraphs[-1]._p.addnext(nxt)
 place(sid(s3, 23), y=7.02)                        # divider
 card, ref_head = sid(s3, 13), sid(s3, 22)
@@ -136,7 +136,7 @@ pilot_head = clone(s4, sid(s4, 19), 5.00, 7.10, 4.6, 0.42)
 set_heading(pilot_head, 'Pilot Plan (proposed)')
 pilot = clone(s4, sid(s4, 21), 4.95, 7.58, 4.72, 2.75)
 set_bullets(pilot, [
-    ('Where', ' - 1 district in Tamil Nadu: police + Regional FSL Coimbatore'),
+    ('Where', ' - 1 district in Tamil Nadu, with local police + nearest FSL'),
     ('Who', ' - 20 field officers for 3 months'),
     ('Check', ' - every field result re-tested in the FSL lab'),
     ('Success', ' - 95%+ match with lab, NOT SURE under 10%, every record verifies'),
