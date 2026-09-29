@@ -39,8 +39,7 @@ put(s2, 39, 0, '4 steps', ' - choose kit, take photo inside the box, see result,
                           'One test takes around 16 seconds (we checked in 19 scans).')
 put(s2, 39, 1, 'Bad photo?', ' - app says NOT SURE, tells the reason (blurry, shiny or card not seen) '
                              'and asks to take the photo again.')
-put(s2, 39, 2, 'Easy to read', ' - result comes in big letters with colour, in simple English. '
-                               'Next we will try it with 10 officers.')
+put(s2, 39, 2, 'Easy to read', ' - Result is shown in big coloured letters, so anyone can read it easily.')
 put(s2, 40, 0, 'Test Log (right side) can search and filter by date, officer, kit and result, '
                'and download as CSV or PDF with QR.')
 put(s2, 41, 0, 'India had 1,20,010 NDPS cases in 2023 (NCRB). Each needs a field test.')
