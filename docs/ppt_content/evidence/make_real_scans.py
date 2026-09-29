@@ -71,7 +71,7 @@ med = gaps[len(gaps) // 2]
 F = lambda s, b=False: ImageFont.truetype('C:/Windows/Fonts/' + ('arialbd.ttf' if b else 'arial.ttf'), s)
 ACC, INK, GREY, RULE = (0x7A, 0x2F, 0x00), (0x1F, 0x1F, 0x1F), (0x6B, 0x6B, 0x6B), (0xD0, 0xD0, 0xD0)
 GREEN, RED, AMBER = (0x2E, 0x7D, 0x32), (0xC6, 0x28, 0x28), (0x8A, 0x5A, 0x00)
-W, H = 1600, 690
+W, H = 1600, 850
 img = Image.new('RGB', (W, H), 'white')
 d = ImageDraw.Draw(img)
 
@@ -90,6 +90,21 @@ for i, (k, name) in enumerate(TILES):
 d.text((10, 560), 'We scanned using our app on 1 phone, in 1 room', font=F(28), fill=GREY)
 d.text((10, 596), 'with window light. Card was shown on a laptop screen.', font=F(28), fill=GREY)
 d.text((10, 632), 'We checked each card by eye, not using the app.', font=F(28), fill=GREY)
+
+# colour gap (Delta E) from the saved records: how far the measured colour was from each kit colour
+right_de, other_de, trick_de = [], [], []
+for k, t in TRUTH.items():
+    v = sorted((recs[k].delta_e_by_outcome or {}).values())
+    if not v:
+        continue
+    if t in ('purple', 'orange', 'plain') and recs[k].result != 'INCONCLUSIVE':
+        right_de.append(v[0]); other_de.append(v[1])
+    elif t in ('between', 'green'):
+        trick_de.append(v[0])
+d.text((10, 692), 'Colour gap (Delta E), our limit is 14', font=F(30, True), fill=ACC)
+d.text((10, 732), f'Right colour: {min(right_de):.1f} to {max(right_de):.1f}', font=F(28), fill=INK)
+d.text((10, 768), f'Other kit colours: {min(other_de):.0f} to {max(other_de):.0f}', font=F(28), fill=INK)
+d.text((10, 804), f'Trick cards: {min(trick_de):.0f} to {max(trick_de):.0f}, so app said NOT SURE', font=F(28), fill=INK)
 
 x0 = 960
 d.text((x0, 6), f'All {len(TRUTH)} real scans', font=F(40, True), fill=ACC)
