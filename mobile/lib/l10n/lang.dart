@@ -96,6 +96,12 @@ const Map<String, String> _ta = {
   'Start timer ({0}s)': 'டைமர் தொடங்கு ({0} வி)',
   'Stop timer': 'டைமர் நிறுத்து',
   'Capture now': 'இப்போது எடு',
+  'Photo looks blurry or dark': 'புகைப்படம் மங்கலாக அல்லது இருட்டாக உள்ளது',
+  'Hold the phone steady, keep the card in good light and take it again.':
+      'போனை அசையாமல் பிடித்து, அட்டையை நல்ல வெளிச்சத்தில் வைத்து மீண்டும் எடுக்கவும்.',
+  'Send anyway': 'இருந்தாலும் அனுப்பு',
+  'Take again': 'மீண்டும் எடு',
+  'Take photo again': 'மீண்டும் புகைப்படம் எடு',
   // Saving
   'Saving test': 'சோதனை சேமிக்கப்படுகிறது',
   'Getting your location...': 'உங்கள் இருப்பிடம் எடுக்கப்படுகிறது...',

@@ -85,7 +85,7 @@ class _SealingScreenState extends State<SealingScreen> {
       );
       if (!mounted) return;
       Navigator.of(this.context).pushReplacement(
-        MaterialPageRoute(builder: (_) => ResultScreen(record: record)),
+        MaterialPageRoute(builder: (_) => ResultScreen(record: record, kit: widget.kit)),
       );
     } catch (e) {
       if (!mounted) return;

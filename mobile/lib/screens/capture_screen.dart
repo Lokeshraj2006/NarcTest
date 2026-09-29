@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../l10n/lang.dart';
 import '../models/test_models.dart';
 import '../services/camera_service.dart';
+import '../services/photo_check.dart';
 import 'sealing_screen.dart';
 
 /// Step 2: in-app camera with a card-shaped guide box and a read timer.
@@ -87,6 +88,32 @@ class _CaptureScreenState extends State<CaptureScreen> {
       return;
     }
     final bytes = await file.readAsBytes();
+    if (!mounted) return;
+    // Catch a blurry or dark photo here, before it is sent, so the officer can retake at once.
+    if (await PhotoCheck.looksBlurry(bytes)) {
+      if (!mounted) return;
+      final send = await showDialog<bool>(
+        context: context,
+        barrierDismissible: false,
+        builder: (ctx) => AlertDialog(
+          title: Text(trNow(ctx, 'Photo looks blurry or dark')),
+          content: Text(trNow(ctx, 'Hold the phone steady, keep the card in good light and take it again.')),
+          actions: [
+            TextButton(
+                onPressed: () => Navigator.of(ctx).pop(true),
+                child: Text(trNow(ctx, 'Send anyway'))),
+            FilledButton(
+                onPressed: () => Navigator.of(ctx).pop(false),
+                child: Text(trNow(ctx, 'Take again'))),
+          ],
+        ),
+      );
+      if (!mounted) return;
+      if (send != true) {
+        setState(() => _busy = false);
+        return;
+      }
+    }
     if (!mounted) return;
     Navigator.of(context).pushReplacement(MaterialPageRoute(
       builder: (_) => SealingScreen(

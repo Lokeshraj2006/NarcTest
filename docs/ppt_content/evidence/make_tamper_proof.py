@@ -78,8 +78,8 @@ if '--tall' in sys.argv:  # bigger text for a narrow slide column: chain on top,
         d.text((c0, y), what, font=F(44), fill=INK)
         d.text((c1, y), 'GENUINE' if ok else 'TAMPERED', font=F(46, True), fill=GREEN if ok else RED)
         d.text((c2, y + 2), 'none, all 5 passed' if ok else ', '.join(failed), font=F(42), fill=GREY)
-    d.text((c0, ty + 64 + 5 * 76 + 6), f"We tried this on our real saved records on {time.strftime('%d %b %Y')}, only in memory. "
-           'Each test keeps the hash of the test before it.', font=F(34), fill=GREY)
+    d.text((c0, ty + 64 + 5 * 76 + 6), f"Tried on copies of our saved records ({time.strftime('%d %b %Y')}). Hash, signature and "
+           "previous hash are stored in the database.", font=F(34), fill=GREY)
     out = Path(__file__).with_name('tamper_proof_tall.png')
     img.save(out)
     print('saved', out)

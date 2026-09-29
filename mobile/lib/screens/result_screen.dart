@@ -5,11 +5,15 @@ import '../l10n/lang.dart';
 import '../models/test_models.dart';
 import '../utils/app_colors.dart';
 import '../widgets/colour_chip.dart';
+import 'capture_screen.dart';
 
 /// Step 4: the result with the sealed record details.
 class ResultScreen extends StatelessWidget {
   final TestRecord record;
-  const ResultScreen({super.key, required this.record});
+
+  /// Set when we come straight from a new test, so a NOT SURE result can offer a second photo.
+  final KitProfile? kit;
+  const ResultScreen({super.key, required this.record, this.kit});
 
   static const disclaimer =
       'Presumptive field result — not a substitute for laboratory confirmatory testing.';
@@ -123,6 +127,21 @@ class ResultScreen extends StatelessWidget {
               child: ListTile(
                 leading: const Icon(Icons.info_outline),
                 title: Text(tr(context, record.reason!)),
+              ),
+            ),
+          ],
+          if (result == 'INCONCLUSIVE' && kit != null) ...[
+            const SizedBox(height: 12),
+            SizedBox(
+              height: 52,
+              child: FilledButton.icon(
+                style: FilledButton.styleFrom(backgroundColor: AppColors.inconclusive),
+                onPressed: () => Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (_) => CaptureScreen(kit: kit!)),
+                ),
+                icon: const Icon(Icons.camera_alt),
+                label: Text(tr(context, 'Take photo again'),
+                    style: const TextStyle(fontSize: 16)),
               ),
             ),
           ],
