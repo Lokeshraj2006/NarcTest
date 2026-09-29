@@ -194,7 +194,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           spacing: 8,
                           runSpacing: 6,
                           children: [
-                            _demoChip('officer1'),
+                            for (var i = 1; i <= 6; i++) _demoChip('officer$i'),
                             _demoChip('supervisor1'),
                           ],
                         ),

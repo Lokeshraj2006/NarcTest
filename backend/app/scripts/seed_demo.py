@@ -4,7 +4,7 @@ FieldProof — Demo seed.
     python -m app.scripts.seed_demo        (run from backend/)
 
 * Makes sure DEMO_PASSWORD exists in backend/.env (adds a random one if not).
-* Creates / updates officer1, supervisor1, admin1 with that password.
+* Creates / updates officer1-officer6, supervisor1, admin1 with that password.
 * Seeds the 2 demo kit profiles (safe to run many times).
 * Writes the logins to DEMO_LOGINS.txt in the repo root (gitignored).
 The password is never printed.
@@ -24,6 +24,11 @@ LOGINS_PATH = BACKEND_DIR.parent / "DEMO_LOGINS.txt"
 
 DEMO_USERS = [
     ("officer1", "field_officer", "Officer One (Demo)"),
+    ("officer2", "field_officer", "Officer Two (Demo)"),
+    ("officer3", "field_officer", "Officer Three (Demo)"),
+    ("officer4", "field_officer", "Officer Four (Demo)"),
+    ("officer5", "field_officer", "Officer Five (Demo)"),
+    ("officer6", "field_officer", "Officer Six (Demo)"),
     ("supervisor1", "supervisor", "Supervisor One (Demo)"),
     ("admin1", "admin", "Admin One (Demo)"),
 ]

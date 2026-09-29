@@ -6,6 +6,7 @@ Slide 5  Privacy + Chain of Custody blocks moved to SPEAKER NOTES (for Q&A); QR 
 """
 from pptx import Presentation
 from pptx.util import Inches, Pt
+from pptx.oxml.ns import qn
 
 SRC = '../deck_v6/K26234_SIH26231_v6.pptx'
 V5 = '../deck_v5/K26234_SIH26231_v5.pptx'
@@ -87,6 +88,34 @@ for par in sid(s5, 22).text_frame.paragraphs:
     par.line_spacing = 1.12
     for r in par.runs:
         r.font.size = Pt(16)
+
+# ------------------------------------------------------------------ Slide 5: full-width map, column aligned
+# Crop the dashboard side menu + empty strips so the map (with the POSITIVE pin + popup) fills the column.
+L, T, R, B = 0.178, 0.10, 0.015, 0.389
+bf = mp._element.find('.//' + qn('a:blipFill'))
+for old_rect in bf.findall(qn('a:srcRect')):
+    bf.remove(old_rect)
+src = bf.makeelement(qn('a:srcRect'), {k: str(int(v * 100000)) for k, v in zip('ltrb', (L, T, R, B))})
+bf.find(qn('a:blip')).addnext(src)
+img_w, img_h = 960, 530                            # map screenshot size in px
+aspect = img_w * (1 - L - R) / (img_h * (1 - T - B))
+col_top, col_bottom = 2.52, 10.34                 # match the left side (QR screenshots end at 10.34)
+sid(s5, 29).left, sid(s5, 29).top = Inches(fx), Inches(2.12)
+sid(s5, 31).left, sid(s5, 31).top = Inches(fx + 0.79), Inches(2.16)
+mh = fw / aspect
+place(mp, x=fx, y=col_top, w=fw, h=mh)
+y = col_top + mh + 0.10
+place(starts(s5, 'Tamper Test'), x=fx, y=y)
+place(starts(s5, 'real test on our saved'), x=fx + 1.88, y=y + 0.04)
+pic.top, pic.left = Inches(y + 0.40), Inches(fx)
+y = y + 0.40 + pic.height / E + 0.12
+place(fut, y=y, h=col_bottom - y)
+place(sid(s5, 28), y=y + 0.04)
+place(sid(s5, 22), y=y + 0.44)
+for par in sid(s5, 22).text_frame.paragraphs:
+    par.line_spacing = 1.1
+    for r in par.runs:
+        r.font.size = Pt(15)
 
 p.save(OUT)
 print('saved', OUT)
