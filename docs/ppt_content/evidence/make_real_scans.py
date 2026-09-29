@@ -85,11 +85,11 @@ for i, (k, name) in enumerate(TILES):
     d.text((x, y + th + 6), name, font=F(28), fill=GREY)
     ans = said(r) + (f' {r.confidence}%' if r.result != 'INCONCLUSIVE' else '')
     ok = (r.result == EXPECT[TRUTH[k]])
-    d.text((x, y + th + 40), ans + ('  (retake)' if name == 'Blurry photo' else ''), font=F(32, True),
+    d.text((x, y + th + 40), ans + (', retake' if name == 'Blurry photo' else ''), font=F(32, True),
            fill=(GREEN if ok and r.result != 'INCONCLUSIVE' else AMBER) if ok or r.result == 'INCONCLUSIVE' else RED)
-d.text((10, 560), 'Real scans with our app: 1 phone, 1 room (window light),', font=F(28), fill=GREY)
-d.text((10, 596), 'card shown on a laptop screen, 29 Sep 2026.', font=F(28), fill=GREY)
-d.text((10, 632), 'Card in each photo checked by eye, not by the app.', font=F(28), fill=GREY)
+d.text((10, 560), 'We scanned using our app on 1 phone, in 1 room', font=F(28), fill=GREY)
+d.text((10, 596), 'with window light. Card was shown on a laptop screen.', font=F(28), fill=GREY)
+d.text((10, 632), 'We checked each card by eye, not using the app.', font=F(28), fill=GREY)
 
 x0 = 960
 d.text((x0, 6), f'All {len(TRUTH)} real scans', font=F(40, True), fill=ACC)
@@ -97,7 +97,7 @@ cw0, cw = 218, 140
 hy = 70
 for j, head in enumerate(['POSITIVE', 'NEGATIVE', 'NOT SURE']):
     d.text((x0 + cw0 + j * cw + 4, hy + 16), head, font=F(22, True), fill=INK)
-d.text((x0, hy + 14), 'Card  \\  App said', font=F(24, True), fill=GREY)
+d.text((x0, hy + 14), 'Card vs app', font=F(24, True), fill=GREY)
 for i, (label, g) in enumerate(groups):
     y = hy + 60 + i * 72
     d.line([(x0, y - 6), (x0 + cw0 + 3 * cw, y - 6)], fill=RULE, width=2)
@@ -111,9 +111,9 @@ for i, (label, g) in enumerate(groups):
             d.rectangle([cx, y - 4, cx + cw - 8, y + 58], fill=(0xE8, 0xF5, 0xE9))
         d.text((cx + 40, y + 6), str(v), font=F(40, True), fill=colr)
 d.line([(x0, hy + 60 + 3 * 72 - 6), (x0 + cw0 + 3 * cw, hy + 60 + 3 * 72 - 6)], fill=RULE, width=2)
-lines = [(f'{wrong} wrong answers', True), (f'{len(readable)}/{len(readable)} readable scans right', False),
-         (f'{trick_ok}/{trick_ok} trick cards said NOT SURE', False), (f'{blurry} blurry photos: asked to retake', False),
-         (f'~{med:.0f} s per test (median, 1 team member)', False)]
+lines = [(f'{wrong} wrong answers', True), (f'All {len(readable)} clear scans correct', False),
+         (f'All {trick_ok} trick cards said NOT SURE', False), (f'{blurry} blurry photos, app asked to retake', False),
+         (f'Around {med:.0f} seconds per test (1 team member)', False)]
 for i, (t, b) in enumerate(lines):
     d.text((x0, 400 + i * 56), t, font=F(34 if b else 30, b), fill=ACC if b else INK)
 out = Path(__file__).with_name('real_scans.png')

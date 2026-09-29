@@ -64,7 +64,7 @@ if '--tall' in sys.argv:  # bigger text for a narrow slide column: chain on top,
             d.line([(ax, y0 + 98), (ax + gap - 20, y0 + 98)], fill=ACC, width=5)
             d.polygon([(ax + gap - 20, y0 + 86), (ax + gap - 4, y0 + 98), (ax + gap - 20, y0 + 110)], fill=ACC)
     sx = 20 + 3 * bw + 2 * gap + 50
-    d.text((sx, y0 + 4), f'Ed25519 signature (#{TID})', font=F(40), fill=GREY)
+    d.text((sx, y0 + 4), f'Ed25519 signature of test {TID}', font=F(40), fill=GREY)
     d.text((sx, y0 + 52), t.signature[:24] + '...', font=M(44), fill=INK)
     d.text((sx, y0 + 108), 'Photo SHA-256', font=F(40), fill=GREY)
     d.text((sx, y0 + 156), t.image_sha256[:24] + '...', font=M(44), fill=INK)
@@ -77,9 +77,9 @@ if '--tall' in sys.argv:  # bigger text for a narrow slide column: chain on top,
         d.line([(c0, y - 8), (W - 20, y - 8)], fill=RULE, width=2)
         d.text((c0, y), what, font=F(44), fill=INK)
         d.text((c1, y), 'GENUINE' if ok else 'TAMPERED', font=F(46, True), fill=GREEN if ok else RED)
-        d.text((c2, y + 2), 'none (5/5 pass)' if ok else ', '.join(failed), font=F(42), fill=GREY)
-    d.text((c0, ty + 64 + 5 * 76 + 6), f"Real run on our saved records, {time.strftime('%d %b %Y')}. "
-           'Changes made in memory only. Each test stores the hash of the one before it.', font=F(34), fill=GREY)
+        d.text((c2, y + 2), 'none, all 5 passed' if ok else ', '.join(failed), font=F(42), fill=GREY)
+    d.text((c0, ty + 64 + 5 * 76 + 6), f"We tried this on our real saved records on {time.strftime('%d %b %Y')}, only in memory. "
+           'Each test keeps the hash of the test before it.', font=F(34), fill=GREY)
     out = Path(__file__).with_name('tamper_proof_tall.png')
     img.save(out)
     print('saved', out)
