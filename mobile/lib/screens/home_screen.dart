@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../l10n/lang.dart';
 import '../providers/auth_provider.dart';
 import '../utils/app_colors.dart';
 import 'auth/login_screen.dart';
@@ -30,25 +31,28 @@ class HomeScreen extends StatelessWidget {
         title: const Text('FieldProof'),
         backgroundColor: AppColors.primary,
         foregroundColor: Colors.white,
+        actions: const [LangButton(color: Colors.white)],
       ),
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.all(20),
           children: [
             Text(
-              name == null || name.isEmpty ? 'Hello!' : 'Hello, $name!',
+              name == null || name.isEmpty
+                  ? tr(context, 'Hello!')
+                  : tr(context, 'Hello, {0}!', [name]),
               style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 4),
-            const Text(
-              'Test a drug kit, get a sealed record.',
-              style: TextStyle(color: AppColors.textSecondary),
+            Text(
+              tr(context, 'Test a drug kit, get a sealed record.'),
+              style: const TextStyle(color: AppColors.textSecondary),
             ),
             const SizedBox(height: 24),
             _BigButton(
               icon: Icons.add_a_photo_outlined,
-              label: 'New Test',
-              subtitle: 'Pick the kit and take a photo',
+              label: tr(context, 'New Test'),
+              subtitle: tr(context, 'Pick the kit and take a photo'),
               color: AppColors.primary,
               onTap: () => Navigator.of(context).push(
                 MaterialPageRoute(builder: (_) => const KitPickerScreen()),
@@ -57,8 +61,8 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: 14),
             _BigButton(
               icon: Icons.history,
-              label: 'My Tests',
-              subtitle: 'See the tests you already did',
+              label: tr(context, 'My Tests'),
+              subtitle: tr(context, 'See the tests you already did'),
               color: Colors.teal.shade700,
               onTap: () => Navigator.of(context).push(
                 MaterialPageRoute(builder: (_) => const MyTestsScreen()),
@@ -67,8 +71,8 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: 14),
             _BigButton(
               icon: Icons.settings_outlined,
-              label: 'Settings',
-              subtitle: 'Change the server address',
+              label: tr(context, 'Settings'),
+              subtitle: tr(context, 'Change the server address'),
               color: Colors.blueGrey.shade600,
               onTap: () => Navigator.of(context).push(
                 MaterialPageRoute(builder: (_) => const SettingsScreen()),
@@ -77,8 +81,8 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: 14),
             _BigButton(
               icon: Icons.logout,
-              label: 'Logout',
-              subtitle: 'Sign out of this phone',
+              label: tr(context, 'Logout'),
+              subtitle: tr(context, 'Sign out of this phone'),
               color: Colors.red.shade400,
               onTap: () => _logout(context),
             ),

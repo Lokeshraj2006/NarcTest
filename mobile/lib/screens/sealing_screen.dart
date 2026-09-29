@@ -4,6 +4,7 @@ import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 
+import '../l10n/lang.dart';
 import '../models/test_models.dart';
 import '../services/api_service.dart';
 import '../services/device_id_service.dart';
@@ -97,7 +98,7 @@ class _SealingScreenState extends State<SealingScreen> {
     return Scaffold(
       backgroundColor: AppColors.background,
       appBar: AppBar(
-        title: const Text('Saving test'),
+        title: Text(tr(context, 'Saving test')),
         backgroundColor: AppColors.primary,
         foregroundColor: Colors.white,
       ),
@@ -116,28 +117,28 @@ class _SealingScreenState extends State<SealingScreen> {
               if (_error == null) ...[
                 const CircularProgressIndicator(),
                 const SizedBox(height: 16),
-                Text(_step,
+                Text(tr(context, _step),
                     textAlign: TextAlign.center,
                     style: const TextStyle(
                         fontSize: 18, fontWeight: FontWeight.w600)),
                 const SizedBox(height: 6),
-                const Text('Please wait, do not close the app.',
-                    style: TextStyle(color: AppColors.textSecondary)),
+                Text(tr(context, 'Please wait, do not close the app.'),
+                    style: const TextStyle(color: AppColors.textSecondary)),
               ] else ...[
                 const Icon(Icons.error_outline, color: Colors.red, size: 48),
                 const SizedBox(height: 12),
-                Text(_error!,
+                Text(tr(context, _error!),
                     textAlign: TextAlign.center,
                     style: const TextStyle(fontSize: 16)),
                 const SizedBox(height: 16),
                 FilledButton.icon(
                   onPressed: _run,
                   icon: const Icon(Icons.refresh),
-                  label: const Text('Try sending again'),
+                  label: Text(tr(context, 'Try sending again')),
                 ),
                 TextButton(
                   onPressed: () => Navigator.of(context).pop(),
-                  child: const Text('Go back'),
+                  child: Text(tr(context, 'Go back')),
                 ),
               ],
             ],

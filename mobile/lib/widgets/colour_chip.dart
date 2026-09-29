@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../l10n/lang.dart';
+
 import '../utils/app_colors.dart';
 
 /// A small colour square with a label under it.
@@ -63,7 +65,7 @@ class ResultPill extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final r = result.toUpperCase();
-    final text = r == 'INCONCLUSIVE' ? 'NOT SURE' : r;
+    final text = r == 'INCONCLUSIVE' ? tr(context, 'NOT SURE') : r;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       decoration: BoxDecoration(

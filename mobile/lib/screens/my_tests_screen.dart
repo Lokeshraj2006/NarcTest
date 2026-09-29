@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../l10n/lang.dart';
 import '../models/test_models.dart';
 import '../services/api_service.dart';
 import '../utils/app_colors.dart';
@@ -40,7 +41,7 @@ class _MyTestsScreenState extends State<MyTestsScreen> {
     return Scaffold(
       backgroundColor: AppColors.background,
       appBar: AppBar(
-        title: const Text('My Tests'),
+        title: Text(tr(context, 'My Tests')),
         backgroundColor: AppColors.primary,
         foregroundColor: Colors.white,
       ),
@@ -57,11 +58,11 @@ class _MyTestsScreenState extends State<MyTestsScreen> {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(ApiService.friendlyError(snap.error!),
+                    Text(tr(context, ApiService.friendlyError(snap.error!)),
                         textAlign: TextAlign.center),
                     const SizedBox(height: 12),
                     FilledButton(
-                        onPressed: _reload, child: const Text('Try again')),
+                        onPressed: _reload, child: Text(tr(context, 'Try again'))),
                   ],
                 ),
               ),
@@ -69,8 +70,8 @@ class _MyTestsScreenState extends State<MyTestsScreen> {
           }
           final tests = snap.data ?? [];
           if (tests.isEmpty) {
-            return const Center(
-                child: Text('No tests yet. Tap "New Test" on Home to start.'));
+            return Center(
+                child: Text(tr(context, 'No tests yet. Tap "New Test" on Home to start.')));
           }
           return RefreshIndicator(
             onRefresh: _reload,
@@ -87,10 +88,10 @@ class _MyTestsScreenState extends State<MyTestsScreen> {
                     leading: CircleAvatar(
                       backgroundColor: r.measuredColor ?? Colors.grey.shade300,
                     ),
-                    title: Text('Test #${r.id} · ${r.kitName}',
+                    title: Text(tr(context, 'Test #{0} · {1}', [r.id, r.kitName]),
                         maxLines: 1, overflow: TextOverflow.ellipsis),
                     subtitle: Text(
-                        '${_when(r)}\n${r.outcomeLabel ?? r.reason ?? ''}',
+                        '${_when(r)}\n${tr(context, r.outcomeLabel ?? r.reason ?? '')}',
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis),
                     isThreeLine: true,

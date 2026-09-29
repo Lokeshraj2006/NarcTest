@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../l10n/lang.dart';
 import '../../providers/auth_provider.dart';
 import '../../widgets/custom_button.dart';
 import '../home_screen.dart';
@@ -47,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
     } else if (auth.errorMessage != null) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(auth.errorMessage!),
+          content: Text(trNow(context, auth.errorMessage!)),
           backgroundColor: Colors.red.shade700,
         ),
       );
@@ -67,9 +68,10 @@ class _LoginScreenState extends State<LoginScreen> {
         elevation: 0,
         foregroundColor: Colors.black54,
         actions: [
+          const LangButton(),
           IconButton(
             icon: const Icon(Icons.settings_outlined),
-            tooltip: 'Backend settings',
+            tooltip: tr(context, 'Backend settings'),
             onPressed: () => Navigator.of(context).push(
               MaterialPageRoute(builder: (_) => const SettingsScreen()),
             ),
@@ -111,10 +113,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   const SizedBox(height: 6),
-                  const Text(
-                    'Digital Companion for Field Drug Testing',
+                  Text(
+                    tr(context, 'Digital Companion for Field Drug Testing'),
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 13, color: Colors.grey),
+                    style: const TextStyle(fontSize: 13, color: Colors.grey),
                   ),
                   const SizedBox(height: 36),
 
@@ -122,7 +124,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   TextFormField(
                     controller: _usernameController,
                     decoration: InputDecoration(
-                      labelText: 'Username',
+                      labelText: tr(context, 'Username'),
                       prefixIcon: const Icon(Icons.person_outline),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
@@ -138,7 +140,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     controller: _passwordController,
                     obscureText: _obscurePassword,
                     decoration: InputDecoration(
-                      labelText: 'Password',
+                      labelText: tr(context, 'Password'),
                       prefixIcon: const Icon(Icons.lock_outline),
                       suffixIcon: IconButton(
                         icon: Icon(
@@ -163,7 +165,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                   // Submit button
                   CustomButton(
-                    text: 'Log in',
+                    text: tr(context, 'Log in'),
                     isLoading: auth.isLoading,
                     onPressed: _handleLogin,
                     backgroundColor: Colors.indigo.shade700,
@@ -181,9 +183,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
-                          'Demo login (tap to fill):',
-                          style: TextStyle(
+                        Text(
+                          tr(context, 'Demo login (tap to fill):'),
+                          style: const TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
                             color: Colors.black54,

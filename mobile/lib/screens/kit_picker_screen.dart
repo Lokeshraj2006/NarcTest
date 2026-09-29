@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../l10n/lang.dart';
 import '../models/test_models.dart';
 import '../services/api_service.dart';
 import '../utils/app_colors.dart';
@@ -30,7 +31,7 @@ class _KitPickerScreenState extends State<KitPickerScreen> {
     return Scaffold(
       backgroundColor: AppColors.background,
       appBar: AppBar(
-        title: const Text('Pick your test kit'),
+        title: Text(tr(context, 'Pick your test kit')),
         backgroundColor: AppColors.primary,
         foregroundColor: Colors.white,
       ),
@@ -42,14 +43,15 @@ class _KitPickerScreenState extends State<KitPickerScreen> {
           }
           if (snap.hasError) {
             return _Message(
-              text: ApiService.friendlyError(snap.error!),
+              text: tr(context, ApiService.friendlyError(snap.error!)),
               onRetry: _reload,
             );
           }
           final kits = snap.data ?? [];
           if (kits.isEmpty) {
             return _Message(
-                text: 'No test kits found on the server.', onRetry: _reload);
+                text: tr(context, 'No test kits found on the server.'),
+                onRetry: _reload);
           }
           return RefreshIndicator(
             onRefresh: () async => _reload(),
@@ -97,7 +99,7 @@ class _KitCard extends StatelessWidget {
                 children: [
                   const Icon(Icons.timer_outlined, size: 18),
                   const SizedBox(width: 4),
-                  Text('Wait ${kit.readTimeS} seconds before reading'),
+                  Text(tr(context, 'Wait {0} seconds before reading', [kit.readTimeS])),
                 ],
               ),
               const SizedBox(height: 12),
@@ -106,7 +108,7 @@ class _KitCard extends StatelessWidget {
                 runSpacing: 8,
                 children: [
                   for (final o in kit.outcomes)
-                    ColourChip(color: o.color, label: o.label, size: 40),
+                    ColourChip(color: o.color, label: tr(context, o.label), size: 40),
                 ],
               ),
               const SizedBox(height: 8),
@@ -117,7 +119,7 @@ class _KitCard extends StatelessWidget {
                     MaterialPageRoute(builder: (_) => CaptureScreen(kit: kit)),
                   ),
                   icon: const Icon(Icons.camera_alt),
-                  label: const Text('Use this kit'),
+                  label: Text(tr(context, 'Use this kit')),
                 ),
               ),
             ],
@@ -145,7 +147,7 @@ class _Message extends StatelessWidget {
             const SizedBox(height: 12),
             Text(text, textAlign: TextAlign.center),
             const SizedBox(height: 12),
-            FilledButton(onPressed: onRetry, child: const Text('Try again')),
+            FilledButton(onPressed: onRetry, child: Text(tr(context, 'Try again'))),
           ],
         ),
       ),

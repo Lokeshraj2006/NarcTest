@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../l10n/lang.dart';
 import '../models/test_models.dart';
 import '../utils/app_colors.dart';
 import '../widgets/colour_chip.dart';
@@ -15,7 +16,7 @@ class ResultScreen extends StatelessWidget {
 
   String _short(String s) => s.length > 16 ? '${s.substring(0, 16)}...' : s;
 
-  String _time() {
+  String _time(BuildContext context) {
     final t = record.ntpTime ?? record.createdAt;
     if (t == null) return '-';
     final parsed = DateTime.tryParse(t)?.toLocal();
@@ -27,21 +28,21 @@ class ResultScreen extends StatelessWidget {
             '${parsed.minute.toString().padLeft(2, '0')}:'
             '${parsed.second.toString().padLeft(2, '0')}';
     final src = record.timeSource == 'ntp'
-        ? 'internet time (NTP)'
+        ? tr(context, 'internet time (NTP)')
         : record.timeSource == 'https'
-            ? 'internet time (HTTPS)'
-            : 'server clock';
+            ? tr(context, 'internet time (HTTPS)')
+            : tr(context, 'server clock');
     return '$shown ($src)';
   }
 
-  String _gps() {
+  String _gps(BuildContext context) {
     final lat = record.latitude, lon = record.longitude;
-    if (lat == null || lon == null) return 'Not available';
+    if (lat == null || lon == null) return tr(context, 'Not available');
     var s = '${lat.toStringAsFixed(5)}, ${lon.toStringAsFixed(5)}';
     if (record.gpsAccuracyM != null) {
       s += ' (±${record.gpsAccuracyM!.round()} m)';
     }
-    if (record.gpsIsMock) s += ' - FAKE GPS!';
+    if (record.gpsIsMock) s += tr(context, ' - FAKE GPS!');
     return s;
   }
 
@@ -52,7 +53,7 @@ class ResultScreen extends StatelessWidget {
         mode: LaunchMode.externalApplication);
     if (!ok && context.mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Could not open $url')));
+          SnackBar(content: Text(trNow(context, 'Could not open {0}', [url]))));
     }
   }
 
@@ -63,7 +64,7 @@ class ResultScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.background,
       appBar: AppBar(
-        title: Text('Test #${record.id}'),
+        title: Text(tr(context, 'Test #{0}', [record.id])),
         backgroundColor: colour,
         foregroundColor: Colors.white,
       ),
@@ -90,7 +91,7 @@ class ResultScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  AppColors.resultTitle(result),
+                  tr(context, AppColors.resultTitle(result)),
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                       color: Colors.white,
@@ -99,14 +100,14 @@ class ResultScreen extends StatelessWidget {
                 ),
                 if (record.outcomeLabel != null) ...[
                   const SizedBox(height: 6),
-                  Text(record.outcomeLabel!,
+                  Text(tr(context, record.outcomeLabel!),
                       textAlign: TextAlign.center,
                       style:
                           const TextStyle(color: Colors.white, fontSize: 18)),
                 ],
                 if (record.confidence != null && result != 'INCONCLUSIVE') ...[
                   const SizedBox(height: 6),
-                  Text('${record.confidence}% sure',
+                  Text(tr(context, '{0}% sure', [record.confidence]),
                       style: const TextStyle(
                           color: Colors.white,
                           fontSize: 16,
@@ -121,7 +122,7 @@ class ResultScreen extends StatelessWidget {
               color: Colors.amber.shade50,
               child: ListTile(
                 leading: const Icon(Icons.info_outline),
-                title: Text(record.reason!),
+                title: Text(tr(context, record.reason!)),
               ),
             ),
           ],
@@ -129,7 +130,7 @@ class ResultScreen extends StatelessWidget {
 
           // Colours
           _section(
-            'Colour seen vs kit colours',
+            tr(context, 'Colour seen vs kit colours'),
             Wrap(
               spacing: 6,
               runSpacing: 8,
@@ -137,14 +138,14 @@ class ResultScreen extends StatelessWidget {
               children: [
                 ColourChip(
                   color: record.measuredColor,
-                  label: 'Your test',
+                  label: tr(context, 'Your test'),
                   highlight: true,
                   size: 56,
                 ),
                 for (final o in record.kitOutcomes)
                   ColourChip(
                     color: o.color,
-                    label: o.label,
+                    label: tr(context, o.label),
                     highlight: o.label == record.outcomeLabel,
                   ),
               ],
@@ -154,30 +155,30 @@ class ResultScreen extends StatelessWidget {
 
           // Record card
           _section(
-            'Record details',
+            tr(context, 'Record details'),
             Column(
               children: [
-                _row('Test ID', '#${record.id}'),
-                _row('Kit', record.kitName),
-                _row('Time', _time()),
-                _row('GPS', _gps()),
-                _row('Officer', record.officerName),
-                _row('Photo hash', _short(record.imageSha256)),
-                _row('Record hash', _short(record.recordHash)),
+                _row(tr(context, 'Test ID'), '#${record.id}'),
+                _row(tr(context, 'Kit'), record.kitName),
+                _row(tr(context, 'Time'), _time(context)),
+                _row('GPS', _gps(context)),
+                _row(tr(context, 'Officer'), record.officerName),
+                _row(tr(context, 'Photo hash'), _short(record.imageSha256)),
+                _row(tr(context, 'Record hash'), _short(record.recordHash)),
                 const SizedBox(height: 8),
                 Row(
                   children: [
                     const Icon(Icons.verified, color: AppColors.negative),
                     const SizedBox(width: 6),
-                    const Text('Sealed & signed',
-                        style: TextStyle(
+                    Text(tr(context, 'Sealed & signed'),
+                        style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             color: AppColors.negative)),
                     if (record.clientHashMatch == false) ...[
                       const SizedBox(width: 8),
-                      const Flexible(
-                        child: Text('(photo hash did not match!)',
-                            style: TextStyle(color: Colors.red)),
+                      Flexible(
+                        child: Text(tr(context, '(photo hash did not match!)'),
+                            style: const TextStyle(color: Colors.red)),
                       ),
                     ],
                   ],
@@ -193,15 +194,15 @@ class ResultScreen extends StatelessWidget {
                   ? null
                   : () => _openVerify(context),
               icon: const Icon(Icons.open_in_new),
-              label: const Text('Open verify page',
-                  style: TextStyle(fontSize: 16)),
+              label: Text(tr(context, 'Open verify page'),
+                  style: const TextStyle(fontSize: 16)),
             ),
           ),
           const SizedBox(height: 16),
-          const Text(
-            disclaimer,
+          Text(
+            tr(context, disclaimer),
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style: const TextStyle(
                 fontSize: 13,
                 fontStyle: FontStyle.italic,
                 color: AppColors.textSecondary),

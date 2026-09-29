@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
+import '../l10n/lang.dart';
 import '../models/test_models.dart';
 import '../services/camera_service.dart';
 import 'sealing_screen.dart';
@@ -81,8 +82,8 @@ class _CaptureScreenState extends State<CaptureScreen> {
     if (!mounted) return;
     if (file == null) {
       setState(() => _busy = false);
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          content: Text('Could not take the photo. Please try again.')));
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text(trNow(context, 'Could not take the photo. Please try again.'))));
       return;
     }
     final bytes = await file.readAsBytes();
@@ -106,13 +107,13 @@ class _CaptureScreenState extends State<CaptureScreen> {
         title: Text(widget.kit.name, overflow: TextOverflow.ellipsis),
       ),
       body: _failed
-          ? const Center(
+          ? Center(
               child: Padding(
-                padding: EdgeInsets.all(24),
+                padding: const EdgeInsets.all(24),
                 child: Text(
-                  'Camera is not working. Please allow camera permission and open this screen again.',
+                  tr(context, 'Camera is not working. Please allow camera permission and open this screen again.'),
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                 ),
               ),
             )
@@ -184,8 +185,8 @@ class _CaptureScreenState extends State<CaptureScreen> {
               icon: Icon(counting ? Icons.stop : Icons.timer),
               label: Text(
                 counting
-                    ? 'Stop timer'
-                    : 'Start timer (${widget.kit.readTimeS}s)',
+                    ? tr(context, 'Stop timer')
+                    : tr(context, 'Start timer ({0}s)', [widget.kit.readTimeS]),
                 style: const TextStyle(fontSize: 16),
               ),
             ),
@@ -199,8 +200,8 @@ class _CaptureScreenState extends State<CaptureScreen> {
               style: FilledButton.styleFrom(backgroundColor: Colors.white),
               onPressed: _busy ? null : _capture,
               icon: const Icon(Icons.camera_alt, color: Colors.black),
-              label: const Text('Capture now',
-                  style: TextStyle(fontSize: 16, color: Colors.black)),
+              label: Text(tr(context, 'Capture now'),
+                  style: const TextStyle(fontSize: 16, color: Colors.black)),
             ),
           ),
         ),
@@ -228,9 +229,9 @@ class _GuideBox extends StatelessWidget {
                 color: Colors.black54,
                 borderRadius: BorderRadius.circular(8),
               ),
-              child: const Text(
-                'Keep the colour card inside the box',
-                style: TextStyle(color: Colors.white, fontSize: 16),
+              child: Text(
+                tr(context, 'Keep the colour card inside the box'),
+                style: const TextStyle(color: Colors.white, fontSize: 16),
               ),
             ),
             const SizedBox(height: 10),
