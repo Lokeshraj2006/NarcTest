@@ -176,5 +176,78 @@ def build_test_pdf(record: Dict[str, Any], image_bytes: Optional[bytes]) -> byte
     story.append(Spacer(1, 4))
     story.append(_p(DISCLAIMER, _SMALL))
 
+    story += _section63_page(record, image_bytes, url)
     doc.build(story)
     return buf.getvalue()
+
+
+def _phone_model(image_bytes: Optional[bytes]) -> str:
+    """Phone make and model from the photo's own EXIF data, if the camera wrote it."""
+    try:
+        from PIL import Image as PILImage
+        exif = PILImage.open(io.BytesIO(image_bytes or b"")).getexif()
+        make, model = (exif.get(0x010F) or "").strip(), (exif.get(0x0110) or "").strip()
+        return " ".join(f"{make} {model}".replace(chr(0), " ").split()) or "not in photo data"
+    except Exception:
+        return "not in photo data"
+
+
+def _section63_page(record: Dict[str, Any], image_bytes: Optional[bytes], url: str) -> list:
+    """Page 2: technical details filled in for the certificate under Section 63(4) BSA 2023.
+    FieldProof does not sign the certificate; the person in charge and an expert must do that."""
+    from reportlab.platypus import PageBreak
+
+    title = ParagraphStyle("fp63", parent=_ss["Heading2"], fontSize=13, spaceAfter=2)
+    rows = [
+        ("Electronic record", f"Field test photo and sealed test record, Test #{record.get('id')} "
+                              f"(Test ID {record.get('test_uid')})"),
+        ("How it was made", "Photo taken with the FieldProof app camera on a mobile phone, sent to the "
+                            "FieldProof server and sealed there."),
+        ("Mobile phone", f"{_phone_model(image_bytes)}, app device ID {record.get('device_id') or '-'}"),
+        ("Server", f"FieldProof server, signing key {record.get('key_id') or '-'}"),
+        ("Date and time", f"{record.get('created_at')} UTC, time from "
+                          f"{time_service.label(record.get('time_source'))}"),
+        ("Place (GPS)", "-" if record.get("latitude") is None
+                        else f"{record['latitude']:.6f}, {record['longitude']:.6f}"),
+        ("Hash algorithm", "SHA-256"),
+        ("Hash of the photo", record.get("image_sha256")),
+        ("Hash of the sealed record", record.get("record_hash")),
+        ("Digital signature", f"Ed25519, key {record.get('key_id') or '-'}"),
+        ("Check it online", url or "-"),
+    ]
+    t = Table([[_p(k, _SMALL), _p(v, _MONO if "Hash" in k else _NORMAL)] for k, v in rows],
+              colWidths=[45 * mm, 135 * mm])
+    t.setStyle(TableStyle([
+        ("GRID", (0, 0), (-1, -1), 0.4, colors.HexColor("#bbbbbb")),
+        ("BACKGROUND", (0, 0), (0, -1), colors.HexColor("#f2f2f2")),
+        ("VALIGN", (0, 0), (-1, -1), "TOP"),
+    ]))
+
+    def sign_box(who: str, name: str) -> Table:
+        s = Table([[Paragraph(f"<b>{escape(who)}</b>", _NORMAL), ""],
+                   [_p("Name", _SMALL), _p(name or "", _NORMAL)],
+                   [_p("Designation", _SMALL), ""],
+                   [_p("Date and place", _SMALL), ""],
+                   [_p("Signature", _SMALL), ""]],
+                  colWidths=[45 * mm, 135 * mm], rowHeights=[None, 8 * mm, 8 * mm, 8 * mm, 12 * mm])
+        s.setStyle(TableStyle([
+            ("GRID", (0, 1), (-1, -1), 0.4, colors.HexColor("#bbbbbb")),
+            ("SPAN", (0, 0), (-1, 0)),
+            ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+        ]))
+        return s
+
+    return [
+        PageBreak(),
+        _p("Details for the certificate under Section 63(4), Bharatiya Sakshya Adhiniyam 2023", title),
+        _p("Filled in by FieldProof from the sealed record above. Attach this to the certificate in the form "
+           "given in the Schedule of the Act, with the hash report.", _SMALL),
+        Spacer(1, 6), t, Spacer(1, 10),
+        sign_box("Part A - person in charge of the device (field officer)", record.get("officer_name") or ""),
+        Spacer(1, 8),
+        sign_box("Part B - expert", ""),
+        Spacer(1, 8),
+        Paragraph(escape("FieldProof only fills the technical details. Under Section 63(4) the certificate must be "
+                         "signed by the person in charge and by an expert. This is a presumptive field test, "
+                         "the FSL lab report confirms it."), _WARN),
+    ]

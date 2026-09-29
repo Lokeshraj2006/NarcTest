@@ -1,0 +1,1718 @@
+{
+ "made": "2026-09-29 12:29",
+ "kit": "DEMO-MARQUIS-SIM",
+ "kit_version": 1,
+ "note": "computer-changed copies of real phone photos",
+ "rows": [
+  {
+   "record": 13,
+   "card": "purple",
+   "group": "Positive card",
+   "condition": "As taken",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 13,
+   "card": "purple",
+   "group": "Positive card",
+   "condition": "Darker room",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 13,
+   "card": "purple",
+   "group": "Positive card",
+   "condition": "Brighter light",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 13,
+   "card": "purple",
+   "group": "Positive card",
+   "condition": "Yellow bulb",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 13,
+   "card": "purple",
+   "group": "Positive card",
+   "condition": "Cool tube light",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 13,
+   "card": "purple",
+   "group": "Positive card",
+   "condition": "Phone tilted",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 13,
+   "card": "purple",
+   "group": "Positive card",
+   "condition": "Shaky hand",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 13,
+   "card": "purple",
+   "group": "Positive card",
+   "condition": "Cheap camera",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 13,
+   "card": "purple",
+   "group": "Positive card",
+   "condition": "Grainy photo",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 14,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "As taken",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 14,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Darker room",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 14,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Brighter light",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 14,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Yellow bulb",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 14,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Cool tube light",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 14,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Phone tilted",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 14,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Shaky hand",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 14,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Cheap camera",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 14,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Grainy photo",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 15,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "As taken",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 15,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Darker room",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 15,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Brighter light",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 15,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Yellow bulb",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 15,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Cool tube light",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 15,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Phone tilted",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 15,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Shaky hand",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 15,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Cheap camera",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 15,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Grainy photo",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 16,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "As taken",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 16,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Darker room",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 16,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Brighter light",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 16,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Yellow bulb",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 16,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Cool tube light",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 16,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Phone tilted",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 16,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Shaky hand",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 16,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Cheap camera",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 16,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Grainy photo",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 17,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "As taken",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour does not match any result of this kit"
+  },
+  {
+   "record": 17,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Darker room",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour does not match any result of this kit"
+  },
+  {
+   "record": 17,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Brighter light",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour does not match any result of this kit"
+  },
+  {
+   "record": 17,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Yellow bulb",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour does not match any result of this kit"
+  },
+  {
+   "record": 17,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Cool tube light",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour does not match any result of this kit"
+  },
+  {
+   "record": 17,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Phone tilted",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour does not match any result of this kit"
+  },
+  {
+   "record": 17,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Shaky hand",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 17,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Cheap camera",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 17,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Grainy photo",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour does not match any result of this kit"
+  },
+  {
+   "record": 18,
+   "card": "green",
+   "group": "Trick card",
+   "condition": "As taken",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour does not match any result of this kit"
+  },
+  {
+   "record": 18,
+   "card": "green",
+   "group": "Trick card",
+   "condition": "Darker room",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour does not match any result of this kit"
+  },
+  {
+   "record": 18,
+   "card": "green",
+   "group": "Trick card",
+   "condition": "Brighter light",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour does not match any result of this kit"
+  },
+  {
+   "record": 18,
+   "card": "green",
+   "group": "Trick card",
+   "condition": "Yellow bulb",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour does not match any result of this kit"
+  },
+  {
+   "record": 18,
+   "card": "green",
+   "group": "Trick card",
+   "condition": "Cool tube light",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour does not match any result of this kit"
+  },
+  {
+   "record": 18,
+   "card": "green",
+   "group": "Trick card",
+   "condition": "Phone tilted",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour does not match any result of this kit"
+  },
+  {
+   "record": 18,
+   "card": "green",
+   "group": "Trick card",
+   "condition": "Shaky hand",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 18,
+   "card": "green",
+   "group": "Trick card",
+   "condition": "Cheap camera",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour does not match any result of this kit"
+  },
+  {
+   "record": 18,
+   "card": "green",
+   "group": "Trick card",
+   "condition": "Grainy photo",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour does not match any result of this kit"
+  },
+  {
+   "record": 19,
+   "card": "green",
+   "group": "Trick card",
+   "condition": "As taken",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 19,
+   "card": "green",
+   "group": "Trick card",
+   "condition": "Darker room",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour card not found \u2014 keep all 4 corner squares in the photo"
+  },
+  {
+   "record": 19,
+   "card": "green",
+   "group": "Trick card",
+   "condition": "Brighter light",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 19,
+   "card": "green",
+   "group": "Trick card",
+   "condition": "Yellow bulb",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 19,
+   "card": "green",
+   "group": "Trick card",
+   "condition": "Cool tube light",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 19,
+   "card": "green",
+   "group": "Trick card",
+   "condition": "Phone tilted",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 19,
+   "card": "green",
+   "group": "Trick card",
+   "condition": "Shaky hand",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 19,
+   "card": "green",
+   "group": "Trick card",
+   "condition": "Cheap camera",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 19,
+   "card": "green",
+   "group": "Trick card",
+   "condition": "Grainy photo",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 20,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "As taken",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 20,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Darker room",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour card not found \u2014 keep all 4 corner squares in the photo"
+  },
+  {
+   "record": 20,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Brighter light",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 20,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Yellow bulb",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 20,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Cool tube light",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 20,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Phone tilted",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 20,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Shaky hand",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 20,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Cheap camera",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 20,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Grainy photo",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 21,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "As taken",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 21,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Darker room",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 21,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Brighter light",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 21,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Yellow bulb",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 21,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Cool tube light",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 21,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Phone tilted",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 21,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Shaky hand",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 21,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Cheap camera",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 21,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Grainy photo",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 22,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "As taken",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 22,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Darker room",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 22,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Brighter light",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 22,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Yellow bulb",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 22,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Cool tube light",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 22,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Phone tilted",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 22,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Shaky hand",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 22,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Cheap camera",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 22,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Grainy photo",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 23,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "As taken",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 23,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Darker room",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 23,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Brighter light",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 23,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Yellow bulb",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 23,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Cool tube light",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 23,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Phone tilted",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 23,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Shaky hand",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 23,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Cheap camera",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 23,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Grainy photo",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 24,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "As taken",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 24,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Darker room",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 24,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Brighter light",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 24,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Yellow bulb",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 24,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Cool tube light",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 24,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Phone tilted",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 24,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Shaky hand",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 24,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Cheap camera",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 24,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Grainy photo",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 25,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "As taken",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour card not found \u2014 keep all 4 corner squares in the photo"
+  },
+  {
+   "record": 25,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Darker room",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour card not found \u2014 keep all 4 corner squares in the photo"
+  },
+  {
+   "record": 25,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Brighter light",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour card not found \u2014 keep all 4 corner squares in the photo"
+  },
+  {
+   "record": 25,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Yellow bulb",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour card not found \u2014 keep all 4 corner squares in the photo"
+  },
+  {
+   "record": 25,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Cool tube light",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour card not found \u2014 keep all 4 corner squares in the photo"
+  },
+  {
+   "record": 25,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Phone tilted",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour card not found \u2014 keep all 4 corner squares in the photo"
+  },
+  {
+   "record": 25,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Shaky hand",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour card not found \u2014 keep all 4 corner squares in the photo"
+  },
+  {
+   "record": 25,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Cheap camera",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour card not found \u2014 keep all 4 corner squares in the photo"
+  },
+  {
+   "record": 25,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Grainy photo",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour card not found \u2014 keep all 4 corner squares in the photo"
+  },
+  {
+   "record": 26,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "As taken",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour card could not be read properly \u2014 retake in even light"
+  },
+  {
+   "record": 26,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Darker room",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour card could not be read properly \u2014 retake in even light"
+  },
+  {
+   "record": 26,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Brighter light",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour card could not be read properly \u2014 retake in even light"
+  },
+  {
+   "record": 26,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Yellow bulb",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour card could not be read properly \u2014 retake in even light"
+  },
+  {
+   "record": 26,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Cool tube light",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour card could not be read properly \u2014 retake in even light"
+  },
+  {
+   "record": 26,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Phone tilted",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour card could not be read properly \u2014 retake in even light"
+  },
+  {
+   "record": 26,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Shaky hand",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 26,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Cheap camera",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour card could not be read properly \u2014 retake in even light"
+  },
+  {
+   "record": 26,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Grainy photo",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour card could not be read properly \u2014 retake in even light"
+  },
+  {
+   "record": 27,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "As taken",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour does not match any result of this kit"
+  },
+  {
+   "record": 27,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Darker room",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour does not match any result of this kit"
+  },
+  {
+   "record": 27,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Brighter light",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour does not match any result of this kit"
+  },
+  {
+   "record": 27,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Yellow bulb",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour does not match any result of this kit"
+  },
+  {
+   "record": 27,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Cool tube light",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour does not match any result of this kit"
+  },
+  {
+   "record": 27,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Phone tilted",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour does not match any result of this kit"
+  },
+  {
+   "record": 27,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Shaky hand",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 27,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Cheap camera",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour does not match any result of this kit"
+  },
+  {
+   "record": 27,
+   "card": "between",
+   "group": "Trick card",
+   "condition": "Grainy photo",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour does not match any result of this kit"
+  },
+  {
+   "record": 28,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "As taken",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 28,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Darker room",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 28,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Brighter light",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 28,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Yellow bulb",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 28,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Cool tube light",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 28,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Phone tilted",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 28,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Shaky hand",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 28,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Cheap camera",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 28,
+   "card": "orange",
+   "group": "Positive card",
+   "condition": "Grainy photo",
+   "result": "POSITIVE",
+   "label": "Amphetamine-type drug (orange)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 29,
+   "card": "purple",
+   "group": "Positive card",
+   "condition": "As taken",
+   "result": "POSITIVE",
+   "label": "Opium-type drug (purple)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 29,
+   "card": "purple",
+   "group": "Positive card",
+   "condition": "Darker room",
+   "result": "POSITIVE",
+   "label": "Opium-type drug (purple)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 29,
+   "card": "purple",
+   "group": "Positive card",
+   "condition": "Brighter light",
+   "result": "POSITIVE",
+   "label": "Opium-type drug (purple)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 29,
+   "card": "purple",
+   "group": "Positive card",
+   "condition": "Yellow bulb",
+   "result": "POSITIVE",
+   "label": "Opium-type drug (purple)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 29,
+   "card": "purple",
+   "group": "Positive card",
+   "condition": "Cool tube light",
+   "result": "POSITIVE",
+   "label": "Opium-type drug (purple)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 29,
+   "card": "purple",
+   "group": "Positive card",
+   "condition": "Phone tilted",
+   "result": "POSITIVE",
+   "label": "Opium-type drug (purple)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 29,
+   "card": "purple",
+   "group": "Positive card",
+   "condition": "Shaky hand",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 29,
+   "card": "purple",
+   "group": "Positive card",
+   "condition": "Cheap camera",
+   "result": "POSITIVE",
+   "label": "Opium-type drug (purple)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 29,
+   "card": "purple",
+   "group": "Positive card",
+   "condition": "Grainy photo",
+   "result": "POSITIVE",
+   "label": "Opium-type drug (purple)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 30,
+   "card": "green",
+   "group": "Trick card",
+   "condition": "As taken",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour card not found \u2014 keep all 4 corner squares in the photo"
+  },
+  {
+   "record": 30,
+   "card": "green",
+   "group": "Trick card",
+   "condition": "Darker room",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour card not found \u2014 keep all 4 corner squares in the photo"
+  },
+  {
+   "record": 30,
+   "card": "green",
+   "group": "Trick card",
+   "condition": "Brighter light",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour card could not be read properly \u2014 retake in even light"
+  },
+  {
+   "record": 30,
+   "card": "green",
+   "group": "Trick card",
+   "condition": "Yellow bulb",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour card not found \u2014 keep all 4 corner squares in the photo"
+  },
+  {
+   "record": 30,
+   "card": "green",
+   "group": "Trick card",
+   "condition": "Cool tube light",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour card not found \u2014 keep all 4 corner squares in the photo"
+  },
+  {
+   "record": 30,
+   "card": "green",
+   "group": "Trick card",
+   "condition": "Phone tilted",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour card not found \u2014 keep all 4 corner squares in the photo"
+  },
+  {
+   "record": 30,
+   "card": "green",
+   "group": "Trick card",
+   "condition": "Shaky hand",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour card not found \u2014 keep all 4 corner squares in the photo"
+  },
+  {
+   "record": 30,
+   "card": "green",
+   "group": "Trick card",
+   "condition": "Cheap camera",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour card not found \u2014 keep all 4 corner squares in the photo"
+  },
+  {
+   "record": 30,
+   "card": "green",
+   "group": "Trick card",
+   "condition": "Grainy photo",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Colour card not found \u2014 keep all 4 corner squares in the photo"
+  },
+  {
+   "record": 31,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "As taken",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 31,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Darker room",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 31,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Brighter light",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 31,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Yellow bulb",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 31,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Cool tube light",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 31,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Phone tilted",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 31,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Shaky hand",
+   "result": "INCONCLUSIVE",
+   "label": null,
+   "verdict": "not_sure",
+   "reason": "Photo is blurry \u2014 hold the phone steady and retake"
+  },
+  {
+   "record": 31,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Cheap camera",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  },
+  {
+   "record": 31,
+   "card": "plain",
+   "group": "Plain card",
+   "condition": "Grainy photo",
+   "result": "NEGATIVE",
+   "label": "No reaction (no colour change)",
+   "verdict": "right",
+   "reason": null
+  }
+ ]
+}

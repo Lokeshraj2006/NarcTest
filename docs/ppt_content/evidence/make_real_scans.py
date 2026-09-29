@@ -53,6 +53,23 @@ if '--check' in sys.argv:                                    # eyeball the dim /
         c = card_crop(recs[k]); c.thumbnail((196, 146)); strip.paste(c, (i * 200 + 2, 2))
     strip.save(Path(__file__).with_name('real_scans_check.jpg')); print('check strip saved'); sys.exit()
 
+if '--tiles' in sys.argv:                                    # photos only (numbers go in slide text)
+    F2 = lambda s, b=False: ImageFont.truetype('C:/Windows/Fonts/' + ('arialbd.ttf' if b else 'arial.ttf'), s)
+    tw, th, gx, gy = 300, 190, 18, 100
+    img = Image.new('RGB', (3 * tw + 2 * gx, 2 * (th + gy)), 'white')
+    d = ImageDraw.Draw(img)
+    for i, (k, name) in enumerate(TILES):
+        r = recs[k]
+        x, y = (i % 3) * (tw + gx), (i // 3) * (th + gy)
+        img.paste(card_crop(r).resize((tw, th)), (x, y))
+        d.rectangle([x, y, x + tw - 1, y + th - 1], outline=(0xD0, 0xD0, 0xD0), width=2)
+        d.text((x, y + th + 6), name, font=F2(30), fill=(0x55, 0x55, 0x55))
+        ans = said(r) + (f' {r.confidence}%' if r.result != 'INCONCLUSIVE' else '')
+        ok = r.result == EXPECT[TRUTH[k]] and r.result != 'INCONCLUSIVE'
+        d.text((x, y + th + 44), ans, font=F2(34, True),
+               fill=(0x2E, 0x7D, 0x32) if ok else (0x8A, 0x5A, 0x00))
+    img.save(Path(__file__).with_name('real_scans_tiles.png')); print('tiles saved'); sys.exit()
+
 # confusion matrix: truth group x app answer
 groups = [('Positive card', ('purple', 'orange')), ('Plain card', ('plain',)), ('Trick card', ('between', 'green'))]
 cols = ['POSITIVE', 'NEGATIVE', 'INCONCLUSIVE']
