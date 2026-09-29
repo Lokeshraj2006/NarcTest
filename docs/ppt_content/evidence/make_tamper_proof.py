@@ -66,7 +66,7 @@ if '--tall' in sys.argv:  # bigger text for a narrow slide column: chain on top,
     sx = 20 + 3 * bw + 2 * gap + 50
     d.text((sx, y0 + 4), f'Ed25519 signature of test {TID}', font=F(40), fill=GREY)
     d.text((sx, y0 + 52), t.signature[:24] + '...', font=M(44), fill=INK)
-    d.text((sx, y0 + 108), 'Photo SHA-256', font=F(40), fill=GREY)
+    d.text((sx, y0 + 108), 'Photo SHA-256 (signed in record)', font=F(40), fill=GREY)
     d.text((sx, y0 + 156), t.image_sha256[:24] + '...', font=M(44), fill=INK)
     c0, c1, c2, ty = 20, 900, 1330, 250
     d.text((c0, ty), f'What we changed (test #{TID})', font=F(42, True), fill=INK)
