@@ -1,5 +1,7 @@
-"""Team_189360: v16b (approved, 60/90) + fixes from the two judge-panel reviews (30 Sep 2026).
+"""Team_189360: the team's 189360 deck layout + content from v16b + fixes from the judge-panel reviews.
 
+Layout, section order and wording style follow 189360_Team_PPT.pdf (the team's version).
+Built on the v16b .pptx because it has the same SIH template (logo, oval, footer, fonts).
 What changed and why is listed in CHANGES.md next to this file.
 Every number comes from docs/ppt_content (validation.md, goals_verified.md,
 evidence/stress_test.json, real_tests/records.json) or FieldProof_FULL_PROJECT_NOTES.md.
@@ -8,6 +10,7 @@ Run from this folder:   python build_team_189360.py
 """
 import copy
 import io
+import zipfile
 from pathlib import Path
 
 from lxml import etree
@@ -24,6 +27,8 @@ from pptx.util import Pt
 HERE = Path(__file__).resolve().parent
 SRC = HERE.parent / 'deck_v16b' / 'K26234_SIH26231_v16b.pptx'
 TILES = HERE.parent / 'ppt_content' / 'evidence' / 'real_scans_tiles.png'
+TAMPER = HERE.parent / 'ppt_content' / 'evidence' / 'tamper_proof_tall.png'
+PHASED = HERE / 'assets' / 'phased_189360.png'      # from 189360_Team_PPT.pdf (icons version)
 OUT = HERE / 'Team_189360.pptx'
 
 TITLE, HEAD, INK, GREY = '7A2F00', '974826', '000000', '555555'
@@ -249,11 +254,42 @@ def image_part(slide, shape):
     return slide.part.related_part(blip.get(qn('r:embed')))
 
 
+def media(name):
+    """A picture from the v16b package, by its media file name."""
+    with zipfile.ZipFile(SRC) as z:
+        return z.read('ppt/media/' + name)
+
+
+def picture(slide, blob_or_path, x, y, w=None, h=None, crop=None):
+    """crop = (left, top, right, bottom) as fractions of the picture."""
+    src = io.BytesIO(blob_or_path) if isinstance(blob_or_path, bytes) else str(blob_or_path)
+    im = Image.open(io.BytesIO(blob_or_path) if isinstance(blob_or_path, bytes) else blob_or_path)
+    cl, ct, cr, cb = crop or (0, 0, 0, 0)
+    aspect = im.width * (1 - cl - cr) / (im.height * (1 - ct - cb))
+    if w is None:
+        w = h * aspect
+    if h is None:
+        h = w / aspect
+    pic = slide.shapes.add_picture(src, I(x), I(y), I(w), I(h))
+    pic.crop_left, pic.crop_top, pic.crop_right, pic.crop_bottom = cl, ct, cr, cb
+    return pic
+
+
+def move(slide, sid, x=None, y=None, w=None, h=None):
+    sh = by_id(slide, sid)
+    if x is not None: sh.left = I(x)
+    if y is not None: sh.top = I(y)
+    if w is not None: sh.width = I(w)
+    if h is not None: sh.height = I(h)
+    return sh
+
+
 # --------------------------------------------------------------------------- deck
 prs = Presentation(SRC)
 s1, s2, s3, s4, s5, s6 = prs.slides
 s7 = clone_slide(prs, s6)
 s8 = clone_slide(prs, s6)
+ORIG = 1.0   # keep the 189360 font sizes where the text fits
 
 set_notes(s1, (
     "OPENING (20 s): We are HexTech, problem statement 26231, Digital Companion for Field Drug Testing. "
@@ -261,64 +297,63 @@ set_notes(s1, (
     "can check later. That makes the result easy to dispute. FieldProof reads the kit colour with a Rs 10 "
     "colour card, says NOT SURE when it cannot tell, and saves a record that anyone can check with a QR code."))
 
-# ============================================================== slide 2: PROPOSED SOLUTION
-kill(s2, 10, 17, 19, 20, 21, 22, 23, 38, 39, 41, 42)
+# ============================================================== slide 2: PROPOSED SOLUTION (189360 layout)
+kill(s2, 10, 17, 19, 20, 21, 22, 23, 24, 31, 32, 34, 38, 39, 40, 41, 42, 43)
 
-heading(s2, 1.08, 1.95, 1.6, 'Problem')
-add_text(s2, 2.55, 2.06, 6.4, 0.34,
+heading(s2, 1.2, 1.95, 1.6, 'Problem')
+add_text(s2, 2.6, 2.08, 6.4, 0.32,
          'India: 1,20,010 NDPS cases registered in 2023 (NCRB, Crime in India 2023)', size=12, color=GREY)
-add_text(s2, 1.08, 2.47, 7.8, 1.72, [
-    "Officers read the kit's colour change by eye, so street lamp, torch or sunlight and personal "
-    "judgement can change the result.",
-    'There is no standard colour value to compare the result with.',
-    'The test often leaves no clear digital record of who tested, where and when, so it is hard to verify later.',
-], size=16, bullet=True, space_after=3)
+add_text(s2, 1.2, 2.42, 7.85, 2.15, [
+    "Officers mainly judge the kit's colour change by looking at it, so lighting and personal judgement "
+    'can affect the result.',
+    'There is no standard colour value to compare the test result with.',
+    'The test does not always leave a clear digital record of who performed it, where, and when, making it '
+    'harder to verify later.',
+], size=20, bullet=True, space_after=2)
+move(s2, 14, x=1.17, y=4.66, w=7.83)
+heading(s2, 1.2, 4.76, 3.0, 'Solution')
+add_text(s2, 1.2, 5.2, 7.85, 2.65, [
+    '**Check the Test** - The app photographs the kit next to a ₹10 colour card and says POSITIVE, NEGATIVE '
+    'or NOT SURE.',
+    '**Record the Test** - Saves the result with the photo fingerprint, time, GPS and Inspector ID, signed '
+    'for a QR check.',
+    '**Manage the Records** - The admin dashboard manages Inspectors, test records, NOT SURE reviews and '
+    'reports.',
+], size=20, bullet=True, space_after=2)
+move(s2, 13, x=1.0, y=7.98, w=8.1, h=8.1 / 11.09)          # Test Kit ... Admin Review boxes
+for sid, box in {26: (1.2, 9.45, 3.35, 0.43), 27: (4.62, 9.47, 2.3, 0.40), 28: (4.62, 9.42, 2.3, 0.50),
+                 25: (7.2, 9.08, 1.16, 1.16), 29: (7.2, 9.08, 1.16, 1.16)}.items():
+    move(s2, sid, *box)
 
-heading(s2, 1.08, 4.3, 3.0, 'Solution')
-add_text(s2, 1.08, 4.78, 7.8, 1.95, [
-    '**Check the Test** - the app photographs the kit next to a ₹10 colour card, corrects the colour and '
-    'says POSITIVE, NEGATIVE or NOT SURE.',
-    '**Record the Test** - saves the photo fingerprint, internet time, GPS and officer ID as a signed '
-    'record with a QR check.',
-    '**Manage the Records** - supervisors see the test log, map, NOT SURE review and PDF reports on the '
-    'dashboard.',
-], size=16, bullet=True, space_after=3)
+add_box(s2, 10.0, 1.87, 7.75, 4.55, line=TITLE, lw=2.25, radius=0.04)
+heading(s2, 10.3, 1.98, 1.6, 'Novelty', size=23)
+add_text(s2, 11.6, 2.1, 6.0, 0.32, 'Not just a colour reader. A field result anyone can check later.',
+         size=13, bold=True, color=GREY, space_after=0)
+add_text(s2, 10.3, 2.55, 7.3, 3.8, [
+    '**Handles Lighting Variations** - 24 known colours on a ₹10 card correct the light before the kit '
+    'colour is read.',
+    '**Handles Unclear Results** - Blurry, shiny or in-between photos get NOT SURE with the reason, '
+    'never a guess.',
+    '**Creates Verifiable Evidence** - Photo fingerprint, GPS, internet time and Inspector ID are signed '
+    'and checked by QR.',
+    '**Supports Multiple Kits** - New kit colour profiles are added from the Admin website without '
+    'changing the app.',
+    '**Local Language Support** - Officers can use the app in Tamil.',
+], size=19, bullet=True, space_after=6)
 
-heading(s2, 1.08, 6.78, 5.0, 'User Experience')
-add_text(s2, 1.08, 7.26, 7.8, 1.8, [
-    "**4 steps** - choose kit, start the kit's read timer, take the photo inside the box, see the result. "
-    'About 16 s per test (19 scans, 1 team member).',
-    '**NOT SURE path** - the app says why (blurry, shiny, card not seen, colour unclear) and asks for a '
-    'retake. Still NOT SURE means no field result. The supervisor can only order a retest or confirm '
-    'NOT SURE, and the sample goes to FSL.',
-    '**Easy to read** - big coloured result, works in Tamil too.',
-], size=15, bullet=True, space_after=2)
-
-# video link row and QR: move a little lower so the text above has room
-for sid, (x, y, w, h) in {25: (7.62, 9.02, 1.22, 1.22), 29: (7.62, 9.02, 1.22, 1.22),
-                          26: (1.08, 9.36, 3.35, 0.43), 27: (4.5, 9.38, 2.3, 0.40),
-                          28: (4.5, 9.33, 2.3, 0.50)}.items():
-    sh = by_id(s2, sid)
-    sh.left, sh.top, sh.width, sh.height = I(x), I(y), I(w), I(h)
-
-set_runs(by_id(s2, 40), ['Real screenshots. Result screen shown in Tamil. Test Log (right) filters by date, '
-                         'officer, kit and result, and downloads CSV or PDF with QR.'])
-
-add_box(s2, 9.4, 6.52, 9.85, 3.78)
-heading(s2, 9.62, 6.58, 1.6, 'Novelty')
-add_text(s2, 11.2, 6.68, 7.9, 0.34, 'Not just a colour reader. A field result that anyone can check later.',
-         size=14, bold=True, color=TITLE)
-add_table(s2, 9.62, 7.12, [2.75, 1.7, 1.75, 3.25], [
-    ['', 'Eye check today', 'FSL lab', 'FieldProof'],
-    ['Result on the spot', 'Yes', 'No, report later', 'Yes, about 16 s'],
-    ['Same reading in any light', 'No', 'Yes, lab conditions', 'Yes, colour card in every photo'],
-    ['Says NOT SURE when unclear', 'Depends on officer', 'Not needed', 'Yes, with the reason'],
-    ['Record anyone can check later', 'No', 'Lab report', 'Signed record + QR, BSA s.63 page'],
-    ['Confirms which drug', 'No', 'Yes', 'No, first check only'],
-], 0.42, size=13, first_col_bold=True)
-add_text(s2, 9.62, 9.88, 9.5, 0.34,
-         'Also: new kit profiles are added from the admin website without an app update. The app works in Tamil.',
-         size=12.5, color=GREY)
+move(s2, 30, x=9.38, y=6.55, w=9.9)                        # 'Prototype Flow - real screenshots ...'
+ys, hs = 7.12, 3.05
+shots = [(media('image8.png'), (0, 0, 0, 0.34)), (media('image9.png'), None),
+         (media('image10.png'), (0, 0, 0, 0.18)), (media('image11.png'), (0, 0, 0.38, 0))]
+x = 9.45
+for k, (blob, crop) in enumerate(shots):
+    pic = picture(s2, blob, x, ys, h=hs, crop=crop)
+    pic.line.color.rgb = rgb('D0D0D0')
+    pic.line.width = Pt(0.75)
+    x += pic.width / 914400
+    if k < 3:
+        move(s2, (35, 36, 37)[k], x=x + 0.035, y=ys + hs / 2 - 0.12, w=0.35, h=0.23)
+        x += 0.42
 
 set_notes(s2, (
     "SAY (40 s): Officers judge the colour by eye. A yellow street lamp can make purple look brown. There is "
@@ -327,18 +362,16 @@ set_notes(s2, (
     "our Rs 10 colour card, and the result comes on screen in about 16 seconds. The record is sealed and gets a QR.\n"
     "Novelty is not colour reading alone. Research has done that (refs 3, 4, 5). What we add is the full path "
     "from field to court: corrected colour, an honest NOT SURE, and a record anyone can check.\n\n"
-    "IF ASKED 'NOT SURE goes to a senior officer to eyeball it?': No. The supervisor cannot change a NOT SURE "
-    "into POSITIVE. On the Review page they can only order a retest or confirm NOT SURE. The sample goes to FSL "
-    "as it does today.\n"
+    "IF ASKED 'Who decides a NOT SURE?': Nobody turns it into POSITIVE. The supervisor can only order a retest "
+    "or confirm NOT SURE on the Review page, and the sample goes to FSL as it does today.\n"
     "IF ASKED 'Is this AI?': No AI model, on purpose. Classical colour maths, every result can be explained "
     "with numbers, and it needs no drug photos to train.\n"
     "Source for 1,20,010: NCRB Crime in India 2023 (also quoted in a PIB reply on NDPS cases). It is total NDPS "
     "cases, we do not know how many used a field kit."))
 
-# ============================================================== slide 3: TECHNICAL APPROACH
+# ============================================================== slide 3: TECHNICAL APPROACH (189360 layout)
 kill(s3, 8, 19, 20, 21, 22, 23, 24)
 
-# --- system architecture, native shapes (only what is built)
 ROWX, ROWW, LBLW = 0.7, 9.1, 1.4
 IX0 = ROWX + LBLW + 0.05
 IW = ROWX + ROWW - 0.1 - IX0
@@ -354,7 +387,7 @@ def arch_row(y, h, label, items, item_h=0.72, gap=0.1):
         box_text(b, it, size=12)
 
 
-y = 2.5
+y = 2.55
 arch_row(y, 0.96, "Officer's phone\n(Flutter app)",
          ['Login and\npick kit', 'Kit read\ntimer', 'Camera with\ncard guide', 'Blur check\non phone',
           'GPS and\nmock flag', 'Photo\nSHA-256'])
@@ -378,129 +411,126 @@ arch_row(y, 0.96, 'Storage',
          ['PostgreSQL: users, tests,\nkit profiles, reviews', 'Photo store, PDF with QR\nand BSA s.63 page'])
 down_arrow(s3, IX0 + IW / 2, y + 0.99)
 y += 1.3
-arch_row(y, 0.96, 'Dashboard\n(React)',
+arch_row(y, 0.96, 'Admin\nDashboard',
          ['Test log\nand CSV', 'Map', 'Kit editor', 'NOT SURE\nreview', 'QR check\npage'])
-add_text(s3, ROWX, y + 1.0, ROWW, 0.3, 'Everything in this diagram is built and running in our prototype.',
+add_text(s3, ROWX, y + 1.0, ROWW, 0.3,
+         'Everything shown is built. No AI model, on purpose: colour maths that can be explained with numbers.',
          size=12, italic=True, color=GREY, space_after=0)
 
-# --- how it decides
-heading(s3, 10.15, 1.95, 6.4, 'How the App Decides')
-add_text(s3, 10.15, 2.45, 6.45, 3.0, [
-    'The card has 24 colours we already know. The app sees how the light changed them and removes the same '
-    'change from the kit colour.',
-    'Result only if the closest kit colour is within **ΔE 14** and at least **4 points** ahead of the next. '
-    'Else NOT SURE.',
-    '**Card fit check** - after correction, the 24 known colours must be within ΔE 9 on average '
-    '(real photos gave 5.9 to 8.7).',
-    'The % on the result screen is a **match score** (closeness and lead), not a probability.',
-    '**No AI model, on purpose** - it needs no drug photos to train, and every result can be explained '
-    'with numbers.',
-], size=15, bullet=True, space_after=3)
-
-heading(s3, 10.15, 5.45, 6.4, 'Measured Results')
-add_text(s3, 10.15, 5.9, 6.45, 0.36, '0 wrong answers so far, and every NOT SURE had a reason.',
-         size=15, bold=True, color=TITLE, space_after=0)
-add_table(s3, 10.15, 6.3, [2.05, 0.55, 3.85], [
-    ['Test', 'n', 'What happened'],
-    ['Computer-made photos', '37', '5 lights. 25 of 25 good photos right, 12 of 12 bad photos NOT SURE'],
-    ['Real scans, 28 Sep', '6', '5 right, 1 NOT SURE (card fit), 0 wrong'],
-    ['Real scans, 29 Sep', '19', '9 right, 7 of 7 trick cards NOT SURE, 3 blurry photos NOT SURE, 0 wrong'],
-    [('All real scans', {'bold': True}), ('25', {'bold': True}),
-     ('14 right, 11 NOT SURE, 0 wrong', {'bold': True})],
-    ['Speed', '18', 'Server check 2.5 s typical, 5 s max\nWhole test about 16 s (1 team member)'],
-], [0.34, 0.5, 0.34, 0.5, 0.34, 0.5], size=12.5, first_col_bold=False)
-add_text(s3, 10.15, 9.0, 6.45, 1.0,
-         'Kit colours are printed swatches shown on a screen, 1 phone, 1 room, our team only. 0 wrong in 14 real '
-         'answers is a small test, not proof. Real kits need an FSL trial (lab prototype, TRL 4).',
-         size=12.5, italic=True, color=GREY)
+heading(s3, 10.17, 2.02, 6.4, 'Measured Results')
+add_text(s3, 10.2, 2.5, 6.45, 3.62, [
+    '**Testing** - 37 computer-made photos in 5 lights and 25 real phone scans.',
+    '**Accuracy** - 25/25 computer photos right. Real scans: 14 right, 11 NOT SURE, 0 wrong.',
+    '**Colour Check** - ΔE ≤ 14 and a 4-point lead, else NOT SURE. The % shown is a match score, '
+    'not a probability.',
+    '**Speed** - Server check 2.5 s (5 s max). Whole test about 16 seconds.',
+    '**Tamper Test** - All 4/4 changed records were caught.',
+], size=17, bullet=True, space_after=8)
+add_text(s3, 10.2, 5.72, 6.45, 0.62,
+         'Kit colours are printed swatches on a screen, 1 phone. Small test, not proof. Real kits need an FSL '
+         'trial (TRL 4).', size=15.5, italic=True, align=C, space_after=0)
+line(s3, 10.17, 6.42, 16.55, 6.42, color=TAN, w=1.25)
+add_text(s3, 10.17, 6.5, 6.45, 0.34, 'Prototype Validation Using Real Phone Scans (29 Sep)', size=17,
+         bold=True, color=TITLE, space_after=0)
+picture(s3, TILES, 10.17, 6.95, w=3.6)
+add_text(s3, 10.17, 9.25, 3.6, 0.75, '1 phone, 1 room, card on a laptop screen. We checked each card by eye.',
+         size=12, color=GREY, space_after=0)
+add_text(s3, 13.9, 6.92, 2.75, 0.34, 'All 19 real scans', size=15, bold=True, color=TITLE, space_after=0)
+OK_ = {'bold': True, 'color': GREEN, 'fill': 'E8F5E9', 'align': C}
+Z = {'color': 'B0B0B0', 'align': C}
+add_table(s3, 13.9, 7.3, [1.05, 0.5, 0.5, 0.7], [
+    ['Card', ('POS', {'align': C}), ('NEG', {'align': C}), ('NOT SURE', {'align': C})],
+    ['Positive (8)', ('5', OK_), ('0', Z), ('3', {'align': C})],
+    ['Plain (4)', ('0', Z), ('4', OK_), ('0', Z)],
+    ['Trick (7)', ('0', Z), ('0', Z), ('7', OK_)],
+], 0.34, size=12, head_fill='F2EBDD', border=ROWLINE)
+add_text(s3, 13.9, 8.85, 2.75, 1.4, [
+    ('0 wrong answers', {'bold': True, 'color': TITLE, 'size': 13}),
+    'All 9 clear scans correct', 'All 7 trick cards said NOT SURE', '3 blurry photos, app asked to retake',
+], size=12.5, space_after=1)
 
 set_notes(s3, (
     "SAY (40 s): The card has 24 colours we already know. The app sees how the light changed those colours, "
     "removes that same change from the kit colour, and only then decides. It needs the closest kit colour within "
     "Delta E 14 and at least 4 points ahead of the next one, else it says NOT SURE.\n"
-    "Results: 25 real phone scans, 14 right, 11 NOT SURE, 0 wrong. 7 of the NOT SUREs were trick cards made to "
-    "test this, 3 were blurry photos (records 13, 14, 20, reason 'Photo is blurry'), 1 was a card-fit reject on 28 Sep.\n"
+    "Results: 25 real phone scans (6 on 28 Sep, 19 on 29 Sep), 14 right, 11 NOT SURE, 0 wrong. 7 NOT SUREs were "
+    "trick cards made to test this, 3 were blurry photos (records 13, 14, 20), 1 was a card-fit reject on 28 Sep.\n"
     "Be honest: printed swatches on a screen, 1 phone. The FSL trial with real kits is next.\n\n"
-    "IF ASKED 'What does 76% sure mean?': It is a match score. 99 x lead part x closeness part. Lead part = gap "
-    "to the next colour / 12, capped at 1. Closeness part = 1 - half of (distance / 14). Not a probability. "
+    "IF ASKED 'What does 76% sure mean?': It is a match score, not a probability. 99 x lead part x closeness "
+    "part. Lead part = gap to the next colour / 12, capped at 1. Closeness part = 1 - half of (distance / 14). "
     "We will rename it 'match score' in the app.\n"
     "IF ASKED 'Why Delta E 14?': On real scans the right colour was 4.7 to 8.9 away, trick cards 16 to 31, other "
     "kit colours 34 or more. 14 sits in that gap. The margin to trick cards is thin, so each real kit gets its own "
     "limit from FSL data (backup slide 8).\n"
     "IF ASKED 'Residual error after correction?': That is our card fit number, the average Delta E of the 24 "
     "known colours after correction. 5.9 to 8.7 on real photos of a screen (limit 9), under 1 on computer-made "
-    "photos. Screens glow, a paper card test is next.\n"
+    "photos. A paper card test is next.\n"
     "IF ASKED '2.5 s or 16 s?': 2.5 s is the server part (colour check about 0.16 s, most of the rest is the "
     "internet time lookup). 16 s is the whole test by one team member, photo to saved result."))
 
-# ============================================================== slide 4: FEASIBILITY AND VIABILITY
-kill(s4, 10, 21, 54, 55, 57)
+# ============================================================== slide 4: FEASIBILITY AND VIABILITY (189360 layout)
+kill(s4, 10, 14, 21, 54, 55, 56, 57)
 
-add_text(s4, 4.21, 1.98, 5.45, 0.5, [
+add_text(s4, 4.3, 1.98, 5.4, 0.5, [
     '**Legal:** first check only, the FSL lab confirms it.',
     '**Privacy:** no face, fingerprint or suspect name, only a sample code.',
 ], size=12, color=GREY, space_after=0)
-add_text(s4, 0.52, 2.5, 9.15, 3.0, [
-    '**Technical** - the full chain works today: phone app, server, database and dashboard '
-    '(lab prototype, TRL 4).',
-    '**User-friendly** - one photo, result in about 16 s. Tested by our team, not yet by officers.',
-    "**Low cost** - officer's own Android phone, a ₹10 reusable card per officer and open-source software. "
-    'Kits cost the same as today.',
-    '**Scalable** - new kits are added from the admin website, after FSL calibrates their colours '
-    'with real reagent.',
-    '**Sustainable** - state police IT cell runs it, FSL keeps kit colours correct (proposed).',
-], size=15.5, bullet=True, space_after=4)
+add_text(s4, 0.55, 2.5, 9.1, 3.95, [
+    '**Technical** - Full chain works today: app, server, database and dashboard (TRL 4).',
+    '**User-Friendly** - One photo, result in about 16 s (tested by our team so far).',
+    '**Low Cost** - Existing Android phone, a reusable ₹10 colour card and open-source tools.',
+    '**Operational** - Simple photo-based workflow. Officer trial is part of the pilot.',
+    '**Scalable** - New kit profiles from the Admin website, after FSL calibration.',
+    '**Sustainable** - State police IT cell runs it, FSL keeps kit colours right (proposed).',
+], size=19, bullet=True, space_after=10)
 
-dv = by_id(s4, 12)                                    # divider and 'Phased' heading move up to use the space
-dv.top = I(5.6)
-by_id(s4, 19).top = I(5.68)
-ph = by_id(s4, 14)                                    # phased implementation picture
-ph.left, ph.top, ph.width, ph.height = I(0.45), I(6.75), I(3.8), I(2.13)
-heading(s4, 4.4, 6.2, 5.2, 'Pilot Plan (proposed)', size=21)
-add_text(s4, 4.4, 6.65, 5.3, 3.7, [
-    '**Where** - 1 district in Tamil Nadu, 20 officers, 3 months, with the nearest FSL.',
-    '**Check 2 things apart** - app vs an expert reading the same kit (target 95%+ same), and kit vs FSL '
-    'lab (kit error, not app error).',
-    '**Size** - 60+ tests per kit, so 0 wrong would show error under 5%.',
-    '**Pass if** - NOT SURE under 10% and every record passes the QR check.',
-    '**Cost** - about ₹9,200 for cards and server only (estimate). Kits, phones, FSL time, training '
-    'and audit are extra.',
-], size=14, bullet=True, space_after=4)
+picture(s4, PHASED, 0.45, 7.55, w=4.3, crop=(0, 0.146, 0, 0))   # 189360 picture, its own title cropped off
+heading(s4, 4.95, 7.08, 4.7, 'Pilot Plan (proposed)', size=20)
+add_text(s4, 4.95, 7.5, 4.72, 2.85, [
+    '**Where** - 1 district in Tamil Nadu, 20 officers, 3 months, nearest FSL.',
+    '**Check 2 things apart** - app vs an expert reading the same kit (target 95%+), and kit vs FSL lab.',
+    '**Size** - 60+ tests per kit, so 0 wrong shows error under 5%.',
+    '**Pass if** - NOT SURE under 10%, every record passes the QR check.',
+    '**Cost** - about ₹9,200, cards and server only (estimate).',
+], size=14, bullet=True, space_after=3)
 
 B, P = ('Built', {'bold': True, 'color': GREEN}), ('Planned', {'bold': True, 'color': AMBER})
-add_table(s4, 10.1, 2.45, [2.75, 5.4, 1.25], [
+add_table(s4, 10.0, 2.35, [3.2, 4.45, 1.1], [
     ['Real-world problem', 'What our app does', 'Status'],
-    ['Bad light (street lamp, torch)', '24 known colours on the card correct the kit colour', B],
-    ['Blurry or shiny photo, card missing', 'NOT SURE with the reason and a retake. Blur check on the phone too', B],
-    ['Colour in between two results', 'NOT SURE. Supervisor can only order a retest or confirm NOT SURE, '
-                                      'sample goes to FSL', B],
-    ['Kit colour keeps changing', 'Each kit has a read time, the app timer takes the photo on time', B],
-    ['Fake GPS app', 'Android mock-location flag is sealed in the record', ('Flag only', {'bold': True, 'color': AMBER})],
-    ['Photo of a screen or a staged colour', 'Screen-photo check and Play Integrity phone check', P],
-    ['Someone with the server key rewrites records', 'Changes by others are caught. Next: key in a hardware '
-                                                     'box (HSM), chain copy kept outside', P],
-], [0.45, 0.42, 0.62, 0.62, 0.62, 0.42, 0.62, 0.62], size=13, first_col_bold=False, head_size=15)
+    ['Lighting can change the colour seen by the phone.', '24 known colours on the card correct the colour '
+                                                          'before analysis.', B],
+    ['Blurry or shiny photos can make the result unclear.', 'Detects it, says NOT SURE with the reason and asks '
+                                                            'for a retake.', B],
+    ['Some colours may fall between two results.', 'Shows NOT SURE instead of guessing. Supervisor can only '
+                                                   'order a retest, sample goes to FSL.', B],
+    ['Kit colour changes with time.', 'Each kit has a read time, the app timer takes the photo on time.', B],
+    ['Photos or records can be edited later.', 'Photo fingerprint, signature and chain catch any change '
+                                               '(4/4 in our test).', B],
+    ['Someone photographs a screen or a staged colour.', 'In-app camera only today. Screen-photo check and '
+                                                         'phone integrity check next.', P],
+    ['Different kits and phones show colours differently.', 'Kit colour settings and colour fixed in every '
+                                                             'photo. Real kits need FSL calibration.', B],
+], [0.5] + [0.6] * 7, size=13, head_size=16, first_col_bold=False)
 
-for sid, t in {45: "Own phone, ₹10 card per officer, open-source software",
-               46: 'NIC cloud or state data centre in India (to confirm)',
-               47: 'Security update every 3 months. FSL updates kit colours',
-               48: 'Pilot first, then district, state and national',
-               49: 'New kits from the website after FSL calibration'}.items():
-    sh = by_id(s4, sid)
-    sh.top, sh.height = I(8.62), I(1.4)
+add_text(s4, 13.35, 7.42, 6.25, 0.5,
+         '**After the pilot**, the cost can come from the state police or NCB IT budget. Server about '
+         '₹36,000 a year (estimate).', size=12, color=GREY, space_after=0)
+for sid, t in {45: 'Existing phone, ₹10 card, open-source software',
+               46: 'NIC or state data centre in India (to confirm)',
+               47: 'Security updates, FSL keeps kit colours right',
+               48: 'Pilot with police and FSL, then scale across locations',
+               49: 'New test kits added through the website, no app update'}.items():
+    sh = move(s4, sid, y=8.62, h=1.4)
     set_runs(sh, [t])
     sh.text_frame.paragraphs[0].runs[0].font.size = Pt(14)
     sh.text_frame.vertical_anchor = MSO_ANCHOR.MIDDLE
-ap = by_id(s4, 56)
-set_runs(ap, ['After the pilot, the cost can come from the state police or NCB IT budget. '
-              'Server about ₹36,000 a year (estimate).'])
 
 set_notes(s4, (
     "SAY (35 s): It works end to end today as a lab prototype. The pilot we propose is 1 district in Tamil "
     "Nadu, 20 officers, 3 months, with the nearest FSL. We measure 2 things apart: does the app read the kit the "
     "same way a trained expert does, and does the kit agree with the FSL lab. A kit false positive is the kit's "
     "error, not the app's.\n"
-    "Every risk in the table has a status. Built means it is in the code now. Planned means it is not built yet.\n\n"
+    "Every challenge in the table has a status. Built means it is in the code now. Planned means not yet.\n\n"
     "IF ASKED 'Why 60 tests?': Rule of three. With 0 errors in n tests, the true error rate is below 3/n with "
     "95% confidence. 3/60 = 5%. For 1% we would need 300.\n"
     "IF ASKED 'What is not in Rs 9,200?': Kits (already bought today), officers' phones, FSL time, training, "
@@ -508,24 +538,25 @@ set_notes(s4, (
     "IF ASKED 'Who owns it after the pilot?': State police IT cell runs the server, FSL owns the kit colour "
     "profiles. MoU is planned, not signed.\n"
     "IF ASKED 'Photo of a screen?': Honest answer, this is open. Our own tests used a screen, which proves "
-    "the risk. Plan: screen-photo (moire) check plus Play Integrity. Until then a supervisor can see the "
-    "photo on the Review page and the FSL report is still the final word."))
+    "the risk. Plan: screen-photo (moire) check plus Play Integrity. Until then the supervisor sees the photo "
+    "and the FSL report is still the final word."))
 
-# ============================================================== slide 5: IMPACT AND BENEFITS
-set_runs(by_id(s5, 24), ['Same reading in any light', 'NOT SURE instead of a guess', 'Result in about 16 s',
-                         'Record made automatically', 'Works in Tamil'])
-set_runs(by_id(s5, 25), ['Time, place, officer and photo for every test', 'Any change to a record is caught',
-                         'PDF with QR and BSA s.63 page', 'Search, map and CSV export',
-                         'NOT SURE tests go to supervisor review'])
-set_runs(by_id(s5, 26), ['Officer Benefits'])
+# ============================================================== slide 5: IMPACT AND BENEFITS (189360 layout)
+kill(s5, 11, 22, 28, 31, 32, 33, 34, 35, 36)
 
-qh = by_id(s5, 30)                                    # QR heading to the left, one line under it
-qh.left, qh.top, qh.width = I(0.93), I(4.9), I(3.9)
+set_runs(by_id(s5, 24), ['Same reading in any light', 'Less manual colour checking',
+                         'NOT SURE when unclear', 'Easy digital test records',
+                         'Quick access to past test records'])
+set_runs(by_id(s5, 25), ['Proof of every test: time, place, officer & photo', 'Any change to a record is caught',
+                         'PDF with QR and BSA s.63 page', 'Easy search, map and CSV export',
+                         'All test data in one system'])
+
+move(s5, 26, x=1.3, w=3.2).text_frame.paragraphs[0].alignment = C
+qh = move(s5, 30, x=0.93, y=4.9, w=3.9)
 qh.text_frame.paragraphs[0].alignment = L
 add_text(s5, 4.85, 4.9, 6.1, 0.42,
          'Judges can scan it on their own phone. For the demo the QR opens a public HTTPS check page '
          '(verify only, nothing else is open).', size=12, color=GREY, space_after=0)
-
 part = image_part(s5, by_id(s5, 10))                  # PDF screenshot: remove the old 127.0.0.1 address
 im = Image.open(io.BytesIO(part.blob)).convert('RGB')
 ImageDraw.Draw(im).rectangle([400, 251, 645, 264], fill=(255, 255, 255))
@@ -533,16 +564,36 @@ buf = io.BytesIO()
 im.save(buf, 'PNG')
 part._blob = buf.getvalue()
 
-fs = by_id(s5, 22)
-set_runs(fs, [
-    'Month 1-2 - offline mode and phone security chip signing, built together.',
-    'Next - FSL trial with real kits, paper card on 3+ phones, officer testing.',
-    'Month 3 - screen-photo check, Play Integrity, Hindi and voice (Tamil done).',
-    'After pilot - apply to NIC or MHA for e-Sakshya and CCTNS (not contacted yet).',
-])
-fs.width = I(7.15)
-for p in fs.text_frame.paragraphs:
-    p.runs[0].font.size = Pt(15)
+add_text(s5, 12.44, 2.14, 6.6, 0.34, 'Admin can monitor area-wise test results on the map.', size=17,
+         space_after=0)
+
+REPORT = 'https://drive.google.com/file/d/1NIR2OyYZRdmEM1R3cz9ghb7rZqyY1D1Z/view?usp=sharing'
+heading(s5, 11.62, 4.74, 7.4, 'Evidence Report', size=18)
+ev = add_text(s5, 11.62, 5.12, 7.45, 0.66, 'Every PDF report has a filled BSA section 63 page (photo hash, phone, '
+              'time, GPS) for the officer and expert to sign. ', size=14, space_after=0)
+lr = ev.text_frame.paragraphs[0].add_run()
+lr.text = 'Open a full sample report (PDF, 2 pages)'
+lr.font.name, lr.font.size, lr.font.underline = 'Calibri', Pt(14), True
+lr.font.color.rgb = rgb('0563C1')
+lr.hyperlink.address = REPORT
+area = add_box(s5, 11.62, 5.12, 7.45, 0.66, fill='FFFFFF', line=None, shape=MSO_SHAPE.RECTANGLE)
+area.fill._xPr.find(qn('a:solidFill'))[0].append(etree.Element(qn('a:alpha'), val='0'))
+area.click_action.hyperlink.address = REPORT            # click area so the link also works in the PDF
+area.name = 'Sample report link area'
+
+add_box(s5, 11.55, 6.0, 7.45, 3.05, line=TITLE, lw=2.25, radius=0.04)
+heading(s5, 11.75, 6.08, 7.0, 'Future Scope', size=21.5)
+add_text(s5, 11.75, 6.58, 7.1, 2.7, [
+    '**Phone Security** - sign each test with the phone’s security chip.',
+    '**Lab Comparison** - FSL trial with real kits, compare with lab results.',
+    '**Screen-photo Check** - catch photos of a screen, phone integrity check.',
+    '**Police Systems** - apply to NIC or MHA for the e-Sakshya and CCTNS link.',
+    '**Regional Languages** - Tamil is done, Hindi and voice help next.',
+], size=16.5, bullet=True, space_after=9)
+add_box(s5, 11.55, 9.22, 7.45, 1.08, line=TITLE, lw=2.25, radius=0.08)
+add_text(s5, 11.7, 9.27, 7.2, 0.98,
+         '**Offline Mode (Planned, month 1-2)** - Test and photo hash saved and signed on the phone, synced when '
+         'the network returns. Duplicates saved once.', size=16, anchor=MSO_ANCHOR.MIDDLE, space_after=0)
 
 set_notes(s5, (
     "SAY (35 s): Every test has time, place, officer and photo. Change even one byte of the photo, or the "
@@ -563,7 +614,7 @@ set_notes(s5, (
 tbl6 = next(s for s in s6.shapes if s.has_table).table
 for i, h in enumerate([0.62] + [1.25] * 5):
     tbl6.rows[i].height = I(h)
-for i in range(1, 6):                                 # references one point smaller so each fits its row
+for i in range(1, 6):
     ref = tbl6.cell(i, 2).text_frame.paragraphs[0]
     ref.line_spacing = 1.05                           # was a fixed 18 pt, which pushed long references out of the row
     for r in ref.runs:
@@ -581,12 +632,11 @@ for (ri, ci, pi), new in {(1, 0, 1): 'Phone camera colours change with light and
     for r in para.runs[1:]:
         r._r.getparent().remove(r._r)
 for k in range(5):
-    sh = by_id(s6, 26 + k)
-    sh.top, sh.height = I(2.1 + 0.62 + 1.25 * k), I(1.25)
+    move(s6, 26 + k, y=2.1 + 0.62 + 1.25 * k, h=1.25)
 add_text(s6, 0.75, 9.12, 18.5, 0.4,
          '**What we add:** earlier work shows a phone can read test colours [1][3][4][5]. We add the NOT SURE rule, '
          'a signed record anyone can check with a QR, and a BSA section 63 page.', size=14, space_after=0)
-add_text(s6, 0.75, 9.66, 18.5, 0.45, 'Corrected colour. Honest NOT SURE. A record anyone can check.',
+add_text(s6, 0.75, 9.66, 18.5, 0.45, 'Scan Smart. Verify Clearly. Protect Evidence.',
          size=20, bold=True, color=TITLE, align=C, space_after=0)
 set_notes(s6, (
     "All 5 DOIs open. Reference 1 author: IEEE Xplore and PubMed list the name as 'Karisen', so we cite it as "
@@ -675,14 +725,14 @@ add_text(s7, 10.9, 4.98, 8.4, 1.15, [
     'of a screen, limit 9. Under 1 on computer-made photos. Paper card test is next.',
 ], size=12.5, space_after=4)
 
-heading(s7, 10.9, 6.25, 8.4, 'Why the 29 Sep Scans Said NOT SURE', size=21)
-s7.shapes.add_picture(str(TILES), I(10.9), I(6.72), I(5.6), I(5.6 * 580 / 936))
-add_text(s7, 16.65, 6.72, 2.75, 3.6, [
-    ('**3 positive cards** - photo was blurry (records 13, 14, 20). The app asked for a retake.', {'bullet': True}),
+heading(s7, 10.9, 6.05, 8.4, 'Why the 29 Sep Scans Said NOT SURE', size=20)
+add_text(s7, 10.9, 6.47, 8.45, 1.05, [
+    ('**3 positive cards** - photo was blurry (records 13, 14, 20), the app asked for a retake.', {'bullet': True}),
     ('**7 trick cards** - 3 matched no kit colour, 4 were stopped earlier by photo checks '
      '(1 blurry, 2 card not found, 1 card fit).', {'bullet': True}),
-    ('Stress test: all 38 NOT SURE on real cards came from blurry photos.', {'bullet': True}),
-], size=12.5, space_after=5)
+], size=12.5, space_after=2)
+heading(s7, 10.9, 7.12, 8.4, 'Tamper Test on Our Saved Records (29 Sep)', size=20)
+picture(s7, TAMPER, 10.9, 7.56, h=2.68)
 set_notes(s7, (
     "Use only if asked about numbers. One ledger: 6 scans on 28 Sep + 19 on 29 Sep = 25 real scans. "
     "Right answers 5 + 9 = 14. NOT SURE 1 + 10 = 11. Wrong 0.\n"
